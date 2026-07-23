@@ -1,0 +1,16 @@
+diff --git a/opendbc/safety/modes/subaru_preglobal.h b/opendbc/safety/modes/subaru_preglobal.h
+--- a/opendbc/safety/modes/subaru_preglobal.h
++++ b/opendbc/safety/modes/subaru_preglobal.h
+@@ -18,7 +18,11 @@
+ #define SUBARU_PG_MAIN_BUS 0U
+ #define SUBARU_PG_CAM_BUS  2U
+
++// DRAFT (Q5 prep, not enabled): adds CruiseControl (0x144) for future button-injection use.
++// SET_BUTTON = byte0 bit3, RES_BUTTON = byte0 bit4, confirmed via telemetry (progress.md Q4).
++// Value-restriction tx_hook check (Honda 0x296-style) intentionally NOT included yet - see phase3_tx_allowlist_draft.md.
+ #define SUBARU_PG_COMMON_TX_MSGS \
+   {MSG_SUBARU_PG_ES_Distance, SUBARU_PG_MAIN_BUS, 8, .check_relay = true}, \
+   {MSG_SUBARU_PG_ES_LKAS,     SUBARU_PG_MAIN_BUS, 8, .check_relay = true}, \
++  {MSG_SUBARU_PG_CruiseControl, SUBARU_PG_MAIN_BUS, 8, .check_relay = false}, \
+
+ #define SUBARU_PG_STOP_AND_GO_TX_MSGS \
