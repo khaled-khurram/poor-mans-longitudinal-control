@@ -6,8 +6,8 @@
 
 ## Methodology
 
-- **Source:** the local route archive at `/mnt/immich-storage/comma-routes/raw/` — 124 routes / 1,375 segments processed successfully (0 hard errors; a handful of individual segments had truncated trailing rlog data, handled the same defensive way `route-stats` already does — a few dropped events, not a few dropped routes).
-- **Schema:** reused `~/homelab/comma-pipeline/route-stats/log.capnp` verbatim — the same schema copy already proven working against this exact archive in production, rather than risking a mismatch against the main repo's schema.
+- **Source:** a local route archive (path scrubbed for publishing — see script) — 124 routes / 1,375 segments processed successfully (0 hard errors; a handful of individual segments had truncated trailing rlog data, handled the same defensive way as a known-working sibling parser — a few dropped events, not a few dropped routes).
+- **Schema:** reused a known-working `log.capnp` schema copy verbatim from a sibling parsing service already proven working against this exact archive in production, rather than risking a mismatch against the main repo's schema.
 - **Processing:** wrote `research/analyze_lead_warning.py` (kept, reusable). Streams `carState` + `radarState` events per route via `pycapnp`, strided to ~10Hz, tracks the current lead state alongside each carState sample. Runtime: 8 minutes for the full archive.
 - **Candidate definition:** a sustained (≥0.5s) window where `vEgo > 50mph`, cruise engaged, a lead is present and closing (`vRel < -3.0 m/s`, i.e. closing at >~6.7mph relative), with no brake/gas in the preceding 3s (rules out "already reacting"). For each candidate, looked forward up to 30s for either a real brake press or a >8mph speed drop without braking (likely EyeSight's own ACC handling it).
 - **Episode clustering:** raw candidates within 20s of each other on the same route were merged into one "episode" — a single real-world traffic encounter can otherwise fragment into several candidate rows as `vRel` fluctuates around the threshold. All headline numbers below use episodes, not raw candidates (163 raw candidates → 63 distinct episodes).

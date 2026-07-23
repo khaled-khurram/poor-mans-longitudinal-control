@@ -2,15 +2,20 @@
 """
 Lead-vehicle early-warning feasibility analysis.
 
-Mines the local route archive (/mnt/immich-storage/comma-routes/raw) for
-real evidence on whether openpilot's vision-based lead detection
-(radarState.leadOne) could have given useful advance warning before this
-car's driver had to brake for a decelerating/queued lead vehicle, on a car
-with no radar and no real longitudinal control.
+Mines a local route archive for real evidence on whether openpilot's
+vision-based lead detection (radarState.leadOne) could have given useful
+advance warning before this car's driver had to brake for a
+decelerating/queued lead vehicle, on a car with no radar and no real
+longitudinal control.
 
-Schema: reuses the route-stats pipeline's own proven log.capnp copy
-(~/homelab/comma-pipeline/route-stats/log.capnp) since it's already
-confirmed working against this exact archive in production.
+Schema: reuses a known-working log.capnp copy from a sibling
+route-parsing pipeline already confirmed working against this exact
+archive in production.
+
+NOTE: RAW_DIR and SCHEMA_DIR below are placeholders - this project's
+actual local/home-network paths were scrubbed before publishing. Point
+these at your own route archive and a matching cereal/log.capnp schema
+copy to actually run this.
 
 Output: writes raw findings as JSON to lead_warning_raw_results.json in the
 same directory as this script, for the writeup to summarize.
@@ -23,8 +28,8 @@ from pathlib import Path
 import capnp
 import zstandard as zstd
 
-RAW_DIR = Path("/mnt/immich-storage/comma-routes/raw")
-SCHEMA_DIR = Path("/home/khaledkdaone/homelab/comma-pipeline/route-stats")
+RAW_DIR = Path("/path/to/your/route-archive/raw")
+SCHEMA_DIR = Path("/path/to/a/cereal-log-capnp-schema-copy")
 SCHEMA_FILE = SCHEMA_DIR / "log.capnp"
 OUT_FILE = Path(__file__).resolve().parent / "lead_warning_raw_results.json"
 

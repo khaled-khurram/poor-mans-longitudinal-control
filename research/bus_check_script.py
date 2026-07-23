@@ -2,7 +2,7 @@
 """
 Checks which physical CAN bus (src) CruiseControl (0x144), ES_LKAS (0x164),
 and ES_Distance (0x161) actually appear on, across a sample of the local
-route archive. Run with sudo (files are root:khaledkdaone).
+route archive. Run with sudo if your archive's file ownership requires it.
 """
 import json
 import sys

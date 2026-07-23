@@ -26,14 +26,11 @@ drives, or narrowly-scoped live tests with explicit before/after safety verifica
 
 See [`research/`](research) for the individual write-ups — CAN bus reverse-engineering,
 UDS diagnostic probing, bus-topology analysis, and community research pulled from the
-comma.ai Discord (with every claim checked against a primary source before being relied
-on — this project has caught and corrected fabricated "research" before, see
-`progress.md` §7.1/§7.2).
+comma.ai Discord, with every claim checked against a primary source (real telemetry,
+actual code, or a directly-quoted first-hand report) before being relied on.
 
-## A note on rigor
+## A note on paths
 
-Two early AI-generated research passes are referenced in `progress.md` but deliberately
-**not included here** — they mixed real findings with fabricated specifics (invented
-function names, a misattributed citation, a fabricated "verbatim quote"), and every
-claim from them was independently re-verified before anything was built on it. The
-research docs in this repo are the ones that survived that bar.
+A couple of the research scripts/docs reference a local route-archive location and
+schema path from this project's own setup — those have been scrubbed before publishing.
+Swap in your own paths if you want to actually run them.
