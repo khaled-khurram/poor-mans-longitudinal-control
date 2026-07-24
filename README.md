@@ -14,20 +14,32 @@ open questions, decisions log, and full incident history.
   driver-facing alert, live and working.
 - **Lead-vehicle closing-speed advisory:** a second advisory trigger, grounded in real
   telemetry analysis of the vision model's own (previously unused) lead-detection data.
-- An opt-in validation tool for testing automated speed-adjustment guidance against real
-  driving, before any hardware investment.
+- **Phase 3 (real longitudinal actuation — live):** on a platform with no native
+  long-control support, the car's own ACC (EyeSight) is commanded via steering-wheel
+  button emulation ("ride EyeSight's own setpoint, turn its dial" rather than replace
+  it) — a closed-loop controller for both curve-speed and lead-vehicle-closing scenarios,
+  gated behind explicit driver-controlled arming and an unconditional, session-long
+  override latch (brake/gas/steering torque instantly and permanently disables it).
+  Deployed and live-tested on public roads. Real magnitude/cadence limits were
+  empirically derived from this car's own archived driving data rather than assumed —
+  see `research/button_cadence_response_curve.md` and
+  `research/phase3_controller_design.md` for the full derivation and safety design.
 
-## Phase 2/3 (recon, not yet actuation)
+## How this got here
 
-Investigating whether real longitudinal control (not just advisory) is feasible on a
-platform with no native long-control support. This has stayed strictly recon/bench-only
-throughout — every finding below came from either passive CAN analysis of already-logged
-drives, or narrowly-scoped live tests with explicit before/after safety verification.
+Every step — from the original CAN reverse-engineering through the first live actuation
+test — followed the same discipline: verify against real telemetry, actual code, or a
+directly-quoted first-hand source before relying on anything, and revert immediately if
+a live test starts misbehaving rather than debug live. That discipline caught real bugs
+along the way (a plannerd crash from a schema mismatch, a safety-latch false-positive
+from engagement timing, an under-sized safety budget), each found and fixed *before* it
+became a real problem, not after.
 
 See [`research/`](research) for the individual write-ups — CAN bus reverse-engineering,
 UDS diagnostic probing, bus-topology analysis, and community research pulled from the
-comma.ai Discord, with every claim checked against a primary source (real telemetry,
-actual code, or a directly-quoted first-hand report) before being relied on.
+comma.ai Discord and cross-referenced against sunnypilot's own official implementations
+for other car brands — with every claim checked against a primary source before being
+relied on.
 
 ## A note on paths
 

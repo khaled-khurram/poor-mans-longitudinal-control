@@ -82,8 +82,8 @@ follow from that, and I didn't want to guess at either and present it as settled
 Both are real engineering questions, not just formalities — recommend resolving them
 (and writing the actual `tx_hook` restriction) as a distinct follow-up task once Q9 is
 answered and this is actually about to be tested on a bench, not before. Shipping a
-guessed-at value check here would repeat a mistake this project has already been
-burned by elsewhere (specific-sounding but unverified claims) — better to
+guessed-at value check here would be the same mistake progress.md §7.1 already flagged
+in the earlier deep-research pass (specific-sounding but unverified claims) — better to
 leave it explicitly open than invent something that looks more finished than it is.
 
 ## Not addressed here at all
@@ -100,8 +100,8 @@ leave it explicitly open than invent something that looks more finished than it 
 ## How to apply (when actually ready, not now)
 
 ```
-cd <your-openpilot-checkout>/opendbc_repo
-git apply <path-to-this-file>/phase3_tx_allowlist_draft.patch
+cd ~/long_control/openpilot/opendbc_repo
+git apply ~/long_control/research/phase3_tx_allowlist_draft.patch
 ```
 
 Not run as part of this task.

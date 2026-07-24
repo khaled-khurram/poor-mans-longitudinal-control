@@ -127,3 +127,55 @@ installs. **This remains genuinely untested and unconfirmed — still needs the 
    assumption.
 
 Pure research — no device access, no code changes, no installation attempted.
+
+---
+
+## RESULT (2026-07-24): Installed, running, boot-persistent, fully verified — supersedes the plan above in several ways
+
+**`noexec` on `/data`: confirmed NOT set.** Mount options are
+`nosuid,nodev,noatime,nodiratime,discard` — no `noexec`. Verified directly (wrote and executed a
+test script on `/data`). Resolves finding #8.
+
+**The apt/remount-rw path was skipped entirely, correctly in hindsight.** Root is `ext4, ro`, only
+352MB free out of 4.3GB — genuinely too little headroom to risk an `apt install` plus dependencies,
+and matches finding #4's real 2024 failure report. Went straight for the static-binary-in-`/data`
+approach instead (this doc's own suggested fallback, promoted to primary). Binary source moved:
+`pkg.tailscale.com` (used in finding #3's scripts) is dead (`NXDOMAIN`, confirmed via direct DNS
+query) — current host is **`pkgs.tailscale.com`** (with an s), found by reading Tailscale's actual
+`install.sh` rather than guessing. `tailscale_1.98.9_arm64.tgz`, sha256-verified against the
+published checksum.
+
+**Finding #5's persistence concern was correct, but the actual mechanism was worse than expected.**
+The plan (and this doc) assumed a `cron`/boot-hook `@reboot` job would work as long as it lived in
+`/data`. **It doesn't — `/var` is mounted as `tmpfs` on this device**, wiped completely every
+reboot, and root's crontab storage (`/var/spool/cron/crontabs/`) lives there. A `sudo crontab`
+entry was added, confirmed present, then **vanished after a real reboot** (`no crontab for root`) —
+cron itself never even ran the job, since its own job list was empty by the time it started.
+**Actual working persistence mechanism**: `/data/openpilot/launch_env.sh` (commit `3c1c45a`) — the
+earliest `/data`-backed, git-tracked, actually-persistent-across-reboots script already sourced
+every boot (proven by this project's own repeated redeploys tonight) — backgrounds
+`/data/tailscale-state/start_tailscaled.sh` with a guard clause, no `Params`, no cron, no root-fs
+edit. Needed `sudo -n` in front of the `tailscaled` invocation (missed on the first pass — it ran as
+the unprivileged `comma` user via the hook and failed silently on TUN creation:
+`tstun.New("tailscale0"): operation not permitted`).
+
+**Fully verified end-to-end, twice, including a real reboot with zero manual intervention**:
+SSH over the Tailscale IP (`[REDACTED-TAILSCALE-IP]`) works, `tailscale ping` upgraded to a direct P2P
+connection (not just DERP-relayed), and after a full `sudo reboot` — no SSH, no LAN, nothing typed
+on the device — `tailscaled` came back up on its own via the boot hook, reconnected using its
+persisted identity (same IP, no re-auth), and SSH over Tailscale worked immediately. Onroad process
+health (`manager`, `ui`, `pandad` clean; `controlsd`/`plannerd` correctly absent since the car was
+off) and HEAD (`3c1c45a010`) confirmed unaffected by the `launch_env.sh` change.
+
+**What this actually unblocks**: SSH access to the device over the phone's hotspot, not just home
+WiFi — the original motivation (avoiding "upload logs, drive home, wait for sync" for every
+iteration). Not yet tested from an actual hotspot/away-from-home network (everything above was
+verified from home WiFi) — the tunnel itself has no reason to care about which network it's on, but
+that's still a real "first time out" data point worth confirming on the next drive rather than
+assumed.
+
+Still true, unresolved, carried forward: **update-persistence beyond a reboot remains unverified.**
+Nothing above tests what happens across an actual AGNOS OS update (as opposed to a reboot) — `/data`
+should survive one (it's the persistent user partition everything else in this project already
+depends on surviving updates), but that's inference from this project's existing assumptions, not a
+direct test. Revisit if/when this device takes an AGNOS update.
