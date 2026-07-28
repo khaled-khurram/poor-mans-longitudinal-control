@@ -1,0 +1,24 @@
+==============================================================
+Guild: comma.ai community
+Channel: Vehicle Specific / car-port-info
+==============================================================
+
+[6/2/2024 3:45 PM] adeebshihadeh
+# Welcome to car porting!
+
+* car ports live in the [opendbc repo](https://github.com/commaai/opendbc)
+* [comma.ai/vehicles](https://comma.ai/vehicles) is an up-to-date list of (plug and play) supported cars
+* WIP car ports are listed [here](https://github.com/orgs/commaai/projects/28)
+* Not sure why you're car isn't supported? Find out more [here](https://github.com/commaai/openpilot/blob/master/docs/CARS.md#dont-see-your-car-here)
+
+**Interested in porting your car?**
+It's easier than it seems - porting a car is doable in most cases by anyone with good programming skills.
+
+The difficulty is a function of the architecture of the car and how new it is to openpilot. In the best case, it's a weekend of hacking for someone new or an hour for an experienced car porter. @jyoung8607 has a good intro talk on the process: https://youtu.be/XxPS5TpTUnI
+
+Every car port is eligible for a bounty: https://github.com/commaai/openpilot/blob/master/docs/BOUNTIES.md#car-bounties
+
+
+==============================================================
+Exported 1 message(s)
+==============================================================

@@ -1,0 +1,74 @@
+diff --git a/opendbc/car/subaru/carcontroller.py b/opendbc/car/subaru/carcontroller.py
+--- a/opendbc/car/subaru/carcontroller.py
++++ b/opendbc/car/subaru/carcontroller.py
+@@ -1,3 +1,5 @@
++import os
++import time
+ import numpy as np
+ from opendbc.can import CANPacker
+ from opendbc.car import Bus, make_tester_present_msg
+@@ -12,6 +14,15 @@
+ MAX_STEER_RATE = 25  # deg/s
+ MAX_STEER_RATE_FRAMES = 7  # tx control frames needed before torque can be cut
+
++# DRAFT v2 (not enabled by default): autonomous, one-shot bench test for the ES_Distance
++# Cruise_Button live-actuation question (progress.md Q6). No SSH/live channel required
++# during the drive by design — see research/es_distance_live_test_protocol.md.
++ES_DISTANCE_TEST_ARM_FLAG = "/data/es_distance_test_arm"
++ES_DISTANCE_TEST_LOG = "/data/es_distance_button_test.log"
++ES_DISTANCE_TEST_ARM_MAX_AGE_S = 30 * 60  # auto-expire a forgotten arm
++ES_DISTANCE_TEST_MIN_VEGO = 11.2  # m/s, ~25mph
++ES_DISTANCE_TEST_SUSTAIN_FRAMES = 40  # ~2s at the 20Hz this block runs (every 5 of 100Hz)
++
+
+ class CarController(CarControllerBase, SnGCarController):
+   def __init__(self, dbc_names, CP, CP_SP):
+@@ -20,6 +31,8 @@
+
+     self.cruise_button_prev = 0
+     self.steer_rate_counter = 0
++    self.es_distance_test_fired = False
++    self.es_distance_test_sustain_count = 0
+
+     self.p = CarControllerParams(CP)
+     self.packer = CANPacker(DBC[CP.carFingerprint][Bus.pt])
+@@ -87,6 +100,40 @@
+         else:
+           cruise_button = CS.cruise_button
+
++        # DRAFT v2 test hook: autonomous, fires at most once per process lifetime, only
++        # under tight gating (armed + sustained highway speed + not already engaged).
++        # Default (flag absent) is a no-op; behavior is identical to unpatched code.
++        if not self.es_distance_test_fired:
++          armed = False
++          if os.path.exists(ES_DISTANCE_TEST_ARM_FLAG):
++            try:
++              age_s = time.time() - os.path.getmtime(ES_DISTANCE_TEST_ARM_FLAG)
++              armed = age_s < ES_DISTANCE_TEST_ARM_MAX_AGE_S
++            except OSError:
++              armed = False
++
++          fast_enough = CS.out.vEgo > ES_DISTANCE_TEST_MIN_VEGO
++          not_engaged = bool(CS.out.cruiseState.available) and not CS.out.cruiseState.enabled
++          no_real_press = CS.cruise_button == 0
++
++          if armed and fast_enough and not_engaged and no_real_press:
++            self.es_distance_test_sustain_count += 1
++          else:
++            self.es_distance_test_sustain_count = 0
++
++          if armed and self.es_distance_test_sustain_count >= ES_DISTANCE_TEST_SUSTAIN_FRAMES:
++            real_cruise_button = cruise_button
++            cruise_button = 2  # SET shallow — smallest, most reversible test value
++            self.es_distance_test_fired = True
++            try:
++              os.remove(ES_DISTANCE_TEST_ARM_FLAG)
++            except OSError:
++              pass
++            with open(ES_DISTANCE_TEST_LOG, "a") as f:
++              f.write(f"{time.time()} FIRED cruise_button=2 (real={real_cruise_button}) "
++                      f"frame={self.frame} vEgo={CS.out.vEgo}\n")
++
+         # unstick previous mocked button press
+         if cruise_button == 1 and self.cruise_button_prev == 1:
+           cruise_button = 0

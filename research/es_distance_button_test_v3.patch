@@ -1,0 +1,182 @@
+diff --git a/opendbc_repo/opendbc/car/subaru/carcontroller.py b/opendbc_repo/opendbc/car/subaru/carcontroller.py
+index fbc55f0..bd6e44a 100644
+--- a/opendbc_repo/opendbc/car/subaru/carcontroller.py
++++ b/opendbc_repo/opendbc/car/subaru/carcontroller.py
+@@ -1,3 +1,5 @@
++import os
++import time
+ import numpy as np
+ from opendbc.can import CANPacker
+ from opendbc.car import Bus, make_tester_present_msg
+@@ -13,6 +15,29 @@ from opendbc.sunnypilot.car.subaru.stop_and_go import SnGCarController
+ MAX_STEER_RATE = 25  # deg/s
+ MAX_STEER_RATE_FRAMES = 7  # tx control frames needed before torque can be cut
+ 
++# DRAFT v3 (not enabled by default): three independently-armed one-shot bench tests for
++# the ES_Distance Cruise_Button question, follow-ups to v2's confirmed SET-shallow-while-
++# not-engaged success (progress.md Q6). See research/es_distance_live_test_protocol_v3.md.
++# Each test is armed via its own flag file (deliberately not a new Params key — same
++# UnknownKeyName crash-class reasoning as v2). Only ONE should ever be armed per drive —
++# if more than one flag is present simultaneously, all three are treated as unarmed and a
++# warning is logged, rather than guessing which one to honor.
++ES_DISTANCE_TEST_LOG = "/data/es_distance_button_test_v3.log"
++ES_DISTANCE_TEST_ARM_MAX_AGE_S = 30 * 60  # auto-expire a forgotten arm
++
++ES_DISTANCE_RESUME_FLAG = "/data/es_distance_test_resume"
++ES_DISTANCE_RESUME_MIN_VEGO = 5.0  # m/s (~11mph) — still clearly driving after a disengage
++
++ES_DISTANCE_DEEP_FLAG = "/data/es_distance_test_deep"
++ES_DISTANCE_DEEP_STEADY_TOLERANCE = 1.0  # m/s, |vEgo - cruiseState.speed| under this = steady-state
++
++ES_DISTANCE_BURST_FLAG = "/data/es_distance_test_burst"
++ES_DISTANCE_BURST_COUNT = 3
++ES_DISTANCE_BURST_SPACING_CYCLES = 5  # 5 * 50ms (this block's cadence) = ~250ms between presses
++
++ES_DISTANCE_SUSTAIN_FRAMES = 40  # ~2s at this block's 20Hz cadence, before any test may fire
++ES_DISTANCE_DEEP_SUSTAIN_FRAMES = 60  # ~3s — deep test wants extra confidence of true steady-state
++
+ 
+ class CarController(CarControllerBase, SnGCarController):
+   def __init__(self, dbc_names, CP, CP_SP):
+@@ -23,6 +48,18 @@ class CarController(CarControllerBase, SnGCarController):
+     self.cruise_button_prev = 0
+     self.steer_rate_counter = 0
+ 
++    self.es_distance_resume_fired = False
++    self.es_distance_resume_was_engaged = False
++    self.es_distance_resume_sustain = 0
++
++    self.es_distance_deep_fired = False
++    self.es_distance_deep_sustain = 0
++
++    self.es_distance_burst_fired = False
++    self.es_distance_burst_sustain = 0
++    self.es_distance_burst_sent = 0
++    self.es_distance_burst_next_frame = 0
++
+     self.p = CarControllerParams(CP)
+     self.packer = CANPacker(DBC[CP.carFingerprint][Bus.pt])
+ 
+@@ -89,6 +126,8 @@ class CarController(CarControllerBase, SnGCarController):
+         else:
+           cruise_button = CS.cruise_button
+ 
++        cruise_button = self._es_distance_v3_test_hook(cruise_button, CS)
++
+         # unstick previous mocked button press
+         if cruise_button == 1 and self.cruise_button_prev == 1:
+           cruise_button = 0
+@@ -147,3 +186,113 @@ class CarController(CarControllerBase, SnGCarController):
+ 
+     self.frame += 1
+     return new_actuators, can_sends
++
++  def _es_distance_v3_test_hook(self, cruise_button, CS):
++    """DRAFT v3, not enabled by default: see research/es_distance_live_test_protocol_v3.md.
++    Three independently-armed one-shot bench tests (RESUME / deep-SET / burst). Only one
++    flag should ever be armed per drive; if more than one is present, all are disabled."""
++    resume_armed = os.path.exists(ES_DISTANCE_RESUME_FLAG)
++    deep_armed = os.path.exists(ES_DISTANCE_DEEP_FLAG)
++    burst_armed = os.path.exists(ES_DISTANCE_BURST_FLAG)
++
++    if sum([resume_armed, deep_armed, burst_armed]) > 1:
++      if not getattr(self, "_es_distance_v3_multi_arm_warned", False):
++        self._es_distance_v3_multi_arm_warned = True
++        with open(ES_DISTANCE_TEST_LOG, "a") as f:
++          f.write(f"{time.time()} WARNING multiple v3 test flags armed simultaneously - all disabled\n")
++      return cruise_button
++
++    def _fresh(flag_path):
++      try:
++        return (time.time() - os.path.getmtime(flag_path)) < ES_DISTANCE_TEST_ARM_MAX_AGE_S
++      except OSError:
++        return False
++
++    no_real_press = CS.cruise_button == 0
++
++    # --- RESUME test: requires a REAL engagement to have happened earlier this arm window,
++    # so there's an actual stored set-speed to resume to - deliberately not assumed by
++    # analogy to v2's SET result. Real Subaru RESUME recalls a previously stored target;
++    # SET captures the current speed. Different code path, different precondition. ---
++    if resume_armed and _fresh(ES_DISTANCE_RESUME_FLAG) and not self.es_distance_resume_fired:
++      if CS.out.cruiseState.enabled:
++        self.es_distance_resume_was_engaged = True  # latch: only a real engagement counts
++
++      ready = (self.es_distance_resume_was_engaged
++               and bool(CS.out.cruiseState.available) and not CS.out.cruiseState.enabled
++               and CS.out.vEgo > ES_DISTANCE_RESUME_MIN_VEGO and no_real_press)
++      self.es_distance_resume_sustain = self.es_distance_resume_sustain + 1 if ready else 0
++
++      if self.es_distance_resume_sustain >= ES_DISTANCE_SUSTAIN_FRAMES:
++        real_cruise_button = cruise_button
++        cruise_button = 4  # RESUME shallow
++        self.es_distance_resume_fired = True
++        try:
++          os.remove(ES_DISTANCE_RESUME_FLAG)
++        except OSError:
++          pass
++        with open(ES_DISTANCE_TEST_LOG, "a") as f:
++          f.write(f"{time.time()} FIRED TEST=resume cruise_button=4 (real={real_cruise_button}) "
++                  f"frame={self.frame} vEgo={CS.out.vEgo} cruiseSpeed={CS.out.cruiseState.speed}\n")
++      return cruise_button
++
++    # --- Deep-SET test: requires cruise ALREADY engaged and steady, so what's measured is
++    # the decrement applied to an existing set-speed - a different behavior than v2 tested
++    # (which was "engage at current speed", not "adjust an existing target"). ---
++    if deep_armed and _fresh(ES_DISTANCE_DEEP_FLAG) and not self.es_distance_deep_fired:
++      steady = abs(CS.out.vEgo - CS.out.cruiseState.speed) < ES_DISTANCE_DEEP_STEADY_TOLERANCE
++      ready = CS.out.cruiseState.enabled and steady and no_real_press
++      self.es_distance_deep_sustain = self.es_distance_deep_sustain + 1 if ready else 0
++
++      if self.es_distance_deep_sustain >= ES_DISTANCE_DEEP_SUSTAIN_FRAMES:
++        real_cruise_button = cruise_button
++        cruise_button = 3  # SET deep - decrease direction, safer than a deep resume/increase
++        self.es_distance_deep_fired = True
++        try:
++          os.remove(ES_DISTANCE_DEEP_FLAG)
++        except OSError:
++          pass
++        with open(ES_DISTANCE_TEST_LOG, "a") as f:
++          f.write(f"{time.time()} FIRED TEST=deep cruise_button=3 (real={real_cruise_button}) "
++                  f"frame={self.frame} vEgo={CS.out.vEgo} cruiseSpeed={CS.out.cruiseState.speed}\n")
++      return cruise_button
++
++    # --- Burst test: up to 3 commanded shallow-SET presses ~250ms apart while already
++    # engaged and steady - tests whether closely-spaced commanded presses fault the ECU or
++    # break counter/checksum continuity. Decrease direction only (bounded, ~3mph total).
++    # Aborts (not just pauses) the instant steady-state is lost mid-sequence, rather than
++    # trying to resume a stale plan later. ---
++    if burst_armed and _fresh(ES_DISTANCE_BURST_FLAG) and not self.es_distance_burst_fired:
++      steady = abs(CS.out.vEgo - CS.out.cruiseState.speed) < ES_DISTANCE_DEEP_STEADY_TOLERANCE
++      ready = CS.out.cruiseState.enabled and steady and no_real_press
++      self.es_distance_burst_sustain = self.es_distance_burst_sustain + 1 if ready else 0
++
++      started = self.es_distance_burst_sent > 0
++      may_send_next = started and self.frame >= self.es_distance_burst_next_frame
++
++      if (not started and self.es_distance_burst_sustain >= ES_DISTANCE_SUSTAIN_FRAMES) or (started and may_send_next and ready):
++        real_cruise_button = cruise_button
++        cruise_button = 2  # SET shallow, repeated
++        self.es_distance_burst_sent += 1
++        self.es_distance_burst_next_frame = self.frame + ES_DISTANCE_BURST_SPACING_CYCLES
++        with open(ES_DISTANCE_TEST_LOG, "a") as f:
++          f.write(f"{time.time()} FIRED TEST=burst seq={self.es_distance_burst_sent}/{ES_DISTANCE_BURST_COUNT} "
++                  f"cruise_button=2 (real={real_cruise_button}) frame={self.frame} vEgo={CS.out.vEgo} "
++                  f"cruiseSpeed={CS.out.cruiseState.speed}\n")
++        if self.es_distance_burst_sent >= ES_DISTANCE_BURST_COUNT:
++          self.es_distance_burst_fired = True
++          try:
++            os.remove(ES_DISTANCE_BURST_FLAG)
++          except OSError:
++            pass
++      elif started and not ready:
++        self.es_distance_burst_fired = True
++        try:
++          os.remove(ES_DISTANCE_BURST_FLAG)
++        except OSError:
++          pass
++        with open(ES_DISTANCE_TEST_LOG, "a") as f:
++          f.write(f"{time.time()} ABORTED TEST=burst after {self.es_distance_burst_sent}/{ES_DISTANCE_BURST_COUNT} "
++                  f"sent - lost steady-state or real press intervened\n")
++
++    return cruise_button

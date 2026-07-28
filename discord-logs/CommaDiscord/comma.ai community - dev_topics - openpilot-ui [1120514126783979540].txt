@@ -1,0 +1,4116 @@
+==============================================================
+Guild: comma.ai community
+Channel: dev_topics / openpilot-ui
+Topic: A place for openpilot mocks and designs!
+==============================================================
+
+[6/19/2023 7:43 PM] georgehotz
+new openpilot designs go here
+
+{Reactions}
+✨ (13) 🎉 (3)
+
+[6/19/2023 7:53 PM] nyhunk
+@cXk , @First .
+
+Here are the user stories as we discussed.
+
+As a driver, I want a lane change indicator feature in my vehicle that provides me with real-time information about the safety of changing lanes. This feature should display one of two statuses:
+
+• Safe to Change: When it is safe to change lanes, the indicator will be green, indicating that there are no obstacles or vehicles in the intended lane.
+• Blocked: When it is not safe to change lanes, the indicator will be red w/ icon, alerting me that there are obstacles or vehicles preventing a safe lane change. Icon: https://www.iso.org/obp/ui#iso:grs:7000:2796
+
+With this lane change indicator, I can make more informed decisions while driving and ensure a safer and smoother lane-changing experience.
+
+
+[6/19/2023 7:58 PM] firstsrif
+https://github.com/commaai/openpilot/issues/24638
+
+{Embed}
+https://github.com/commaai/openpilot/issues/24638
+UI: better lane change alert · Issue #24638 · commaai/openpilot
+https://images-ext-1.discordapp.net/external/epjQmsd6Bro0-tI9TeMZId-EmLPiRdTwFM9iaAWHw0A/https/opengraph.githubassets.com/8ab35a45de8920c0a20b9b5b34bf0688ee4d325f5fda1491b5d0ab0389d003f5/commaai/openpilot/issues/24638
+
+
+[6/19/2023 8:02 PM] nyhunk
+@cXk , @First , and I are teaming up to level up the lane change feature for Comma! We totally see the potential for some epic design changes down the road. But for now, we're pumped about making those smaller tweaks that'll  boost the current functionality. Our main goal? Polishing up the lane change feature to give you an even more awesome user experience. In the mean time, it'd be great to see the comma team provide some feedback and guidance along the way.
+
+{Reactions}
+👍 (2)
+
+[6/19/2023 8:12 PM] georgehotz
+the more we get, the more we give. if you show you can go from idea, to mock, to code, to PR, to merged, i'm happy to put company resources into helping you
+
+{Reactions}
+💖 (2)
+
+[6/19/2023 8:13 PM] georgehotz
+then if you do that a few times and want to join comma, that's the way to do it
+
+{Reactions}
+🤜
+
+[6/19/2023 8:13 PM] nyhunk
+Can we get access to these internal files or a copy of it. Helps with assets
+https://www.figma.com/file/kPvxp4UcTTU9RLLOY7R2b9/openpilot---REDESIGN?node-id=303%3A3
+
+
+[6/19/2023 8:14 PM] georgehotz
+@alexm easy to share?
+
+
+[6/19/2023 8:15 PM] georgehotz
+yea jozef (creator of that PR) is no longer with the company, but I think github issues like that are a great way to do design
+
+
+[6/19/2023 8:15 PM] sunnyhaibin
+https://cdn.discordapp.com/attachments/994915271213064222/1119358753863639212/IMG_3115.mov
+
+{Embed}
+https://cdn.discordapp.com/attachments/994915271213064222/1119358753863639212/IMG_3115.mov
+
+
+[6/19/2023 8:16 PM] sunnyhaibin
+I just added this to sunnypilot, lemme know if you guys want this upstreamed
+
+{Reactions}
+⏫ (6) ❤️ (4)
+
+[6/19/2023 8:16 PM] georgehotz
+idk how good figma is at sharing in public, but we don't have secrets
+
+
+[6/19/2023 8:16 PM] sunnyhaibin
+It matches the design in that Issue to 90%+
+
+
+[6/19/2023 8:16 PM] sunnyhaibin
+Even the red and green colors match the figma design in that Issue.
+
+
+[6/19/2023 8:16 PM] georgehotz
+wow sunnypilot looks a lot better than openpilot! 🙂
+
+{Reactions}
+Yes_WOE (6) 🙏 (3) 🚀 (3) ☝️
+
+[6/19/2023 8:16 PM] nyhunk
+solid, @sunnyhaibin . @First , CHECK THIS OUT
+
+
+[6/19/2023 8:17 PM] georgehotz
+@adeeb we want to merge this blinker?
+
+
+[6/19/2023 8:17 PM] georgehotz
+the "Changing Lanes" text is awful i think
+
+
+[6/19/2023 8:17 PM] georgehotz
+it blocks the key part of the display
+
+{Reactions}
+☝️ (2)
+
+[6/19/2023 8:17 PM] sunnyhaibin
+https://cdn.discordapp.com/attachments/887896059039326259/1119357598878142464/20230616-154302.mov
+
+{Embed}
+https://cdn.discordapp.com/attachments/887896059039326259/1119357598878142464/20230616-154302.mov
+
+
+[6/19/2023 8:18 PM] sunnyhaibin
+Yep, I'm working on refactoring that right now and see how to make it look clean
+
+
+[6/19/2023 8:18 PM] nyhunk
+Same feeling. @sunnyhaibin , if you're down. I can work with on improving that
+
+{Reactions}
+👍
+
+[6/19/2023 8:18 PM] sunnyhaibin
+It blocks way too much
+
+
+[6/19/2023 8:18 PM] sunnyhaibin
+If you guys are down I can open a PR.
+
+
+[6/19/2023 8:18 PM] adeebshihadeh
+created a design section in our github discussions - https://github.com/commaai/openpilot/discussions/categories/design
+
+{Embed}
+https://github.com/commaai/openpilot/discussions/categories/design
+commaai openpilot Design · Discussions
+Explore the GitHub Discussions forum for commaai openpilot in the Design category.
+https://images-ext-1.discordapp.net/external/VaCFMuxomQvd6Q7L5kr4ZZ8kBjgJAfixsihvueic0FQ/https/repository-images.githubusercontent.com/74627617/107aa381-a61e-49ff-9a68-59b4fd315093
+
+{Reactions}
+💖 (3) 💯
+
+[6/19/2023 8:19 PM] nyhunk
+do it, i'm down to follow up
+
+{Reactions}
+👍
+
+[6/19/2023 8:19 PM] georgehotz
+btw, does stock do "lane change unavailable" road edge?
+
+
+[6/19/2023 8:19 PM] georgehotz
+that's a good check to have
+
+
+[6/19/2023 8:19 PM] sunnyhaibin
+Nope I added to sunnypilot
+
+{Reactions}
+❤️
+
+[6/19/2023 8:19 PM] adeebshihadeh
+problem is mostly in the split view with the map. i'll try it out an drive on it though
+
+{Reactions}
+❤️
+
+[6/19/2023 8:19 PM] sunnyhaibin
+It's a bit finicky but it's working quite well
+
+
+[6/19/2023 8:20 PM] georgehotz
+i think if there's a detected road edge in the lane it's always fine to block the lane change
+
+{Reactions}
+👍 (2)
+
+[6/19/2023 8:21 PM] georgehotz
+though ideally we want some ML for "lane change possible"
+
+
+[6/19/2023 8:23 PM] sunnyhaibin
+Yea if there're some ML for that, it would be much more ideal, could work with lane/edge prob detection in parallel
+
+
+[6/19/2023 9:11 PM] sunnyhaibin
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1120536443501170738/IMG_3172.mov?ex=6a62c9e2&is=6a617862&hm=1a6e64c2954e6eb1459fc4efdf8c11c6516ac02f83aac860de04f9c05cba4fa5&
+
+
+[6/19/2023 9:11 PM] sunnyhaibin
+Oh yea, definitely need to fix it up when using Split View with map
+
+
+[6/19/2023 9:50 PM] alesatobrazilsp
+human vision better detects movements in the peripheral field. So I believe that colored movement on the borders communicates better than something that requires focus and attention.
+
+{Reactions}
+👍🏿
+
+[6/19/2023 10:05 PM] mcall
+This was shared on another server, but how about having the green border blink like a blinker on the half you are trying to activate. That is very simple to parse.
+
+
+[6/19/2023 10:06 PM] mcall
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1120550228068663347/video0_1.mp4?ex=6a62d6b9&is=6a618539&hm=db0c07b52425718889e114566a2ebf930d2c17ee07b1bc2565c06d2243407944&
+
+
+[6/19/2023 10:07 PM] mcall
+Perhaps dimming one half (or one edge) of the green border or changing it to a slightly different color, and then a solid different color while it is performing the lane change
+
+{Reactions}
+👎 (2)
+
+[6/19/2023 10:08 PM] mcall
+Or just having a 2nd border inside the green border
+
+
+[6/19/2023 10:19 PM] serverdummy
+is the c3 even powerful enough to run a tesla fsd visulization like that?
+
+
+[6/19/2023 10:19 PM] serverdummy
+that would be sick for nav though
+
+
+[6/19/2023 10:33 PM] mcall
+I am not talking about the visulization
+
+
+[6/19/2023 10:33 PM] mcall
+I am talking about how it represents blinkers
+
+
+[6/19/2023 11:05 PM] spektor56
+Who's looking at their screen during a lane change anyway? Seems like a useless feature to me.  How does this help the driver?
+
+
+[6/19/2023 11:09 PM] spektor56
+Eh, you should never block a user from doing anything.  If they want to do that it's up to them
+
+
+[6/19/2023 11:10 PM] spektor56
+Hate UI stuff that restricts me
+
+
+[6/19/2023 11:11 PM] spektor56
+Maybe just have that logic whenever you guys decide to have a nudgeless mode
+
+
+[6/20/2023 12:53 AM] nyhunk
+I've blended together the lane change + ui ideas
+
+
+[6/20/2023 1:10 AM] nyhunk
+Outlining the ideas being explored here, feedback is much welcomed
+
+1. Replacing edge lines with yellow: The purpose of using yellow edge lines could be to make them more visually distinct and aligned with what drivers typically encounter on the roads. This can help the comma users better understand the boundaries of the lane. However, it's important to consider local regulations and guidelines for road markings. Different regions may have specific color coding standards for lane markings, so it would be necessary to adhere to those guidelines.
+2. Replacing solid lines with dotted lines or reflective markings: This idea aims to improve the relationship between what the driver perceives and what the driving system recognizes. Dotted lines or reflective markings are commonly used on roads to indicate temporary or advisory boundaries. Implementing such markings could provide additional cues to the driving system, enhancing its ability to understand lane positioning and changes.
+3. Dividing lane lines into three segments: This suggestion aims to help users differentiate safe distances and understand when the driving system, like Comma, might slow down or speed up. Breaking down the lane lines into segments could provide visual indicators of safe following distances, similar to adaptive cruise control systems. This can be useful for assisting drivers in maintaining safe distances from the vehicles ahead and optimizing the behavior of the driving system accordingly.
+
+
+[6/20/2023 1:14 AM] frogsgomoo
+That’s how I have the lane detection logic setup in mine. It doesn’t prevent lane changes, just prevents nudgless lane changes.
+
+
+[6/20/2023 1:16 AM] nyhunk
+4. Arrows: Displaying arrows indicating the intended direction of the lane change can give drivers a clear visual indication of the upcoming maneuver. For example, if the vehicle intends to move to the left lane, an arrow pointing left could be shown. 
+5. Lane direction cues: Providing visual cues that show the direction of the lanes can aid drivers in understanding the lane layout. For instance, using dashed lines or chevron symbols that depict the flow of traffic in each lane can be beneficial. This helps drivers anticipate and prepare for lane changes and reduces confusion.
+6. Use a clean and uncluttered design: Opt for a minimalist design approach that emphasizes simplicity and clarity. Avoid excessive visual elements, distracting animations, or unnecessary graphics. Keep the UI layout clean and organized, ensuring that information is presented in a logical and easy-to-read manner.
+7. Context-aware information display: Tailor the displayed information based on the current driving situation. For example, when approaching an upcoming intersection, highlight relevant navigation instructions or system errors. Contextual awareness allows for dynamic adjustment of the UI to provide the most relevant and timely information.
+
+
+[6/20/2023 1:20 AM] nyhunk
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1120599033812090900/COMMA_MATRIX.png?ex=6a625b6d&is=6a6109ed&hm=0610d6bd878d54a30d8ff914d8e0de9d0b7aeb99e010d47232bc5d49a424a6c3&
+
+{Reactions}
+☝️ (5) 👍 (7)
+
+[6/20/2023 3:33 AM] cnxkz
+Yes
+
+
+[6/20/2023 7:39 AM] firstsrif
+I like the overlapped arrow+border
+
+
+[6/20/2023 7:42 AM] nyhunk
+@First , I still have to design for a car in the adjacent lane
+
+{Reactions}
+👍
+
+[6/20/2023 7:44 AM] nyhunk
+Also, @sunnyhaibin posted his work yesterday too. Looks to be similar to what the original mocks have
+
+
+[6/20/2023 8:03 AM] sunnyhaibin
+A lot of people.
+
+
+[6/20/2023 8:07 AM] sunnyhaibin
+Check out 0:27 with blind spot monitorin display, this was also using the design from the figma from comma last year: https://discord.com/channels/469524606043160576/1120514126783979540/1120522877184266343
+
+
+[6/20/2023 8:09 AM] nyhunk
+@sunnyhaibin , we were discussing how might we extend the iso standard with such overlapped
+
+{Reactions}
+👍
+
+[6/20/2023 8:21 AM] nyhunk
+@sunnyhaibin , at 27s, why are the left & right blinkers going off simultaneously?
+
+
+[6/20/2023 8:21 AM] sunnyhaibin
+Testing hazard light
+
+
+[6/20/2023 8:21 AM] sunnyhaibin
+Yea people were looking at me weird lol
+
+
+[6/20/2023 8:21 AM] nyhunk
+That makes sense, you did all the things at once. Lol
+
+{Reactions}
+😆
+
+[6/20/2023 8:22 AM] sunnyhaibin
+Then I found out it turned red when there were cars in the blind post so now it doesn’t turn red when hazard is on
+
+
+[6/20/2023 8:23 AM] mcall
+Well we are exploring having arrow indicators on the UI, might as well make it easily readable for the driver.
+
+
+[6/20/2023 8:23 AM] mcall
+I do think the arrows connected to the edges looks nicer then up top
+
+
+[6/20/2023 8:24 AM] nyhunk
+Thanks, I’m curious how will it be received while driving
+
+
+[6/20/2023 8:25 AM] nyhunk
+Would it make sense to split the  turn and hazard indicator into its own UX.?
+
+
+[6/20/2023 8:29 AM] nyhunk
+Great question.
+
+The Comma AI device's display serves as an intermediate step towards the long-term vision. Its purpose is to demonstrate logic and instill confidence until users no longer need to rely on it. While existing users and enthusiasts may trust Comma, it's important to consider the experience of new users or those encountering it as passengers for the first time. The focus is on creating a positive impression that driving can be both relaxed and safe with the assistance of this model.
+
+
+[6/20/2023 8:33 AM] mcall
+I do think some of the UI elements in the mockup are too small, that settings button would be a pain to press.
+
+
+[6/20/2023 8:41 AM] spektor56
+Yes, but this doesn't help the driver at all, just serves as a distraction.  There are more useful things that can be on the screen like state of op, speed limit, fcw, compass, etc.  Comma devices are currently sold as driver assist
+
+
+[6/20/2023 8:50 AM] mcall
+When OP will be able to do reliable blind spot protection/block lane changes it could be important.
+
+
+[6/20/2023 8:50 AM] mcall
+And it could possibly be used to communicate the models desire to do a lane change when that's a thing
+
+
+[6/20/2023 9:28 AM] firstsrif
+I can see both sides
+
+
+[6/20/2023 9:45 AM] nyhunk
+This feels like a use case we could address in a new view.
+
+
+[6/20/2023 9:47 AM] nyhunk
+I see three sides, maps, dashcam and dashboard. Lol
+
+
+[6/20/2023 9:49 AM] nyhunk
+I woke up this morning thinking that too
+
+
+[6/20/2023 9:49 AM] nyhunk
+We have so much real estate, that setting buttons is tooo small
+
+
+[6/20/2023 9:52 AM] mcall
+Also, current OP uses the top right corner icon to let you switch OP modes. That would be a good thing to keep
+
+
+[6/20/2023 9:53 AM] nyhunk
+Define OP modes, I’ve never used this hidden feature
+
+
+[6/20/2023 9:54 AM] mcall
+You can tap on that icon to switch between "chill" mode and "experimental" mode after enabling experimental for the first time.
+
+
+[6/20/2023 9:55 AM] nyhunk
+Wow, 4 commas later
+
+
+[6/20/2023 9:55 AM] mcall
+It's a recent thing
+
+
+[6/20/2023 9:55 AM] nyhunk
+We’ll it’s new feature, so I don’t blame@mtsef
+
+
+[6/20/2023 9:55 AM] nyhunk
+Yay
+
+
+[6/20/2023 9:56 AM] nyhunk
+I’m curious if we’re collecting usage metrics data from comma’s ui’s
+
+
+[6/20/2023 1:48 PM] spektor56
+eh, you don't even need that stuff, as long as nav is doing "suggestions".  You will need some kind of sound + UI prompt to suggest to the driver to change lanes.  If they ever do nudgeless it will only ever be available on a tiny subset of vehicles
+
+
+[6/20/2023 9:44 PM] nyhunk
+@sunnyhaibin , I was wondering if you'd be available to share some feedback on the proposed mocks in discord or in GitHub.
+
+
+[6/20/2023 9:45 PM] nyhunk
+I haven't posted in GitHub yet but I can certainly post if that helps
+
+
+[6/20/2023 11:45 PM] emalton
+Awesome new channel!
+
+{Reactions}
+☝️ (3)
+
+[6/21/2023 12:34 PM] mcall
+Here's an idea to make overriding more readable. When steering overriding, the left and right edge of the border is made gray with the top and bottom edges staying green, and when gas overriding the top and bottom is made gray with the left and right edges staying green. This would enable someone looking at the UI to actually know what is being done.
+
+{Reactions}
+👍
+
+[6/21/2023 2:25 PM] firstsrif
+That’s an interesting idea
+
+
+[6/21/2023 7:04 PM] .le_potato
+this have on dragonpilot, pretty annoying
+
+
+[6/22/2023 1:38 PM] torq_boi
+Ya'll have opinions on this?
+https://github.com/commaai/openpilot/pull/27416
+
+{Embed}
+https://github.com/commaai/openpilot/pull/27416
+UI: border is always engagement state by adeebshihadeh · Pull Reque...
+https://images-ext-1.discordapp.net/external/Oqnp5YuozT7eZZKunjycMPSA5wClO8DV57rtFSOcfMw/https/opengraph.githubassets.com/d3a6ec5d4a032e79bada1d7405cc052c6e1f05ed03a887a8b2654e8c0bea83a9/commaai/openpilot/pull/27416
+
+{Reactions}
+👍🏻 (6) 💯 (4) 🚀 (2)
+
+[6/22/2023 3:06 PM] jcys
+i'm no ui guy but might i suggest adaptive width for the alerts?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1121531703358394388/image.png?ex=6a62744b&is=6a6122cb&hm=8ce868aa426c0b2def4b1ce785c89c6998ef9ec38c20dbd7300124b91c15e198&
+
+{Reactions}
+👍 🇱 🇪 🇫 🇹
+
+[6/22/2023 3:46 PM] frogsgomoo
+Adapative looks great, and if you're showing 2 variants for feedback purposes the ones on the left look a lot nicer.
+
+{Reactions}
+👍 (6)
+
+[6/22/2023 3:47 PM] frogsgomoo
+Ones on the right kinda blend in to the border.
+
+
+[6/22/2023 3:52 PM] jyoung8607
+i dig it
+
+
+[6/22/2023 6:09 PM] frogsgomoo
+@incognitojam New Nav UI in home screen looks great!
+
+{Reactions}
+ablobbongocatlove (3) 👍
+
+[6/22/2023 7:07 PM] firstsrif
+Not so sure about the toggle split, feel like I would be bouncing around both menus to find what I’m looking for. I already do that with the other menus when looking for restart or language switcher but maybe I’m stupid
+
+
+[6/22/2023 7:49 PM] torq_boi
+Yeah I thought about, but not sure what I think yet
+
+{Reactions}
+😢
+
+[6/22/2023 7:51 PM] mcall
+I've always thought the alerts had a ton of wasted space.
+
+
+[6/22/2023 7:51 PM] mcall
+Looks nice
+
+
+[6/23/2023 11:14 AM] nyhunk
+Nice, I’m also leaning in such a direction too
+
+
+[6/23/2023 11:15 AM] nyhunk
+UX wise, have any and all messaging always in the same place, is a win for the user.
+
+
+[6/23/2023 4:05 PM] cnxkz
+hello everyone!
+I am having a few issues running the openpilot simulator.
+https://blog.comma.ai/turning-the-speed-blue/
+^ I have followed the tutorial here. 
+
+selfdrive/ui/replay/replay --demo
+bash: selfdrive/ui/replay/replay: No such file or directory
+^ I got stuck on the following command
+
+@rinterdonato told on a previous thread that https://discord.com/channels/469524606043160576/524594418628558878/1084195214689841238
+^ These commands would work although they did not work. 
+
+there is not another "replay" folder under the replay.
+
+I have not gone through any user authentication steps. I just need help so that I can run the  "--demo" which should work without the auth
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1121908792053997578/Screenshot_from_2023-06-24_00-03-12.png?ex=6a6281fc&is=6a61307c&hm=335487eec85331483de08d5d5bdb444b4b50a2b44784fc2eba30800d7144cd27&
+
+{Embed}
+https://blog.comma.ai/turning-the-speed-blue/
+Turning the speed blue
+A getting started guide for openpilot development
+https://images-ext-1.discordapp.net/external/7Kr2n1XNbPy7NFt1BmWODNVI-9zcIGZ0138FMQw3BEY/https/blog.comma.ai/img/blue_speed_ui.png
+
+
+[6/23/2023 4:08 PM] cnxkz
+there is not an additional "replay" folder under the directory "tools/replay" so tools/replay/replay does not exity
+there is not an additional "ui" folder under the directory "selfdrive/ui" so selfdrive/ui/ui does not exit
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1121909600325738506/Screenshot_from_2023-06-24_00-06-31.png?ex=6a6282bc&is=6a61313c&hm=63f164930843c2dc83902317d99beda9339c8aac8ab60391ecf5145a9d4e3c59&
+
+
+[6/23/2023 4:11 PM] jcys
+#dev-openpilot is a better channel for this, but did you follow the op tools guide and build op first?
+
+
+[6/23/2023 4:17 PM] cnxkz
+yes
+
+
+[6/23/2023 4:17 PM] cnxkz
+If I sent you a DC link would you be interested in helping me and my friend who is also stuck
+
+
+[6/23/2023 6:43 PM] rinterdonato
+I also would like to know how to get it working again.  Back when it worked for me, I was using old code (so the directories were there).
+
+
+[6/23/2023 6:47 PM] nyhunk
+new mocks
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1121949789005828145/COMMA_MATRIX_v2.png?ex=6a62a82a&is=6a6156aa&hm=7c29f3d69089beeb6cc2d094b41844f61309fcda4e9e94ba15807a8919acb9cc&
+
+{Reactions}
+🚀 (4) 🤤
+
+[6/23/2023 6:54 PM] torq_boi
+Cool! Forks with nice openpilot ui reskins sounds awesome
+
+
+[6/23/2023 7:15 PM] appleexpl01t
+Love that mock-up
+
+{Reactions}
+💯
+
+[6/23/2023 7:46 PM] nyhunk
+With @cXk & @First ‘s help, we just might
+
+{Reactions}
+🚀 👀
+
+[6/23/2023 7:47 PM] jcys
+i really like what you did with the buttons, very intuitive and looks great!
+
+
+[6/23/2023 7:47 PM] jcys
+same goes for the speed info too
+
+{Reactions}
+🤗 💯
+
+[6/23/2023 7:48 PM] nyhunk
+Im on @sunnyhaibin’s repo, so I’m trying to find space for all the other tidbits too.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1121965123939078216/IMG_1186.jpg?ex=6a62b672&is=6a6164f2&hm=46df30178e88659b42c2e90f1260bdb05b17e50ea8ea9016ff88591a66401bf5&
+
+
+[6/23/2023 7:49 PM] jcys
+i think stock op is always going to have the camera view for onroad though, wonder if you can slap that behind the mockup you made and see how it would look like
+
+{Reactions}
+💯 (2) ✅
+
+[6/23/2023 7:51 PM] nyhunk
+In the figma file, i have the camera view but it’s pixelated. I’m curious if anyone has a higher res photo from their comma
+
+
+[6/23/2023 7:52 PM] nyhunk
+I have no attentions to replace the camera view atm. I just don’t have a high res photo, so I mocked the road the best I could.
+
+
+[6/23/2023 8:08 PM] nyhunk
+I'm facing challenges with the overall user experience of the map feature. Despite having access to prime, I didn't find myself using it often. One reason could be that it was not easily accessible on my phone. Additionally, the value it provided during the times I did use it was not sufficient. I like to know what is the value we hope to achieve?
+
+
+[6/23/2023 10:15 PM] yassineyousfi
+navigate on openpilot! 🗺️
+
+{Reactions}
+💯 ✅
+
+[6/24/2023 11:47 AM] nworby
+RSOD with blue border looks kinda wrong IMO
+
+
+[6/24/2023 12:13 PM] adeebshihadeh
+this was the main point of this change, to disambiguate engagement status from alerts
+
+
+[6/24/2023 12:14 PM] adeebshihadeh
+for example, a FCW is a full screen red alert but stays engaged
+
+
+[6/24/2023 12:40 PM] nworby
+Hmm okay. Maybe the jankiness will lessen as I get used to it
+
+
+[6/24/2023 10:06 PM] torq_boi
+RSOD?
+
+
+[6/24/2023 10:17 PM] yassineyousfi
+https://youtu.be/1uHLQHjtPLE
+
+{Embed}
+Louie Vanderhyde
+https://www.youtube.com/watch?v=1uHLQHjtPLE
+PS2: Red Screen of Death (RSOD)
+What happens when you don't put in a PlayStation 1 or PlayStation 2 (or DVD/CD) format disc? The red screen happens.
+https://images-ext-1.discordapp.net/external/D2-VPWmotw0nDQ8EFnjTqQXYFjWVk4eIPaD48RwWPJo/https/i.ytimg.com/vi/1uHLQHjtPLE/sddefault.jpg
+
+
+[6/24/2023 10:18 PM] crazysim
+**BRAKE**
+
+
+i think? when you come up on a car too close too fast maybe
+
+
+[6/24/2023 10:20 PM] crazysim
+FWIW, i did trigger it with the new UI and like, i couldn't tell a relevant difference.
+
+
+[6/24/2023 10:21 PM] crazysim
+some very important thing is happening, and yep, that's still reading.
+
+
+[6/24/2023 10:21 PM] crazysim
+that or @nworby ('18 radarless Volt) has some color blindness that we aren't aware of.
+
+
+[6/24/2023 10:35 PM] nworby
+Red screen of death. Controls mismatch, cruise fault, FCW, etc
+
+
+[6/24/2023 10:39 PM] torq_boi
+Oh, yeah the whole point was to make it clear what was happening then to engagement
+
+
+[6/24/2023 10:54 PM] nworby
+I think that aesthetically, red screen with blue border clashes. Not that it matters all that much. From a UX perspective, perhaps there ought to be something *noticeably* different between "critical alert" and "critical disengagement"?
+
+
+[6/24/2023 11:54 PM] jcys
+new nav homescreen looks great! scrolling is 10/10 for smoothness
+
+
+[6/25/2023 12:13 AM] alesatobrazilsp
+now the borders are white when navmodeld is active?
+
+
+[6/25/2023 5:31 PM] alesatobrazilsp
+If I want my square to touch the corner what do I need to do? I've tried negative coordinate instead of (0, 0) but no effect
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1122655439289589850/image.png?ex=6a62965a&is=6a6144da&hm=d8a58006a6217d246c529624d518a8f59ab9f849325ce049198bac4e4cde922f&
+
+
+[6/25/2023 5:32 PM] alesatobrazilsp
+on `drawHud()`
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1122655675680575611/image.png?ex=6a629693&is=6a614513&hm=7351ed33957d4a083dd4edc982fc94b80dcd0fbc2fa1435492487689f571318f&
+
+
+[6/25/2023 5:49 PM] incognitojam
+that's more #dev-openpilot, but you probably need to do the painting in a different widget
+
+{Reactions}
+✅
+
+[6/25/2023 5:50 PM] alesatobrazilsp
+thanks!
+
+
+[6/26/2023 12:12 AM] torq_boi
+I agree with this, but I  couldn't really figure out how to make it work, and I prioritized the functionality over looks during those important states. That's what this channel is for!
+
+
+[6/26/2023 7:55 AM] nworby
+I wonder if orange = "no disengagement" and red = "disengagement" would make sense. We could maybe scale up orange depending on the severity (bubble vs half screen vs full screen). Not a UI/UX guy though
+
+
+[6/26/2023 8:45 AM] nyhunk
+Had a great time doing mocks over the past weekend with @First & @cXk. 
+
+Comma team, users and contributors: We'd highly appreciate your insights and thoughts on the user experience and design aspects of the sidebar, floating island, and split view. Your feedback is crucial for us bring these changes to life and enhance these proposals.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1122885263190929538/COMMA_MATRIX.png?ex=6a62c3a4&is=6a617224&hm=b516e5be2cbe4e8649e4c22b315fa7638cbbd698464a80aa243e1748dc26e3dc&
+
+{Reactions}
+❤️ (11) 🚀 (6)
+
+[6/26/2023 11:27 AM] sunnyhaibin
+"Lane Change" with turn signal integrated into the border is growing on me.
+
+{Reactions}
+❤️ (2)
+
+[6/26/2023 11:31 AM] torq_boi
+Cool! The urgent alert are different in openpilot as of recently. We now always comminicate engagement status with the border, even during critical alerts.
+
+
+[6/26/2023 11:34 AM] torq_boi
+Just want to make it clear that is very difficult to merge design changes into master. Especially big ones. We struggle with this internally a lot too. If you want to move forward I suggest the best thing to do is to try get a fork running with new designs. If people like it they will use your fork 🙂. Popular forks often inspire great PRs to openpilot.
+
+
+[6/26/2023 11:34 AM] nyhunk
+That was a neat direction inspired by @First's direction. We can find fun ways to bring it back.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1122927849960120380/Screenshot_2023-06-26_at_12.34.16_PM.png?ex=6a62428e&is=6a60f10e&hm=dec65ac513e5778db426632699817b7b18565257e65124f86fe4e61b40208c36&
+
+{Reactions}
+👍 (2)
+
+[6/26/2023 11:34 AM] torq_boi
+I like this, was thinking of implementing that too.
+
+
+[6/26/2023 11:35 AM] nyhunk
+@First has been championing small changes from the start, suggesting we introduce the island and work out ways to other ux challenges.
+
+
+[6/26/2023 11:36 AM] nyhunk
+Just giving credit were it's due 🤗
+
+
+[6/26/2023 11:37 AM] nyhunk
+@Torq_boi , any active/open UX issues the team is looking to solve for the next few releases?
+
+
+[6/26/2023 11:41 AM] torq_boi
+One we've been thinking about is how to communicate confidence, since this PR
+https://github.com/commaai/openpilot/commit/ce2dffe56689615597766652576e3711efdb8e61
+
+openpilot tells you how confident it is it can stay engaged the next 10s, would be cool to show that somehow.
+
+
+[6/26/2023 11:41 AM] torq_boi
+But again I really recommend running a fork and trying this stuff!
+
+{Reactions}
+🙏 (2) 👀 🔥
+
+[6/26/2023 11:53 AM] sunnyhaibin
+*Hold my beer*
+
+
+[6/26/2023 11:53 AM] nyhunk
+That was good beer
+
+
+[6/26/2023 11:54 AM] sunnyhaibin
+Now that I think more of it, do we separate the turn signal color, or should it sync with the border status color?
+
+
+[6/26/2023 11:57 AM] nyhunk
+The turn signal, as pointed out by @First, doesn't have to mimic a car's flashing lights. Its purpose is simply to indicate that a turn has been acknowledged and can be responded to. Considering this, it may not be necessary for the signal to adhere to car FMVSS standards in terms of alignment with car.
+
+
+[6/26/2023 11:58 AM] nyhunk
+In other words, we decide it we'd like to continue with FMVSS standards or not. Comma isn't a car, (or bus)
+
+
+[6/26/2023 11:59 AM] nyhunk
+hope that helped
+
+
+[6/26/2023 1:05 PM] nworby
+Is there a current opinion on having the screen auto-dim depending on ambient light? (maxing out brightness for important alerts, obv)
+
+
+[6/26/2023 1:14 PM] jyoung8607
+that already happens. not the increase for alerts, but management of display brightness to ambient light levels. based on light levels from one of the cameras, I forget the details.
+
+
+[6/26/2023 6:12 PM] alesatobrazilsp
+blinker indicator using borders is good especially when the screen is split to display the navigation map
+
+
+[6/26/2023 6:14 PM] nworby
+Had someone asking about fullscreen nav, so figured I'd pass the question on here. Is that too outlandish for the time being?
+
+
+[6/26/2023 6:24 PM] alesatobrazilsp
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1123031063099355187/RPReplay_Final1687821802.mov?ex=6a62a2ae&is=6a61512e&hm=04ed03214f1d6d66b12b854c09dbafa3667c041cfa427a2b14aaf4792c54404d&
+
+{Reactions}
+doggoBlink
+
+[6/27/2023 12:57 AM] crwusiz
+my branch current ui
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1123129966025003109/20230627_144004.jpg?ex=6a62560a&is=6a61048a&hm=d57dffc883c5a2be456425392734fbd6751249c743bcb4941b4ecea983c0d98f&
+
+{Reactions}
+💯 (5) 👀 (2) 🔥
+
+[6/27/2023 8:05 AM] nyhunk
+looks cool
+
+
+[6/27/2023 8:11 AM] spektor56
+I think the border should have a faulted state if it doesn't already
+
+
+[6/27/2023 9:01 AM] swish865
+really enjoing all the UI/UX love as of late.. ❤️
+
+
+[6/27/2023 9:02 AM] swish865
+Becoming much more polished.
+
+
+[6/27/2023 10:02 AM] twilsonco
+Me too. Tested on master this morning and it looks great!
+
+
+[6/27/2023 10:03 AM] twilsonco
+link?
+
+
+[6/27/2023 10:04 AM] crwusiz
+https://github.com/crwusiz/openpilot
+
+{Embed}
+https://github.com/crwusiz/openpilot
+GitHub - crwusiz/openpilot: Easy Driving~!!
+Easy Driving~!! Contribute to crwusiz/openpilot development by creating an account on GitHub.
+https://images-ext-1.discordapp.net/external/80IXflXFDmAopwP8wehkPB9DZP7cBmEGR1BKQtlEfTA/https/opengraph.githubassets.com/c1c2c6d2f8e5e20f0290c23768b7c2c21c1eacff142eae2a1018879052159e68/crwusiz/openpilot
+
+{Reactions}
+✊ (4)
+
+[6/27/2023 10:06 AM] twilsonco
+WOW great readme! Such helpful info for HKG folks!
+
+
+[6/27/2023 1:47 PM] frogsgomoo
+Not gonna lie probably gonna steal your following distance icons lol
+
+
+[6/27/2023 1:48 PM] frogsgomoo
+Curious, what does the "Long" indicator represent?
+
+
+[6/27/2023 7:34 PM] alesatobrazilsp
+the border are shortened from 30 to 10!
+
+{Reactions}
+🔥 👍
+
+[6/27/2023 7:35 PM] alesatobrazilsp
+where is _mui used?
+
+
+[6/27/2023 8:52 PM] sunnyhaibin
+Body
+
+{Reactions}
+✅
+
+[6/27/2023 9:59 PM] alesatobrazilsp
+if you play back in your peripheral field of vision (don't look directly, keep the focus straight ahead) this video with movement and compare just blinking you will notice that our peripheral field of vision favors movement over blinks
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1123447572607017021/RPReplay_Final1687920952.mov?ex=6a62d515&is=6a618395&hm=8cc43bc1be0ca30e732dca8e4c41c255db4793d12fe98b4655d1cd0d77feddeb&
+
+{Reactions}
+💯 (3)
+
+[6/28/2023 11:15 AM] mcall
+I'm glad the border turn signal idea is gaining traction
+
+{Reactions}
+📈
+
+[6/28/2023 11:44 AM] twilsonco
+It's border-line good
+
+{Reactions}
+🔥 (3) 💢 🤣 (2)
+
+[6/29/2023 10:07 AM] sunnyhaibin
+https://tenor.com/view/point-hehe-haha-smiling-i-see-what-you-did-there-gif-21567119
+
+{Embed}
+https://tenor.com/view/point-hehe-haha-smiling-i-see-what-you-did-there-gif-21567119
+https://images-ext-1.discordapp.net/external/3J0CFvR4yERFYbnKKQ7vHOdQfx3TTsgPU2Zjt5v-CXI/https/media.tenor.com/MUsANezp0F0AAAAD/point-hehe.png
+
+
+[7/5/2023 1:32 PM] eyezenheim
+this was an old UI concept of mine. basically get rid of camera view . https://www.youtube.com/watch?v=qxuNPxPj4PI https://www.youtube.com/watch?v=EsRLNgxxuV0
+
+{Embed}
+Eyezenheim
+https://www.youtube.com/watch?v=qxuNPxPj4PI
+Concept #2 Openpilot UI  / Great Project for Upcoming UI Designers
+https://images-ext-1.discordapp.net/external/wWZxvOSAdaIjqaVmPBHr49kIhwXINvdmYg-9e8hQP2o/https/i.ytimg.com/vi/qxuNPxPj4PI/sddefault.jpg
+
+{Embed}
+Eyezenheim
+https://www.youtube.com/watch?v=EsRLNgxxuV0
+Mock Setup Openpilot/Dragonpilot UI  Concept / Testing Branch  0.7....
+UI goes hand in hand with UX. And since we are nearing 1.0  I think its time to revamp the old UI.  George should start  doing UI contest so it does not burden his staff or maybe dragonpilot community  can do it.
+
+My concept it fairly easy to make.
+5 or more  pics of battery/temperature  in different stages
+Pic of car  image (can be edited) , al...
+https://images-ext-1.discordapp.net/external/HliXoYI035HvRl0J2DVLCTAU2UbUukuKuxc6A8TU2KY/https/i.ytimg.com/vi/EsRLNgxxuV0/sddefault.jpg
+
+
+[7/6/2023 4:18 PM] alesatobrazilsp
+blinker indicator on the border
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1126623329340624968/IMG_2314.MOV?ex=6a62853d&is=6a6133bd&hm=d4882c993df1f15b0edab6784a87ec138c436ddd210bfed03a6c1f8f05e812e9&
+
+
+[7/6/2023 4:20 PM] alesatobrazilsp
+now the movement is missing there is a QPropertyAnimation/
+QSequentialAnimationGroup function that I think does what I'm imagining
+
+
+[7/7/2023 5:37 PM] nworby
+Can ETA be put near the top of the screen, or somehow rearrange things so events don't cover up nav info?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1127005536060190822/signal-2023-07-07-132921.jpeg?ex=6a6297b2&is=6a614632&hm=6d0748cff2fda45cd405de4d3609db97a2e91945d88d139afe6758ed3e06cb84&
+
+
+[7/9/2023 3:04 AM] crazysim
+i'm not sure if i'm too thrilled with the persistent openpilot icon on the top left
+
+
+[7/9/2023 3:04 AM] crazysim
+the transparency difference is hard to see if op is available
+
+
+[7/9/2023 3:05 AM] crazysim
+i engine brake a lot, and i do use that
+
+{Reactions}
+👍
+
+[7/9/2023 3:06 AM] crazysim
+to know when it's safe to make op active without it all going noisy on, no, not available.
+
+
+[7/9/2023 9:35 AM] alesatobrazilsp
+humm 🤨 lol 😝
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1127608962636841001/IMG_2320.MOV?ex=6a62cf6e&is=6a617dee&hm=8053246e190b5cfcd8b1acdcbcc8a8ca63b292bb63c203d55185aa1bb99173a7&
+
+
+[7/9/2023 11:45 AM] alesatobrazilsp
+found out what it was, it was connected to the wrong object. But I found it too complicated, it's simpler to change the QRect coordinates dynamically
+
+
+[7/9/2023 5:16 PM] alesatobrazilsp
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1127724901818712144/IMG_2323.MOV?ex=6a6292a8&is=6a614128&hm=e63f2bc00a06b522c100e4f4be60a07c902f82de21f5086c09c1b05d4d19af12&
+
+
+[7/9/2023 5:16 PM] alesatobrazilsp
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1127724965148504165/IMG_2322.MOV?ex=6a6292b7&is=6a614137&hm=ae0eb926b21b700aa91984e5553ecd048ed19b8dd36079a93b29359dfb43f4f5&
+
+
+[7/9/2023 5:51 PM] alesatobrazilsp
+apparently updating the borders causes some kind of slow frame rate
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1127733803360731299/IMG_2321.MOV?ex=6a629af3&is=6a614973&hm=7a27f9e0d56f99320bb44b573eed5557ff00243cb7ed9116d53c27f7112d2fc2&
+
+
+[7/12/2023 3:23 PM] sshane_
+we're coming up with a way to communicate when you're using navigate on openpilot (rather than just navigation), and so far we now enforce the map view open. we're thinking of doing something to the nav path color, or even change the arrow icon.
+
+
+[7/12/2023 3:23 PM] sshane_
+anyone have any other good ideas or mockups?
+
+
+[7/12/2023 3:49 PM] chrismccammon
+I think changing the top right steering icon to be more nav focused would be a good way to do it!
+
+{Reactions}
+🧠 (7)
+
+[7/12/2023 3:58 PM] crazysim
+light blue skunk strip on path planner or border?
+
+
+[7/12/2023 3:58 PM] crazysim
+feel like that's the universal ui color for navigation path nowadays in all map apps.
+
+
+[7/12/2023 3:59 PM] crazysim
+_skunk_, meaning the existing colors are still there
+
+
+[7/12/2023 4:24 PM] frogsgomoo
+I love using path edges to convey information. Blue path edges is a nice clean way to do it.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1128799111299215390/IMG_2246.mov?ex=6a628698&is=6a613518&hm=730233b4a75eee0f3dac5ac6e3fceeea4fe85fb4f7b37b1142ecc4f3efbc0f84&
+
+{Reactions}
+👍
+
+[7/12/2023 4:27 PM] sunnyhaibin
+I use blue borders on each side of the driving path for showing the planner in laneline mode: https://cdn.discordapp.com/attachments/1020067212935049286/1090866993420316692/IMG_2082.mov
+
+{Embed}
+https://cdn.discordapp.com/attachments/1020067212935049286/1090866993420316692/IMG_2082.mov
+
+
+[7/12/2023 4:29 PM] frogsgomoo
+Yeah I love them. They’re a nice non-invasive way of conveying information.
+
+
+[7/12/2023 5:42 PM] alesatobrazilsp
+I understand the top speed symbol more than enough
+
+
+[7/12/2023 5:43 PM] alesatobrazilsp
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1128818874280849521/image.png?ex=6a629900&is=6a614780&hm=8d4137b81de8cc923f7f3034c07ec1eb4c024202c446e5d93e2929b503f264ea&
+
+
+[7/12/2023 5:43 PM] incognitojam
+that doesn't really tell you that navigation is being used for the driving model though (NoO)
+
+{Reactions}
+THIS (2)
+
+[7/12/2023 5:44 PM] alesatobrazilsp
+oh got it
+
+
+[7/12/2023 6:04 PM] crazysim
+i mean, i was thinking skunk strip down the middle but 🤷‍♂️ . strip of some sort i guess.
+
+
+[7/12/2023 8:10 PM] alesatobrazilsp
+change the color of the border? from green to red when nav model is controlling.
+
+
+[7/12/2023 8:11 PM] alesatobrazilsp
+I've already been surprised by sudden turns on the highway after a speed bump (I put a random address just to test)
+
+
+[7/12/2023 8:15 PM] alesatobrazilsp
+when someone provides me with a map with a route it is difficult to know that the X or Y street corresponds to the right or wrong one for my route, would it be possible to plot a ghost path of what the one model converged to the other?
+
+
+[7/12/2023 8:16 PM] alesatobrazilsp
+In other words, if I'm at an intersection with three exits, would I be able to plot on the screen which of the three does openpilot intend to enter?
+
+
+[7/12/2023 8:46 PM] marcothedingo
+Honestly I like this the most.
+
+Make it a white arrow when navigating in chill, and maybe a 3d orange arrow when navigating in experimental?
+
+
+[7/12/2023 9:15 PM] crazysim
+do you think it's possible to overlay the navigation path itself separate from the op lane planner line?
+
+{Reactions}
+👆 (2)
+
+[7/12/2023 9:15 PM] crazysim
+probably asking too much.
+
+
+[7/12/2023 11:10 PM] nworby
+I was gonna suggest that tongue in cheek
+
+
+[7/13/2023 6:54 AM] sshane_
+we can use a different color for the nav path, or maybe a different car icon adeeb suggested
+
+
+[7/13/2023 6:55 AM] sshane_
+i feel like changing the engagability icon would introduce some confusion. right now it's engagability, plus a button that switches between experimental mode and chill mode
+
+
+[7/13/2023 10:05 AM] nworby
+Maybe put a compass rose behind/around the icon?
+
+
+[7/13/2023 11:21 AM] sunnyhaibin
+Thinking of adding a countdown timer for alpha or experimental toggles, so we enforce users to read the description and *accept* the potential risks before enabling them. A lot of Android phones have this type of countdown timer for certain critical settings and I really like the idea.
+
+Is this something that can be accepted in upstream if PRed?
+
+{Reactions}
+👀 👍 (2)
+
+[7/13/2023 11:21 AM] sunnyhaibin
+When counting down (button not clickable, timer displays in button)
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1129085179252711474/image.png?ex=6a623f84&is=6a60ee04&hm=8b5721139a9aa792f09f06342f0badf543f0359b5fb70b79a2336e148e01b8d7&
+
+
+[7/13/2023 11:21 AM] sunnyhaibin
+Countdown complete, button now clickable
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1129085231048163328/image.png?ex=6a623f90&is=6a60ee10&hm=e6774c3a99cd4f16cda6716af6bed6628df41e3ebbddffed0f9aa8b60176fe2c&
+
+
+[7/13/2023 9:14 PM] emalton
+Great idea ^
+
+
+[7/13/2023 9:31 PM] crazysim
+worth a shot. any way that text can all fit above the fold.
+
+
+[7/13/2023 9:31 PM] crazysim
+like maybe warning can be replaced with emoji ⚠️
+
+
+[7/13/2023 9:32 PM] crazysim
+that... or force scroll to bottom to continue with the timer
+
+
+[7/13/2023 9:32 PM] crazysim
+call it a happy problem
+
+
+[7/13/2023 9:33 PM] crazysim
+it's not a TOS press end button thing, just a warning
+
+
+[7/13/2023 10:16 PM] jcys
+yeah i agree as well, either with a warning emoji or some sort of color to grab the user's attention
+
+
+[7/14/2023 2:49 AM] serverdummy
+Is it out of the question to combine the map/nav camera similar to Tesla with the high up view for turns/intersections
+
+
+[7/14/2023 2:49 AM] serverdummy
+Seems like too much with lane lines and sorts perhaps but would definitely be cool
+
+
+[7/14/2023 7:00 AM] alesatobrazilsp
+amazing catch at stencilBufferSize
+
+{Reactions}
+😮‍💨
+
+[7/15/2023 12:32 AM] sshane_
+what do you guys think about something like this to show the NOO state?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1129646661409439744/noo_discord_demo.mp4?ex=6a62502f&is=6a60feaf&hm=1d0c6a1c6e1fac7a7f2d86a9c89626726a6f7d7d5dcd9c05812d7d891c70bf1a&
+
+{Reactions}
+👀 (2) 🚀 👍 (2)
+
+[7/15/2023 12:33 AM] sshane_
+Try it out here: https://github.com/commaai/openpilot/pull/28958
+
+
+[7/15/2023 9:41 AM] alesatobrazilsp
+looks good so far!!
+
+
+[7/16/2023 12:26 PM] chaheeto
+I think the split screen on the map side just has a lot of map thats not useful information. Color and icons and symbols are nice, but just having text that says Navigation Enabled is more concise.
+
+
+[7/16/2023 1:26 PM] swish865
+what if the destination icon and words changed colors to show enabled or disabled
+
+
+[7/16/2023 1:27 PM] swish865
+maybe green to match border state and time left
+
+
+[7/17/2023 11:28 PM] sshane_
+merged the UI, please let us know what you think of it if you try it!
+
+{Reactions}
+👍 (3)
+
+[7/18/2023 3:06 PM] mlp______
+does navigate on autopilot only work with experimental mode
+
+{Reactions}
+👍
+
+[7/18/2023 3:07 PM] mlp______
+anyway, I will test tomorrow
+
+
+[7/18/2023 3:10 PM] adeebshihadeh
+yes, it's gonna work with the same cars that experimental mode works with now
+
+
+[7/18/2023 5:58 PM] sshane_
+any thoughts about making the path wider? the current one is a bit too thin, but to make the difference noticable, the new width needs to be huge, from what I've seen on the device
+
+
+[7/18/2023 6:07 PM] nik.olas
+Any examples that can provided at various widths?
+
+
+[7/18/2023 7:30 PM] frogsgomoo
+I think it's fine, if you're wanting to make the path more noticeable I'd say have it zoom in on the path in accordance to the time/distance too the next turn/exit/whatever. Granted not drastically, but just enough so the path is a bit wider without making it *too* much.
+
+
+[7/18/2023 7:31 PM] sshane_
+we have a todo for that, think this comment also applies to zoom https://github.com/commaai/openpilot/blob/1235110983b9cd65af43530b35f26b8d790b3e96/selfdrive/ui/qt/maps/map.cc#L224
+
+
+[7/18/2023 7:31 PM] sshane_
+right now we zoom based on speed, but makes sense to make it distance to next instruction
+
+
+[7/18/2023 7:32 PM] sshane_
+there's a video above, but we'd want to make it thicker than that to notice it on device. you can change the width in map.cc to experiment for yourself
+
+
+[7/18/2023 7:32 PM] sshane_
+search for `m_map->setPaintProperty("navLayer", "line-width", 7.5);`
+
+{Reactions}
+👍
+
+[7/18/2023 7:34 PM] nik.olas
+I honestly see no issue with using the entire displayed width of a road, as long as it cannot overlap smaller roads nearby, etc. there's no other information it would take away from.
+
+
+[7/19/2023 7:46 AM] sapo916
+the colors blue vs green don't have any inherent association with NOO for me, an icon would still be ideal IMO or even a temporary message on screen. long term I think the zoom functionality with some type of next action hinting is probably the strongest. but its great definitely to get some UI feedback.
+
+{Reactions}
+👍 (2)
+
+[7/19/2023 9:45 AM] nworby
+I think that giving soundd the ability to speak, and having it make announcements in the imperative vs declarative, would be fantastic. "Turn right in 50 feet" vs "turning right in 50 feet"
+
+
+[7/20/2023 6:00 AM] sunnyhaibin
+Here is Waymo’s UI:
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1131541225627979826/IMG_4011.png?ex=6a629d23&is=6a614ba3&hm=21a67ed08956f1bab128f11df1b3b203f27eaabb0707befe51dcdf32f3d423e4&
+
+{Reactions}
+👌🏼
+
+[7/24/2023 8:57 PM] eyezenheim
+heres a nice simple ui refresh - maybe one mode to choose from ( taken from comma site )
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1133216402338222133/image.png?ex=6a62c684&is=6a617504&hm=7627a84052713c4c4ccf127c9a594ff47ddc632eadb34df3443b04b07655638e&
+
+{Reactions}
+💯 (7)
+
+[7/25/2023 10:33 AM] kaplanfx
+You have a second dash cam?
+
+
+[7/25/2023 10:33 AM] kaplanfx
+Sorry that’s offtopic but I’m just curious 🤣
+
+
+[7/25/2023 10:36 AM] pkp24
+well the camera on the comma 3 can't identify crap if anything happens
+
+
+[7/25/2023 10:56 AM] cfranyota
+Yea.. Sure it looks cool but that’s about it, it’s not functional.
+
+
+[7/25/2023 10:57 AM] sirian
+It's by *far* the best dashcam video I've seen, but it doesn't handle power loss saving the latest video in a major incident
+
+
+[7/25/2023 10:58 AM] pkp24
+you haven't had a 4k dashcam then lol, and yeah power loss and losing the footage is pretty bad
+
+
+[7/25/2023 10:58 AM] sirian
+https://youtu.be/4AnyhHl3_tE
+
+{Embed}
+Linus Tech Tips
+https://www.youtube.com/watch?v=4AnyhHl3_tE
+Almost EVERYONE is Wasting Money on Dash Cams.
+Try FreshBooks free, for 30 days, no credit card required at https://www.freshbooks.com/linus
+
+Create your build at https://www.buildredux.com/linus
+
+It’s been YEARS since dash cams hit the market, but it feels like we’ve been stuck at a standstill. Why is it that camera quality is so lacking? Are there really no good options when shopping for a...
+https://images-ext-1.discordapp.net/external/gtmXLVE7m0irsoJSsZfuf3Y4Dthx_-RB9MnUsRG6frM/https/i.ytimg.com/vi/4AnyhHl3_tE/maxresdefault.jpg
+
+
+[7/25/2023 10:58 AM] pkp24
+first time I watched video from my comma 3 I was like wow it's like one of those grainy security cameras
+
+
+[7/25/2023 10:59 AM] sirian
+Are you downloading it from device? Or just getting it from connect?
+
+
+[7/25/2023 10:59 AM] pkp24
+got it from connect, is it better on the device?
+
+{Reactions}
+concernNod (2)
+
+[7/25/2023 11:01 AM] cfranyota
+You can download a higher quality video
+
+
+[7/25/2023 11:02 AM] pkp24
+the ecamera.hevc?
+
+
+[7/25/2023 11:04 AM] sirian
+Well they will be 1 minute segments of your route, ecam is one of the three
+
+
+[7/28/2023 4:18 PM] firstsrif
+Left spacing around the set speed isn’t the same as the rest of the ui elements when using imperial units, metric is fine.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1134595870952792124/IMG_6335.jpg?ex=6a62853f&is=6a6133bf&hm=2e30b12c07d7103caf831e840b2e6d9e88330e96de3b8357d419f2b0865dde9f&
+
+
+[7/28/2023 4:21 PM] firstsrif
+The new nav icon is nice (love the thickness) but doesn’t match the existing dm icon thickness, maybe change both to something in between
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1134596516716236901/IMG_6333.jpg?ex=6a6285d9&is=6a613459&hm=32bff10c967afef1f5ad9ab20569016c1f10c72a5d9c2587e3515a068b3f81ef&
+
+
+[7/29/2023 2:21 PM] sunnyhaibin
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1134928608599744512/IMG_4177.jpg?ex=6a6269a2&is=6a611822&hm=edbbc47702caa049857724bd1af8d91160abf902ec468fb242a753992eb29cce&
+
+
+[7/29/2023 2:21 PM] sunnyhaibin
+#dream
+
+{Reactions}
+💯 (7)
+
+[7/29/2023 8:26 PM] mike854
+Rehash the tesla hmi idea and messaging from a few years ago.
+https://www.youtube.com/watch?v=rxTK5McUPA4
+
+{Embed}
+Golden Li
+https://www.youtube.com/watch?v=rxTK5McUPA4
+openpilot with tesla hmi
+android pad rendering openliot vision model in 3d with map sdk integrated
+source code:
+https://github.com/299299/openpilot
+https://github.com/299299/tesla_hmi
+https://images-ext-1.discordapp.net/external/FiTDob-9JqMOJ-polQORw7XtsOeVxik5g7wQlY-8mIk/https/i.ytimg.com/vi/rxTK5McUPA4/sddefault.jpg
+
+
+[7/30/2023 2:46 PM] fred.discor.d
+Liking the new UI changes 🫶
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1135297474471395419/IMG_1682.jpg?ex=6a626faa&is=6a611e2a&hm=2a4043f8c4fc91239aaf89afb1aaa1ace469bce9332c68cd5b6da89ae6a38738&
+
+{Reactions}
+💯 (8)
+
+[8/6/2023 11:47 PM] semilucent
+Hey Comma team! Just wanted to say that I love the thoughtfulness in the UI design.
+I discovered the other day that you can tap the experimental mode "atom" icon on the main on-road screen, and it will toggle between experimental mode, or normal mode.
+
+I tapped it thinking "it would make sense for it to do that" but fully expecting it not to be the case, but it turns out it is! Well done all! 😁
+
+{Reactions}
+😆 (2)
+
+[8/14/2023 4:35 AM] jakethesnake420420
+what about something like this?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1140579482030317618/image.png?ex=6a62892b&is=6a6137ab&hm=46126a9a4f90f6243a7624c910a42be8ab55a0f72ff3f1f8a764ff0717f25933&
+
+
+[8/14/2023 4:38 AM] jakethesnake420420
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1140580190527967282/image.png?ex=6a6289d4&is=6a613854&hm=f56a6ddf9e4b4ee126ceafa9de18bfb4f70cef7edb34e73ae941fdf98969acf8&
+
+{Reactions}
+☝️
+
+[8/14/2023 4:39 AM] jakethesnake420420
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1140580395398725653/image.png?ex=6a628a05&is=6a613885&hm=59a394d447b25142e74c41feaa08eeb698b3d769f4695907625c0f6d5c728219&
+
+{Reactions}
+👀 (2) ✅ (2)
+
+[8/14/2023 4:40 AM] jakethesnake420420
+kinda complicated though
+
+
+[8/14/2023 4:43 AM] jakethesnake420420
+https://github.com/mapbox/mapbox-gl-js/pull/6303
+https://docs.mapbox.com/mapbox-gl-js/example/line-gradient/?size=n_10_n
+
+{Embed}
+https://github.com/mapbox/mapbox-gl-js/pull/6303
+Add line-gradient property by lbud · Pull Request #6303 · mapbox/ma...
+This PR adds support for gradient lines, with the following limitations:
+
+line-gradient can only be used for lines with GeoJSON sources
+
+the GeoJSON source used for these lines must specify the &qu...
+https://images-ext-1.discordapp.net/external/uUySwJPiLp6CqKVj5wJZtFkH0_feGKdBzF4x9Du66v0/https/opengraph.githubassets.com/727067b46f85f537307335d1cc896bd3f45d03cb2e81ebc98cfa1a8470d28d7a/mapbox/mapbox-gl-js/pull/6303
+
+{Embed}
+https://docs.mapbox.com/mapbox-gl-js/example/line-gradient/?size=n_10_n
+Create a gradient line using an expression | Mapbox GL JS
+Use the line-gradient paint property and an expression to visualize distance from the starting point of a line.
+https://images-ext-1.discordapp.net/external/sCGXtZ2G7vdWULdN7LIpGMI6xhSELc6lxVURnAiAnnc/https/static-assets.mapbox.com/branding/social/social-1200x630.v4.png
+
+
+[8/15/2023 2:35 AM] jakethesnake420420
+exmple
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1140911531442323536/message.txt?ex=6a626cea&is=6a611b6a&hm=29fdcf5180b91ea94d997365869605e70b18a0e5aa67d37908c0adb4f7323843&
+
+
+[8/16/2023 12:36 AM] sshane_
+we have a layer for the nav model path, but I don't believe we have code to draw it, even behind a debug flag
+
+
+[8/16/2023 12:36 AM] sshane_
+want to try to add that?
+
+
+[8/17/2023 8:08 PM] jakethesnake420420
+sure ill play with it
+
+
+[8/17/2023 8:08 PM] jakethesnake420420
+i think i understand how the map works now
+
+{Reactions}
+🎉
+
+[8/17/2023 8:43 PM] jakethesnake420420
+I was playing with for about 6 hours already lol trying to wrap my head around navd.py maprender.cc and map.cc
+
+
+[8/17/2023 8:44 PM] jakethesnake420420
+@shane is there a way I can get the map to show on my PC without changing too much? I know you have custom styles that I don't think i can load with my api key
+
+
+[8/17/2023 8:45 PM] jakethesnake420420
+would like to use replay.
+
+
+[8/17/2023 9:15 PM] sshane_
+do you have a 3/3X? you can take the mapbox token from that
+
+
+[8/17/2023 9:15 PM] sshane_
+or make a free one
+
+
+[8/17/2023 9:16 PM] sshane_
+the style should be public afaik @incognitojam
+
+
+[8/17/2023 9:16 PM] sshane_
+maprenderer is for the model, you only need map.cc really
+
+
+[8/17/2023 9:16 PM] sshane_
+navd.py and set a destination to get navRoute in replay
+
+
+[8/17/2023 9:17 PM] sshane_
+we should add map dev documentation somewhere if we don't already
+
+
+[8/17/2023 9:19 PM] jakethesnake420420
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1141919146964164768/message.txt?ex=6a62cb94&is=6a617a14&hm=755a1dee1f70738033ed5123d3de0c5a6b822c1b1d2717583611c40c155c47d4&
+
+
+[8/17/2023 9:19 PM] jakethesnake420420
+python selfdrive/navd/tests/test_map_renderer.py throws errors
+
+
+[8/17/2023 9:19 PM] jakethesnake420420
+And when i run replay, the UI show connect error
+
+
+[8/17/2023 9:20 PM] jakethesnake420420
+i ran auth.py
+
+
+[8/17/2023 9:21 PM] jakethesnake420420
+ok actually im making progress
+
+
+[8/17/2023 9:23 PM] jakethesnake420420
+the map is being shown now but it says waitng for gps
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1141920308551483514/image.png?ex=6a62cca9&is=6a617b29&hm=d0f49dc0e71d96297a1bef3e52ac874682ef93e0256a44d3f48dd69249944364&
+
+
+[8/17/2023 9:23 PM] jakethesnake420420
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1141920401266585690/image.png?ex=6a62ccbf&is=6a617b3f&hm=d9a37fed2bc32dcd03d18c8e4317c933985553c0cbf6f5922e9bdee44a223c20&
+
+
+[8/17/2023 9:25 PM] jakethesnake420420
+I am just runnning replay and ui
+
+
+[8/17/2023 9:41 PM] jakethesnake420420
+weird it seems like llk was not being published
+
+
+[8/17/2023 10:08 PM] sshane_
+try the replay route
+
+
+[8/17/2023 10:36 PM] jakethesnake420420
+Ok can you tell me if struct NavModelData.position should have the navmodel plan?
+
+
+[8/17/2023 10:37 PM] sshane_
+navModel is for the model, you don't need to look at that when working on the ui. it's in navRoute
+
+
+[8/17/2023 10:37 PM] sshane_
+oh I told you to plot it lol, right
+
+
+[8/17/2023 10:38 PM] jakethesnake420420
+yea i get that but i wanted to show the navmodel output path
+
+
+[8/17/2023 10:38 PM] sshane_
+if nav on OP wasn't used online, then you might need to run it offline
+
+
+[8/17/2023 10:38 PM] jakethesnake420420
+ok if thats where it is then i will work with that
+
+
+[8/17/2023 10:39 PM] jakethesnake420420
+What reference frame is it in?
+
+
+[8/17/2023 10:40 PM] jakethesnake420420
+like ill need to transform it to the map
+
+
+[8/17/2023 10:44 PM] jakethesnake420420
+https://github.com/commaai/openpilot/tree/master/common/transformations Calibrated Device frame? I am thinking its different. Edit: Looks like its the same as the input frame from map_renderer so its simple
+
+
+[8/17/2023 10:49 PM] sshane_
+actually it seems like the output is zeroed out for now, asked mitchell. he said he'll try to get a model with the outputs posted
+
+
+[8/17/2023 10:50 PM] jakethesnake420420
+okok thats what im seeing as outputs
+
+
+[8/17/2023 10:51 PM] sshane_
+would be cool to get the modelV2 path on there on a fork, it would probably translate
+
+
+[8/18/2023 6:25 PM] jakethesnake420420
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1142237888482906143/image.png?ex=6a62a2ee&is=6a61516e&hm=ac8964aabea353e4668b08ea429ad996d2a31b828c27e041cf26db11fc1c190c&
+
+{Reactions}
+👀 (4)
+
+[8/18/2023 6:26 PM] jakethesnake420420
+code was already written to translate the model to geodetic points
+
+
+[8/18/2023 7:23 PM] jakethesnake420420
+Its cool you can see the plan when its out of the camera view
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1142252519364493352/image.png?ex=6a62b08e&is=6a615f0e&hm=85b5254b6a3524c25d3e39d6bb427d49e48c8c5fb15b812802073d5b73ab5c1f&
+
+
+[8/18/2023 7:24 PM] jakethesnake420420
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1142252815683682444/image.png?ex=6a62b0d5&is=6a615f55&hm=2a430df162886dbce378208182ffb67a3d7e4231829cbd4a83a886851d3deee5&
+
+
+[8/18/2023 7:26 PM] jakethesnake420420
+this is basically all the code you need to do this.
+```
+if (loaded_once && (sm.rcv_frame("uiPlan") != model_rcv_frame)) {
+        m = sm["uiPlan"].getUiPlan().getPosition(); // XYZTData in device frame
+        auto model_path = model_to_collection(locationd_location.getCalibratedOrientationECEF(), locationd_location.getPositionECEF(), m);
+        QMapbox::Feature model_path_feature(QMapbox::Feature::LineStringType, model_path, {}, {});
+        QVariantMap modelV2Path;
+        modelV2Path["type"] =  "geojson";
+        modelV2Path["data"] = QVariant::fromValue<QMapbox::Feature>(model_path_feature);
+        m_map->updateSource("modelPathSource", modelV2Path);
+        model_rcv_frame = sm.rcv_frame("uiPlan");
+ }
+```
+
+
+[8/18/2023 7:27 PM] jakethesnake420420
+you can add the lane lines and leads easily as well
+
+{Reactions}
+👀 (4)
+
+[8/18/2023 8:21 PM] jakethesnake420420
+did someone say 3d buildings? No? too bad!
+
+
+[8/18/2023 8:30 PM] jakethesnake420420
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1142269328952139885/image.png?ex=6a62c036&is=6a616eb6&hm=3f3b093a15cd3a0aaa2df46b959687104c9d31a4d6aa4e3d55bb424022727d9c&
+
+{Reactions}
+👀 (3) 💪 (2) ✅ (2) 💯
+
+[8/18/2023 8:34 PM] jakethesnake420420
+code to do it:
+```
+   if (!m_map->layerExists("buildingsLayer")) {
+    qDebug() << "Initializing buildingsLayer";
+    QVariantMap buildings;
+    buildings["id"] = "buildingsLayer";
+    buildings["source"] = "composite";
+    buildings["source-layer"] = "building";
+    buildings["type"] = "fill-extrusion";
+    buildings["minzoom"] = 15;
+    m_map->addLayer(buildings);
+    m_map->setFilter("buildingsLayer", QVariantList({"==", "extrude", "true"}));
+
+    QVariantList fillExtrusionHight = {
+      "interpolate",
+      QVariantList{"linear"},
+      QVariantList{"zoom"},
+      15, 0,
+      15.05, QVariantList{"get", "height"}
+    };
+
+    QVariantList fillExtrusionBase = {
+      "interpolate",
+      QVariantList{"linear"},
+      QVariantList{"zoom"},
+      15, 0,
+      15.05, QVariantList{"get", "min_height"}
+    };
+
+    QVariantList fillExtrusionOpacity = {
+      "interpolate", 
+      QVariantList{"linear"},
+      QVariantList{"zoom"},
+      15, 0,
+      15.5, .6,
+      17, .6,
+      20, 0
+    };
+
+    m_map->setPaintProperty("buildingsLayer", "fill-extrusion-color", QColor("grey"));
+    m_map->setPaintProperty("buildingsLayer", "fill-extrusion-opacity", fillExtrusionOpacity);
+    m_map->setPaintProperty("buildingsLayer", "fill-extrusion-height", fillExtrusionHight);
+    m_map->setPaintProperty("buildingsLayer", "fill-extrusion-base", fillExtrusionBase);
+    m_map->setLayoutProperty("buildingsLayer", "visibility", "visible");
+    }
+```
+
+
+[8/18/2023 8:45 PM] jakethesnake420420
+the pan and zoom counter code is buggy. It should only reset the zoom and center when the user stops interacting with the map
+
+
+[8/18/2023 8:51 PM] jyoung8607
+This is cool stuff!
+
+{Reactions}
+☝️ (2)
+
+[8/18/2023 8:56 PM] jakethesnake420420
+the C3 handles it very smoothly, I am just tweaking it so that i can get a nice fade in fade out effect and then the building will smoothly rise out of the map tile
+
+
+[8/18/2023 8:57 PM] jakethesnake420420
+I also want double/tripple point drag to tilt the camera
+
+
+[8/18/2023 9:13 PM] jakethesnake420420
+https://github.com/commaai/openpilot/pull/29470
+
+{Embed}
+https://github.com/commaai/openpilot/pull/29470
+Map interactive counter fix by jakethesnake420 · Pull Request #2947...
+When the user zooms out to pan a long distance, the zoom counter will cause the view to zoom back in even if the user is still panning around. The same thing occurs for zooming without panning, the...
+https://images-ext-1.discordapp.net/external/o6-Nz1z4fgsCzgCUJznZXib_6ThePtO92aG-1x4PjE0/https/opengraph.githubassets.com/a38bf6bf21e5f0dd2d382b76a00c0e6f8055a1b81bc03728ff105bd17697294f/commaai/openpilot/pull/29470
+
+
+[8/18/2023 10:26 PM] alesatobrazilsp
+the zoom changes dynamically according speed
+
+
+[8/19/2023 1:39 AM] jakethesnake420420
+I was drivinig around with it for a couple hours and its working fine with all the changes i have made including: UiPlan, interactive counter fix, and 3d buildings.
+
+{Reactions}
+💯 (3) 🙏
+
+[8/19/2023 7:25 AM] alesatobrazilsp
+nice work
+
+
+[8/19/2023 5:13 PM] jakethesnake420420
+@shane should I make a PR show the UiPlan/modelV2 on the map? What about the 3D buildings?
+
+
+[8/19/2023 6:15 PM] firstsrif
+Could be a toggle
+
+{Reactions}
+😂
+
+[8/19/2023 8:51 PM] jakethesnake420420
+it would be a for fun on a separate branch. The 3d buildings should be on master though. It looks very nice
+
+
+[8/19/2023 8:51 PM] jakethesnake420420
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1142637079340273684/20230819_003016.jpg?ex=6a62c534&is=6a6173b4&hm=514390bed22c4385eff2199a1cfbf98f8c024eef29770f976debc90f014c8f27&
+
+{Reactions}
+❤️ (6) 😍 (4) 🥳 (4) ✅
+
+[8/19/2023 8:52 PM] jakethesnake420420
+maybe adjust the colors a bit to differentiate the roads/highways/buildings
+
+
+[8/19/2023 8:55 PM] nworby
+Looks 1000x better than what's currently in release IMO
+
+{Reactions}
+💯 (2)
+
+[8/19/2023 8:57 PM] jyoung8607
+Would have to be validated to look good and be understandable in a variety of environments, but I really really love what you've shown so far
+
+
+[8/19/2023 8:59 PM] jakethesnake420420
+yes it needs to remain clear in all environments
+
+
+[8/19/2023 8:59 PM] jyoung8607
+Does it substantively change the amount of Mapbox API calls or LTE data usage? Those will both directly affect commas cost to offer it.
+
+
+[8/19/2023 8:59 PM] jakethesnake420420
+its already running in the background i believe
+
+
+[8/19/2023 8:59 PM] jakethesnake420420
+all im doing its rendering it
+
+
+[8/19/2023 9:00 PM] jakethesnake420420
+i think. Its pretty abstracted in map.cc so im not sure what's going on under the hood
+
+
+[8/19/2023 9:00 PM] nworby
+Does the nav destination pin tend to coincide with the actual building when it's rendered? Would be nice to change the zoom level as you approach the destination to emphasize which building you're going to
+
+
+[8/19/2023 9:00 PM] jyoung8607
+If you get to the point of opening a PR, and I hope you do, expect to be asked to prove that
+
+
+[8/19/2023 9:04 PM] jakethesnake420420
+i think someone at comma would know already
+
+
+[8/19/2023 9:05 PM] jyoung8607
+... not necessarily
+
+
+[8/19/2023 9:06 PM] jakethesnake420420
+well here is the source. https://github.dev/mapbox/mapbox-gl-native mapbox/mapbox-gl-native/platform/qt/
+
+
+[8/19/2023 9:07 PM] jyoung8607
+The guy who did the lions share of the work has since moved on from comma, and it's been *mostly* static since then. Only recently has @shane started working on it a bit, and I think that's mostly been debugging.
+
+
+[8/19/2023 9:07 PM] jakethesnake420420
+oh i see
+
+
+[8/19/2023 9:07 PM] jyoung8607
+Oh, actually Mitchell will have done some work to generate the map view for NOO
+
+
+[8/19/2023 9:08 PM] jakethesnake420420
+ok then i will look into it
+
+
+[8/19/2023 9:08 PM] jakethesnake420420
+i have time right now
+
+
+[8/19/2023 9:08 PM] jyoung8607
+Regardless, except for basic maintenance and generating the NOO map view, I think it's been *mostly* untouched for like two years
+
+{Reactions}
+👍
+
+[8/19/2023 9:18 PM] henryccy
+@jakethesnake Sir, Can you point me if I want the map_instructions move to bottom and map_eta move to top,  where can I modify
+
+{Reactions}
+🤷‍♂️
+
+[8/19/2023 11:12 PM] jakethesnake420420
+I am still not 100% sure but it looks like the building data is being loaded for every vector tile already and is not used. you can inspect the style here https://api.mapbox.com/styles/v1/commaai/clkqztk0f00ou01qyhsa5bzpj?access_token=YOUR_TOKEN
+and you can see its requesting the building layer. I tried using a blank style with a background and it did not show any buildings.
+
+{Reactions}
+👍 (2)
+
+[8/19/2023 11:14 PM] jakethesnake420420
+would need to compare packet sizes next to confirm
+
+
+[8/20/2023 7:56 AM] emalton
+Looks great!
+
+
+[8/21/2023 9:57 PM] jakethesnake420420
+https://github.com/commaai/openpilot/pull/29519
+
+{Embed}
+https://github.com/commaai/openpilot/pull/29519
+3D buildings on map by jakethesnake420 · Pull Request #29519 · comm...
+https://images-ext-1.discordapp.net/external/5mbT8YrutFVu8iOw6ywUUYF_5EXhUHr73UGaVysmbK8/https/opengraph.githubassets.com/61fdef46a0d50cead98afb22d3cbdea90ea90e81023f6bdbefd0ec141da3b912/commaai/openpilot/pull/29519
+
+{Reactions}
+👍 (7) 👀 🏘️
+
+[8/24/2023 10:10 AM] incognitojam
+You can also make a copy of our mapbox style and edit it in mapbox studio: https://studio.mapbox.com/styles/commaai/clkqztk0f00ou01qyhsa5bzpj
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1144287575457149008/image.png?ex=6a62d799&is=6a618619&hm=37f3becf9b4a2b7fa0c2c7b6c2f544ca92d5c5a24b817a8547c8e9c037bf5db3&
+
+
+[8/27/2023 4:43 PM] jakethesnake420420
+yea thats what i did. It didn't show the buildings for me though until i added the extra code
+
+
+[8/27/2023 4:48 PM] jakethesnake420420
+I played around with other styles but I like the stock one. One thing that might be nice is a light/dark mode that changes automatically using the lightSensor
+
+
+[8/27/2023 4:53 PM] jakethesnake420420
+I can barely see the dark map during the day though
+
+
+[8/27/2023 5:06 PM] jakethesnake420420
+The default navigation themes on mapbox look nice. Why not just use those and switch between the light and dark styles?
+
+{Reactions}
+❤️
+
+[8/27/2023 5:07 PM] jakethesnake420420
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1145479751071436900/image.png?ex=6a6290a6&is=6a613f26&hm=e49ed19b307c76cd9278527d06417fdc9191a2819d84b5904189c2dbcd3766e5&
+https://cdn.discordapp.com/attachments/1120514126783979540/1145479751553777815/image.png?ex=6a6290a6&is=6a613f26&hm=74c57f605a784f3f1709a9dded939ddbbe7b7233b1b3a8b6d811d8aa747f553a&
+
+
+[8/27/2023 5:08 PM] jakethesnake420420
+I could put together a PR that switches between them with the lightSensor and add some change threshold logic
+
+{Reactions}
+👀 (2)
+
+[8/27/2023 5:15 PM] jakethesnake420420
+simply inverting the comma dark theme looks like sh*t so if you want a light mode, the dark mode should change as well to match
+
+
+[9/2/2023 2:00 AM] torq_boi
+https://github.com/commaai/openpilot/tree/beeps
+
+Trying new engage and disengage sounds if anyone is interested
+
+{Embed}
+https://github.com/commaai/openpilot/tree/beeps
+GitHub - commaai/openpilot at beeps
+openpilot is an open source driver assistance system. openpilot performs the functions of Automated Lane Centering and Adaptive Cruise Control for 250+ supported car makes and models. - GitHub - co...
+https://images-ext-1.discordapp.net/external/VaCFMuxomQvd6Q7L5kr4ZZ8kBjgJAfixsihvueic0FQ/https/repository-images.githubusercontent.com/74627617/107aa381-a61e-49ff-9a68-59b4fd315093
+
+{Reactions}
+👍 (2) 👏 💯 👎
+
+[9/2/2023 3:31 AM] crazysim
+need to actually listen to it from _your_ device in _your_ car for the real experience but just re-uploading here for those just perusing.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1147448628529598474/disengage.wav?ex=6a627a0f&is=6a61288f&hm=f461e7aa0e7c4615345d0defe2d2c95210211bc32c0e30a897840ac317bfa3d8&
+https://cdn.discordapp.com/attachments/1120514126783979540/1147448628848369786/engage.wav?ex=6a627a0f&is=6a61288f&hm=84d4753d00797e5494a0333515827c9d42f93291e6ef51fe025f0acee6d2f2f9&
+
+{Reactions}
+✅ (3) 👎 (5)
+
+[9/2/2023 4:13 AM] manu23
+I’ve just tried. The sound is good but I find it a little too loud. 🙏
+
+
+[9/2/2023 10:16 AM] nworby
+Some of us enjoy feeling like we're in a casino when engaging openpilot. Sounds like a slot machine, gives me that gambler's high 🎲
+
+{Reactions}
+💀 (2)
+
+[9/2/2023 3:02 PM] manu23
+https://tenor.com/view/im-all-in-poker-betting-it-all-going-all-in-sean-astin-gif-16760963
+
+{Embed}
+https://tenor.com/view/im-all-in-poker-betting-it-all-going-all-in-sean-astin-gif-16760963
+https://images-ext-1.discordapp.net/external/V7Qp5lOYiRX2hZ018_aQHZMw2Tm-CfBaPLN9IiVXCY4/https/media.tenor.com/UJtfZLzpS68AAAAe/im-all-in-poker.png
+
+
+[9/2/2023 4:51 PM] marcothedingo
+For me `beeps` is not too loud, but it is very jarring vs today's. I would like it a softer sounding engage/disengage. Change is good though!
+
+{Reactions}
+👍
+
+[9/3/2023 1:17 AM] sunnyhaibin
+Will open a PR to resolve this after some cleanup!
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1147777384548937738/IMG_4921.mov?ex=6a625abd&is=6a61093d&hm=c428aa0639d4e0c36923074b5b717fb1a53b1c4fabcdae9ff9f4035a02c2ba12&
+
+
+[9/3/2023 12:05 PM] sunnyhaibin
+https://github.com/commaai/openpilot/pull/29764
+
+{Embed}
+https://github.com/commaai/openpilot/pull/29764
+ui: Countdown timer for experimental features and device critical a...
+Description
+This PR introduces countdown timers to enhance the user experience during critical actions within the device menu, toggles menu, and software menu. This mechanism ensures that users pau...
+https://images-ext-1.discordapp.net/external/-m1eDaLBiMhmMdF_2o6F3FV0kafSxIsrMRoiVxHojII/https/opengraph.githubassets.com/930fb54b13064df5623e3ee821b46785c3a74f5a97e9eec8e1eff8a998caadb3/commaai/openpilot/pull/29764
+
+
+[9/5/2023 1:23 PM] marcothedingo
+The 50% volume change made yesterday is a huge difference. Much better 👍
+
+{Reactions}
+💯 (2)
+
+[9/8/2023 7:39 PM] torq_boi
+Great
+
+
+[9/8/2023 7:39 PM] torq_boi
+Reverted back to single beeps
+
+
+[9/9/2023 8:26 PM] marcothedingo
+Love the single beep! Simple and not annoying.
+
+
+[9/11/2023 12:12 AM] sunnyhaibin
+Nice little easter egg 😉
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1150660048096329838/image.png?ex=6a624b6d&is=6a60f9ed&hm=d173230737a90cd4cacf46e59bd03ae54748a8d298d8c6284be9b672163e411f&
+
+{Reactions}
+🥚 (5)
+
+[10/11/2023 4:52 PM] noelelias
+Small little toggle to start OpenPilot without it recognizing any CAN signal https://github.com/noel-schenk/openpilot/tree/no-ignition
+
+
+[11/3/2023 2:36 PM] mapsurfer
+How do I toggle on experimental mode?  I turned off vehicle and experimental mode stays grayed out.   It displays a bunch of text in a font too small to read.
+
+
+[11/3/2023 2:41 PM] nworby
+If you ask someone with younger eyes to read it, you'll find out why. Likely you are running a release version of openpilot, but experimental mode is only available on development branches.
+
+{Reactions}
+😂
+
+[11/3/2023 2:43 PM] mapsurfer
+Ah thank you
+
+
+[11/25/2023 2:36 PM] semilucent
+Hey all! (for Monday when people are back in)
+I filed an issue this morning about a UI glitch with updates here: https://github.com/commaai/openpilot/issues/30521
+Let me know if you need more info or need me to test anything.
+I don't know if it's intended behaviour or not...  Maybe if we don't want the update UI popping  up again automatically, it can go in the banner? And perhaps the update can be auto applied after reboot, or maybe get prompted to "reboot and update" a la windows in the device menu? (not a flattering comparison but the only one I could think of)
+Anyways, let me know your thoughts!
+
+Thanks all, and I hope  you had a good weekend!
+
+
+[11/29/2023 7:03 AM] .wired4sound.
+Would be nice to see maps display the street number when you get close to your destination.   I end up having to pull out my phone and looking at it to figure out the street number I am looking for when I am near.
+
+{Reactions}
+💯
+
+[11/30/2023 8:38 AM] amusedgrape
+is there a Figma file or something for the OP UI? looking at doing some modifications or something, but want to design it out first
+
+
+[11/30/2023 12:49 PM] hiimisaac
+no. lol.
+
+
+[11/30/2023 12:49 PM] hiimisaac
+you just kinda... do it. you can run the ui on pc tho
+
+
+[11/30/2023 12:49 PM] hiimisaac
+don't have to do it in vehicle
+
+
+[11/30/2023 3:52 PM] sirian
+There's even a nice emulator to see it live in
+
+
+[11/30/2023 8:42 PM] amusedgrape
+i've seen the simulation thing on the wiki, is that it? or is there another way to just have the UI?
+
+
+[12/7/2023 9:13 AM] amusedgrape
+been working on a redesign idea for connect, thoughts?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1182339100716576838/Screenshot_2023-12-07_at_10.13.08_AM.png?ex=6a62d858&is=6a6186d8&hm=42fb4e744932aa96998478eded0e96fdbed2168277c4f49a5f6c710df5d4faf0&
+
+{Reactions}
+❤️ (2)
+
+[12/7/2023 9:13 AM] amusedgrape
+trying to figure out where i could put the previous drives
+
+
+[12/7/2023 9:47 AM] amusedgrape
+this looks better
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1182347546497130546/Screenshot_2023-12-07_at_10.46.50_AM.png?ex=6a62e036&is=6a618eb6&hm=a24e26969bb719e0e0a2fc7cf9934333814a60d26eb7cd927a311176e4fcb158&
+
+{Reactions}
+👍 (3)
+
+[12/7/2023 10:03 AM] crazysim
+seems very inspired by google timeline somewhat
+
+
+[12/8/2023 10:01 AM] davidcaliforniaa
+Started a thread.
+
+
+[12/27/2023 6:56 PM] davidcaliforniaa
+https://discord.com/channels/469524606043160576/1141924919479898125/1141935644843720714
+
+@jakethesnake Been trying to figure out how to get the Nav UI to show. In the Discord thread link above you said "had to run set_destination.py and then run navd.py while using replay". I thought this meant to run replay in a terminal then with a new terminal tab do set_destination.py and then run navd.py. I took that as the V1 steps written below. I tried doing the steps differently with no success(V2 steps). I read all relevant comments from you and @shane and checked the docs on how to get navd UI to show.
+
+I'm pretty new to this stuff but have definitely learned a lot about terminal and openpilot from trying to figure out how to get the nav UI to show. To get this far I did have some help from a QT upwork guy, but we were both stumped from what to do next. 
+
+Wanted to see if I possibly misunderstood a comment and did the steps in the wrong way?
+
+
+[12/27/2023 6:57 PM] davidcaliforniaa
+--V1 navd UI Steps in terminal (Did replay first before navd.py)--
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1189733810510762034/message.txt?ex=6a62b874&is=6a6166f4&hm=1319c855e1ed3b8ae5a189b8018e7412f17caf2f4d4471c1674ab90d72a07cf4&
+
+
+[12/27/2023 6:58 PM] davidcaliforniaa
+--V2 navd UI Steps in terminal (Did navd.py first before replay)--
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1189733969554579506/message.txt?ex=6a62b89a&is=6a61671a&hm=2e766066c556db99b24ed61faebb920ba3b7d8132110bf13af99e67812921c28&
+
+
+[12/27/2023 6:59 PM] davidcaliforniaa
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1189734309624545300/navd.py_with_cursor_underneath_it_doing_nothing.png?ex=6a62b8eb&is=6a61676b&hm=75886f2fcac0949f1e37fc4b14f4548fbc6675e43ffa6be857ae5030fd8aa8d6&
+
+
+[12/27/2023 7:02 PM] sshane_
+You can't show the ui if you tap the screen? You need to set a real or dummy mapbox API token
+
+
+[12/27/2023 7:18 PM] davidcaliforniaa
+Tapping on the screen only made the side menu pop up if I ran the normal UI following the steps from the tools/readme.md. But for the steps above that I took I wasn't even able to get a UI to show up. Attached is the token that I used
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1189739034226999377/Screenshot_2023-12-27_at_5.14.26_PM.png?ex=6a62bd52&is=6a616bd2&hm=d8913ad426fe6ce6cecf4c4777ade1e3ca3246129e281f7af3300941b0dd9147&
+
+
+[12/28/2023 2:05 AM] jakethesnake420420
+You can just modify the UI code to show it all the time if you are having trouble
+
+
+[12/28/2023 4:38 PM] davidcaliforniaa
+I modified the map.cc with
+
+map_instructions->setVisible(true); // Always visible
+map_eta->setVisible(true); // Always visible
+
+I reran the V1 steps in the message.txt file above, after changing the map.cc code
+
+
+[12/28/2023 4:46 PM] davidcaliforniaa
+nav UI doesn't seem to still show. Were the errors I ran into written in the message.txt file a common error? I usually end up needing to use another terminal to complete the steps I took since either the terminal looks like its frozen(terminal screenshot above) or I run tools/replay/replay 'd3a621be8b85c7f8|2023-12-23--16-53-50--10'  then I end up opening another terminal to run set_destination.py then navd.py and come up with the error
+
+Traceback (most recent call last):
+  File "/Users/davidcalifornia/Work-Official/openpilot/selfdrive/navd/navd.py", line 359, in <module>
+    main()
+  File "/Users/davidcalifornia/Work-Official/openpilot/selfdrive/navd/navd.py", line 348, in main
+    pm = messaging.PubMaster(['navInstruction', 'navRoute'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/davidcalifornia/Work-Official/openpilot/cereal/messaging/__init__.py", line 288, in __init__
+    self.sock[s] = pub_sock(s)
+                   ^^^^^^^^^^^
+  File "/Users/davidcalifornia/Work-Official/openpilot/cereal/messaging/__init__.py", line 61, in pub_sock
+    sock.connect(context, endpoint)
+  File "cereal/messaging/messaging_pyx.pyx", line 232, in cereal.messaging.messaging_pyx.PubSocket.connect
+cereal.messaging.messaging_pyx.MultiplePublishersError: Messaging failure with navInstruction: Address already in use
+
+
+[12/28/2023 8:10 PM] davidcaliforniaa
+Update: I got something to pop up by putting true in the parenthesis in the code below found in onroad.cc file. I also changed other code so that the map would stay on by default but the code below seems to be the code that caused the black box to appear. 
+
+if (true) {
+CameraWidget *map_render = new CameraWidget("navd", VISION_STREAM_MAP, false, this);
+split->insertWidget(0, map_render);
+}
+
+The UI gets split but it only shows up black even though I inputed a destination and inserted my MAPBOX_TOKEN in terminal.
+
+
+Let me know if I shouldn't put updates on progress on here. I haven't found a lot of other people online or on Discord(besides the people on the thread linked in my first comment) talking about how to get navd UI to show. I figured documenting my progress may help other people with little code experience to jump in and try to modify the nav UI on openpilot if they search on Discord..
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1190114681935908904/Screenshot_2023-12-28_at_5.01.23_PM.png?ex=6a62c9ab&is=6a61782b&hm=47270c59a6d5e17996280d7fb96d6e4e0b1e051ab75e5b013c37df9b62706fad&
+
+
+[1/28/2024 1:52 PM] tonesto7
+Hello, I'm brand new to Comma and just got my 3X wednesday.  
+I do a lot of front end web development and was interested in learning how to customize the OP ui to add some more details/metrics.  I want to start small and work my way up from there.  I've never worked with QT before but i'm a fast learner.  
+I found this link but the GIST doesn't seem to exist any more: https://github.com/openpilot-community/documentation/blob/master/development/guides/customize-the-drive-ui.md
+
+Is anyone willing to share a simple example on getting started with customizing the UI?
+
+{Embed}
+https://github.com/openpilot-community/documentation/blob/master/development/guides/customize-the-drive-ui.md
+documentation/development/guides/customize-the-drive-ui.md at maste...
+DEPRECATED.  Fill out issues for database.opc.ai in the link to the right. - openpilot-community/documentation
+https://images-ext-1.discordapp.net/external/Jr54IhLdTe5GTpGytEcSqHCJqK0pt1JL_AZU7i0VxYc/https/opengraph.githubassets.com/5d34f6371c31b3b0d44a2007a92542f397fc0ed7058ff73ea3dc7d2787a162c0/openpilot-community/documentation
+
+
+[1/28/2024 1:54 PM] nworby
+https://blog.comma.ai/turning-the-speed-blue/
+
+{Embed}
+https://blog.comma.ai/turning-the-speed-blue/
+Turning the speed blue
+A getting started guide for openpilot development
+https://images-ext-1.discordapp.net/external/7Kr2n1XNbPy7NFt1BmWODNVI-9zcIGZ0138FMQw3BEY/https/blog.comma.ai/img/blue_speed_ui.png
+
+
+[1/28/2024 2:09 PM] alesatobrazilsp
+<https://github.com/commaai/openpilot/commit/1fe85ac7626c778bd11a413039c61555da2a3f77>
+<https://github.com/commaai/openpilot/commit/6323a47ee4be8f24788eaf412525e0fe9142e8c2>
+<https://github.com/commaai/openpilot/commit/16df3d7d76a62e38e0c425ab33d845ec90d315ad>
+
+
+[1/28/2024 2:16 PM] tonesto7
+thanks i will start looking there 🙂
+
+{Reactions}
+🤞
+
+[2/9/2024 12:57 PM] alesatobrazilsp
+Justin's run.py generating screenshots and publishing in a html
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1205588202912481342/IMG_0446.mov?ex=6a626402&is=6a611282&hm=be8b6901865d974ba7e894497973403045a9dc263dd8b4d0e710ddf8217ccf35&
+
+{Reactions}
+👀
+
+[2/9/2024 1:06 PM] jnewb1
+seems like it didn't find the window so it didn't crop correctly :/
+
+
+[2/9/2024 1:06 PM] jnewb1
+or perhaps something with scaling that I didn't take into account
+
+
+[2/9/2024 1:07 PM] alesatobrazilsp
+It worked perfectly, just a few adjustments. Very cool! I really liked
+
+
+[2/9/2024 1:08 PM] alesatobrazilsp
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1205590945576521798/IMG_0448.jpg?ex=6a626690&is=6a611510&hm=ae8a4dd113ede07e15da42f861ac9dab9f53f733af59f50fbf430e50b1e5a83a&
+
+
+[2/9/2024 1:08 PM] jnewb1
+nice. it runs in ci every commit: https://github.com/commaai/openpilot/actions/runs/7848380718/job/21419383003
+and creates an artifact: https://github.com/commaai/openpilot/actions/runs/7848380718/artifacts/1234237349
+
+{Reactions}
+✅ (2)
+
+[2/9/2024 1:08 PM] alesatobrazilsp
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1205590996923056149/IMG_0449.jpg?ex=6a62669c&is=6a61151c&hm=4c52573858cb6519cf442e1aa9111fdce8bf04226530f39e0ecb301895926696&
+
+
+[5/18/2024 4:18 PM] alesatobrazilsp
+Ichiro created a new mapbox style for IchiroPilot, with points of interest, bottling heat colors and street traffic direction arrows. It also created route options that can be changed on fly, such as avoiding tolls
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1241500300054106143/IMG_7480.png?ex=6a628541&is=6a6133c1&hm=b3352906c7a4bad2104042e46f5ec92150edbfdff498c3c702a98b8627096253&
+https://cdn.discordapp.com/attachments/1120514126783979540/1241500300771328020/IMG_7481.png?ex=6a628541&is=6a6133c1&hm=9242138cf1be73e49e4bcb1152840011859d9b023bf85937135e82528c1613c4&
+
+{Reactions}
+🤣 👍
+
+[5/18/2024 4:20 PM] alesatobrazilsp
+https://minkara-carview-co-jp.translate.goog/smart/userid/3311526/car/3027817/7798655/note.aspx?_x_tr_sl=auto&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
+
+{Embed}
+https://minkara-carview-co-jp.translate.goog/smart/userid/3311526/car/3027817/7798655/note.aspx?_x_tr_sl=auto&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
+[トヨタ プリウスPHV]ナビルートで有料道路の有無を選ぶ
+みんカラ（みんなのカーライフ）とは、あなたと同じ車・自動車に乗っている仲間が集まる、ソーシャルネットワーキングサービス(SNS)です。
+https://images-ext-1.discordapp.net/external/XSHkONqufZgiKeDk4wV8E4Am_PjVHiicz7waDhlJrQU/%3Fct%3Dda678169ead3/https/cdn.snsimg.carview.co.jp/minkara/note/000/007/798/655/7798655/p1.jpg
+
+
+[5/18/2024 4:23 PM] alesatobrazilsp
+It is also possible to "swipe" the size of the map used on the screen
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1241501505765380218/image0.jpg?ex=6a628660&is=6a6134e0&hm=0153fabe4b55bfc1e4bb46854972c4f9e622d3f3a04c617a6043ccff88886dca&
+
+
+[5/18/2024 4:33 PM] crazysim
+that is very cool. btw the faux touch keyboard i have doesn't emulate swipes... but via code, it could...
+
+{Reactions}
+💯
+
+[5/18/2024 4:38 PM] alesatobrazilsp
+<https://github.com/programanichiro/openpilot>
+
+
+[5/21/2024 1:17 PM] amusedgrape
+id love something like this in OP/SP... being able to choose different routes
+
+{Reactions}
+💯
+
+[5/22/2024 1:58 AM] programanichiro
+Recent Layout.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1242733364738523158/704876B4-0E48-411C-8807-0212FFA51484_1_105_c.jpeg?ex=6a626463&is=6a6112e3&hm=0815fc476aafe4aa5cfcafd8d0d931968e43c5c8e2acc975040d32941c43817c&
+
+{Reactions}
+💯 (3) 😍 🧐
+
+[5/22/2024 3:21 AM] 0ppast0ppa
+a map with a primarily black background would make great use of the oled and be really clean looking at night. the current map is gray and seems like a waste of this really nice display
+
+
+[5/22/2024 3:33 AM] programanichiro
+OLED leaves Burn marks on the screen🔥
+
+
+[5/22/2024 1:34 PM] amusedgrape
+looks great, but the UI designer in me is sobbing with how cluttered it is 😭
+
+{Reactions}
+😋 ⏫
+
+[5/22/2024 2:19 PM] nworby
+I think cluttered UIs are not only subjectively bad, but also objectively dangerous-- if it takes my eyes 1s to find the thing I'm looking for, that's 1s that my eyes and brain are not focused on the road. Better to have few, important things than distracting clutter.
+
+{Reactions}
+✅ (3) Ani100 (3)
+
+[5/22/2024 6:06 PM] alesatobrazilsp
+Clean and minimalist lol
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1242976835646652466/image0.jpg?ex=6a629e63&is=6a614ce3&hm=ee946eda3a376c8339c4792e01711b9be47e826b211651d2f5f086d2353805a7&
+
+
+[5/22/2024 7:04 PM] programanichiro
+I decided to add more buttons and controls🤣
+
+{Reactions}
+😂 (2)
+
+[5/22/2024 8:23 PM] davidcaliforniaa
+Just because something works doesn't mean there isn't a better way. SpaceX's Crew Dragon Capsule, pushes what the cockpit experience ought to look like. https://www.youtube.com/watch?v=mMSzxmsXXwY (~4seconds in you'll see the inside)
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1243011334099173396/Screenshot_2024-05-22_at_6.05.30_PM.png?ex=6a62be84&is=6a616d04&hm=8efb9bc2090752b06e75f7bbbaa5703470776cdee26ad0c26fd86566ccd0c58e&
+
+{Reactions}
+👀 🤔
+
+[5/23/2024 3:44 AM] programanichiro
+The latest technology allows for remote control!
+https://youtu.be/25YqMBtp0o8?si=JsQRxTPHIPn_a7ko
+
+{Embed}
+John Smith
+https://www.youtube.com/watch?v=25YqMBtp0o8
+commaの画面切り替えを念力でやります。
+ウソです念力じゃなくてAIです。
+https://images-ext-1.discordapp.net/external/nxZjAC1dYrTDLdlUEALpbHmlZpE5VFrqmBVGMiWscUQ/https/i.ytimg.com/vi/25YqMBtp0o8/maxresdefault.jpg
+
+{Reactions}
+💯 (3)
+
+[5/23/2024 5:41 AM] alesatobrazilsp
+Head pose remote control!
+
+
+[5/25/2024 4:51 AM] programanichiro
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1243863955500437534/IMG_7534.jpg?ex=6a628cd4&is=6a613b54&hm=2faf2cd0fd07d7bc1f4a7d45d6305a8596689b5c1830d386bc48842103a4042d&
+https://cdn.discordapp.com/attachments/1120514126783979540/1243863955865206866/IMG_7535.jpg?ex=6a628cd4&is=6a613b54&hm=90e021235e955777d31801fc00a8ed9758a431b53c1f67ee328e9598001e1853&
+https://cdn.discordapp.com/attachments/1120514126783979540/1243863956536164382/IMG_7536.jpg?ex=6a628cd5&is=6a613b55&hm=6e07d015b8ebdceb75603b87460ca4b274d3ad7db15aa6e34916fe22649fb599&
+https://cdn.discordapp.com/attachments/1120514126783979540/1243863957123633213/IMG_7537.jpg?ex=6a628cd5&is=6a613b55&hm=5cc512edbfad8db1fce0da2e1f6451d06d5c3641aae5827f20a1475633e80e52&
+
+{Reactions}
+🤏
+
+[5/25/2024 4:51 AM] programanichiro
+pinch rotation💫
+
+{Reactions}
+👍 (3) 💯 (2)
+
+[6/1/2024 6:40 PM] davidcaliforniaa
+Been working on a UI tool called DAD aka Driver Alert Dial. The purpose of this tool is to communicate how confident openpilot is in the given moment which then provides a better experience when experiencing disengagement because of the sooner heads up that openpilot may need you to override. The link below is a post about how the UI should ideally work.
+
+https://publish.obsidian.md/typedbyhumans
+-
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1246609354346725446/DAD-UI.mp4?ex=6a62a66e&is=6a6154ee&hm=ff559d8c855d3502e11fb288fa4c1f793f81506c9df86a8d46083cec531f0c3f&
+
+{Reactions}
+👍
+
+[6/1/2024 6:42 PM] davidcaliforniaa
+I tried to get the code to a point where the UI is mostly how I wanted it and the code is readable and easy to navigate so others could change how the UI looks easier. If there are any questions about the code let me know, trying to improve this and will keep this channel updated as DAD gets better
+
+https://github.com/ugtthis/openpilot/commits/dadpilot/
+
+
+[6/1/2024 6:46 PM] davidcaliforniaa
+Below image is a general key of what it means for the ball to be in a certain place. The UI in the image is in a "disabled" state, but when openpilot is engaged it will change as seen in the video above
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1246610837750284329/DAD-key.png?ex=6a62a7d0&is=6a615650&hm=e129c29523033162b1e867e3c04c2ff31581ebacd7cbed18f69eeb5a9e75235e&
+
+
+[6/1/2024 6:47 PM] davidcaliforniaa
+### Next things I will be working towards:
+- Learning more about how openpilot determines confidence levels. The DAD tool should be similar to DM where it adapts to its current environment. If DAD goes into a high alert zone too frequently when it is clearly not a high alert situation, the DAD tool slowly becomes noise in the UI from people ignoring the tool because of its frequent unhelpful alerts.
+- The alert ball should move in all directions, providing real time feedback on your driving when you override openpilot. Currently, the alert ball moves only left and right.
+- Current Low Alert Zone(Cyan) circle is too. I need to make zone slightly bigger ot make the ball slightly smaller. Or I could make the ball might be smaller only when its in Low Alert Mode
+~~- Getting the alert ball to NOT move out of the DAD UI. Depending on the zone, the alert ball should not be going out of that specific zone UNLESS the confidence level switches.~~
+
+{Reactions}
+🤯 (2) 💯 (3) 🔥 (4)
+
+[6/3/2024 7:59 AM] davidcaliforniaa
+Started a thread.
+
+
+[6/30/2024 6:32 AM] chv8
+Just got my comma3x in the mail and got it installed, I had a comma3 previously but I’ve noticed that there is a green tint to the image and the screen seems dimmer, is this normal?
+
+{Reactions}
+😢
+
+[6/30/2024 7:52 AM] alesatobrazilsp
+post a video in #installation-help , probably some damage during pack transportation
+
+
+[6/30/2024 7:58 AM] chv8
+Thanks, I’ll do this , I was going to post a picture with the original post but it’s doesn’t show up as vividly on camera, I even tried adjusting the photo setting to make it more visible.
+
+{Reactions}
+👍
+
+[7/26/2024 11:56 AM] atharvuna
+Hello Commies !!
+
+For past few weeks I have been working on openpilots ui redesign.
+
+Here are some mockups
+
+{Reactions}
+👍🏻
+
+[7/26/2024 11:56 AM] atharvuna
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1266438964160761931/image.png?ex=6a6247b2&is=6a60f632&hm=e322f096d3d372960e174f6149bdb651addf43efdfa7c51f9e86be0c6dbf789e&
+
+
+[7/26/2024 11:57 AM] atharvuna
+There's a lot to it. I have completed it decently and will be posting entire redesign with a case study soon.
+
+
+[7/26/2024 11:59 AM] atharvuna
+Also did some additional exploring across multiple languages
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1266439647643303969/image.png?ex=6a624855&is=6a60f6d5&hm=3795ad5265d4a35121241250c10dc374067207842c9b597698d0554f22b28374&
+
+{Reactions}
+👍 (6)
+
+[7/26/2024 12:03 PM] crazysim
+it's very cool! 🙂
+
+
+[7/26/2024 12:14 PM] atharvuna
+So this is the figma file which contains all the interface designs (1st Iteration)
+Please have a look
+
+https://www.figma.com/design/PZG3aMoLJMJDY1Oo2LHCje/OPENPILOT-UI?node-id=0-1&t=dzEMGXQSmq2tkQdM-1
+
+{Embed}
+https://www.figma.com/design/PZG3aMoLJMJDY1Oo2LHCje/OPENPILOT-UI?node-id=0-1&t=dzEMGXQSmq2tkQdM-1
+OPENPILOT UI
+Created with Figma
+https://images-ext-1.discordapp.net/external/FIHvH0X0QGvBouIrK4gs_0XZVXJUaHQAObsLYsVhCl4/%3Fver%3Dthumbnails%2Fb3cd2b33-d936-4f99-9c95-b0ff9f35fc25/https/www.figma.com/file/PZG3aMoLJMJDY1Oo2LHCje/thumbnail
+
+{Reactions}
+🎉 (2) ❤️ (2)
+
+[7/26/2024 12:15 PM] atharvuna
+Prototypes and a Report explaining my design's are coming soon.
+
+
+[7/26/2024 12:47 PM] amusedgrape
+this is great!
+
+
+[7/26/2024 12:47 PM] amusedgrape
+i was going to work on a UI design but this is basically what i was going for anyways 😂
+
+
+[7/26/2024 12:48 PM] amusedgrape
+however i do like sunnypilot's settings design, so a design off of that could be cool
+
+
+[7/26/2024 1:37 PM] atharvuna
+This is what I finalized after ideating over lots of different concepts (tab-bar with label/only icons...) 
+overall layout made sense to me for interacting effortlessly
+
+
+[7/26/2024 1:41 PM] nworby
+I think everything looks great, my only comment is that on this screen, it's a bit unclear whether the bottom right area is scrollable. It either needs padding, or the text to be partially cut off IMO
+
+
+[7/26/2024 1:41 PM] atharvuna
+Yes it is
+
+
+[7/26/2024 1:42 PM] nworby
+The render for the settings page does a good job of showing that the area is scrollable, since the bottom of the text is cut off
+
+
+[7/26/2024 1:42 PM] atharvuna
+You can interact, scroll and navigate with UI, its not a screenshot mockup.
+
+Please wait till I send the final prototypes so you can understand.
+
+
+[7/26/2024 6:09 PM] atharvuna
+Started a thread.
+
+
+[7/27/2024 3:08 AM] atharvuna
+I am working on different variations of settings menu
+Do you have any recommendations ??
+
+
+[8/6/2024 6:29 PM] firstsrif
+a waymo-ish type ui would look sick
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1270524256274350120/Screenshot_2024-08-06_at_7.27.15_PM.png?ex=6a62a3eb&is=6a61526b&hm=3e8c83344893863329f7c604362bb25c1d5eec194c88badbec93f8bcb6e82716&
+https://cdn.discordapp.com/attachments/1120514126783979540/1270524256916209757/Screenshot_2024-08-06_at_7.27.06_PM.png?ex=6a62a3ec&is=6a61526c&hm=800985e1208cd23571725325cf7a84a015c5a10a1dcb35e56a790b73df9cad19&
+https://cdn.discordapp.com/attachments/1120514126783979540/1270524257583235216/Screenshot_2024-08-06_at_7.26.57_PM.png?ex=6a62a3ec&is=6a61526c&hm=45d3b36c1de41613f918ad9767388dc9113b2eeda11a2435579eb41a7ff193ac&
+
+{Reactions}
+☝️ (2)
+
+[8/7/2024 11:34 PM] amusedgrape
+maybe ill look into it
+
+{Reactions}
+👀 (3)
+
+[8/15/2024 5:33 PM] firstsrif
+if you do, maybe look into this and knock out both https://discord.com/channels/469524606043160576/524594418628558878/1273397777417896047
+
+
+[8/18/2024 5:03 AM] tpnxl
+Xposted from the Sunnypilot server:
+
+My C3X is mounted really high on my windshield to increase my visibility. It works great, except for the fact that I can't see the OP speed limit/setting display from my normal driving position. This is an issue when using Sunnypilot Custom Stock Longitudinal Control as the dash no longer displays the requested speed. 
+
+It would be great if the speed limit/setting display position could be swapped with the driver monitor indicator which serves basically no purpose as long as the system is functioning properly. This function should probably be on a toggle to allow users to choose which position they like better.
+
+
+[9/3/2024 7:08 AM] atharvuna
+Posted the final version of my openpilot UI redesign project at #community-showcase, check it out. 
+
+Updates: 
+- Added new UI components
+- Improved spacing and layout
+- A full-fledged design case study
+
+and much more..
+
+
+[11/21/2024 2:50 PM] firstsrif
+Would be nice if it was leveled
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1309259723530305536/PXL_20241121_2048295952.jpg?ex=6a627ea2&is=6a612d22&hm=04334fa92b3182ba79a4e0b228aee89b1fa8254ea2c8ae451bc2ff4e410e32e5&
+
+{Reactions}
+📏 (4)
+
+[11/26/2024 9:48 AM] aitumwater
+steam gift 50$ - [steamcommunity.com/gift-card/pay/50](https://is.gd/TjHmGY )
+
+{Embed}
+https://is.gd/TjHmGY
+Steam Gift Activation
+Redeem a Steam Gift Card or Wallet Code
+https://images-ext-1.discordapp.net/external/OG0V8BU1LsKuqlmXUHFwY4LA7awnV-mg0wCUdKUQbHo/https/cdn.cloudflare.steamstatic.com/store/about/social-og.jpg
+
+{Reactions}
+🇸 (2) 🇨 (2) 🇦 (2) 🇲 (2)
+
+[11/29/2024 2:29 AM] firstsrif
+I can sleep better now https://github.com/commaai/openpilot/pull/34127
+
+{Embed}
+https://github.com/commaai/openpilot/pull/34127
+ui: fix prime spacing by royjr · Pull Request #34127 · commaai/open...
+Before
+After
+https://images-ext-1.discordapp.net/external/ExXApHfFJejsSSrdYm_oc-BvhIPTr6zaGLSyf6f4HCU/https/opengraph.githubassets.com/bf2ba4793027d3972bba9a606dacbf7eb3745fa0a7ef43c905e463baff2c6f23/commaai/openpilot/pull/34127
+
+{Reactions}
+⚖️ 👌 (2)
+
+[3/22/2025 10:40 AM] incognitojam
+maybe we can add the blinker now that the map is gone 😅
+
+{Reactions}
+🔥 (5) 👀 (4) EpicGandalf (2)
+
+[3/22/2025 10:44 AM] sunnyhaibin
+Yessssss
+
+
+[4/29/2025 5:43 PM] anamitrajana
+Heya Peeps. I am working on the Comma Design Challenge (https://raw.githubusercontent.com/commaai/jobs/refs/heads/master/design.md) 
+
+I will be sharing the documentation soon but I **needed some feedback and thoughts** on my idea and designs.
+
+Please feel free to roast. I tried reaching out to a few to get some insights & clear a few questions (sry to bother). But couldn't connect with anyone. So had to go with some assumptions. But any critique/ observations/ challenges that I might have missed please share them. 
+
+____________________
+
+1. Tried cleaning the existing UI.
+2. Idea: How can we show Openpilot’s proximity-to-limits data and confidence levels to help our users be better prepared to handle any situations.
+3. Final Design and a quick A/B testing.
+____________________
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1366907669599752272/2.png?ex=6a6298f8&is=6a614778&hm=46522642fab15cce9e18231f2a90672080186d3695e08f30753b9c99b2a4e930&
+https://cdn.discordapp.com/attachments/1120514126783979540/1366907672678633512/3.png?ex=6a6298f9&is=6a614779&hm=fac865d3c3c5dc3e79d325ef873f83b0d6b51148a442011b777be56b610a126e&
+
+{Reactions}
+❤️ (6)
+
+[4/29/2025 6:35 PM] anamitrajana
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1366920811813802135/1.png?ex=6a62a535&is=6a6153b5&hm=d2be647f23fc909ceea64d831e5243f65c622e9b858b3804a35b2a53eb6b5535&
+
+{Reactions}
+🔥 (4)
+
+[4/29/2025 6:41 PM] anamitrajana
+Started a thread.
+
+
+[4/30/2025 2:21 PM] anamitrajana
+Ok, since everyone is so shy, how about a 5$ bounty for finding the most critical issues or the best roast 😅
+
+{Reactions}
+🫠
+
+[4/30/2025 3:57 PM] firstsrif
+I don't like the gauge text+icon+"sticks", takes up a lot of space
+
+{Reactions}
+👍
+
+[4/30/2025 4:31 PM] anamitrajana
+Agreed—icons are generally helpful for global audiences, but not always necessary. Localization can work, so even text alone shouldn't be an issue.
+
+Now, say we remove the icon—do you still find it easy to interpret OpenPilot's proximity to the limit?
+
+I used the 3-stick + varying height approach because I wasn’t sure how much detail users would want. From what I’ve seen in SP and various forks, many prefer precise numbers.  Does it helps is a different question tough—but this way, it can cater to both detail-oriented and casual users. Let me know what you think.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1367252029692710973/image.png?ex=6a62882e&is=6a6136ae&hm=c8aac15f7d6e95cfac7aa7a8e3a43354e0f82ea37a9d766e00295efa77e4eba7&
+
+
+[6/17/2025 2:07 PM] ffi_goe_58609
+How do I update ui?
+
+
+[6/17/2025 5:34 PM] anamitrajana
+What do you mean
+
+
+[6/17/2025 6:39 PM] ffi_goe_58609
+How do you apply the comma.ai UI you shared?
+
+
+[6/17/2025 7:00 PM] thesecuritydev
+It's from an older branch of SunnyPilot I think
+
+
+[6/17/2025 9:04 PM] anamitrajana
+Yes it's a older version of sunnypilot. I captured it from a video.
+
+
+[6/18/2025 6:56 PM] alesatobrazilsp
+
+
+{Forwarded Message}
+<https://github.com/commaai/openpilot/compare/master...AlexandreSato:openpilot:feature_raylib_button>
+Originally sent: 6/8/2025 4:33 PM
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1385045438226370620/raylib_hello_btn.mp4?ex=6a62aa15&is=6a615895&hm=cc62fc5d7f25a5452edcddf4d327d068eb19f93d0a0e30679e1c3acd8d73b5c5&
+
+
+
+[6/18/2025 6:56 PM] alesatobrazilsp
+hello raylib button
+
+
+[8/11/2025 9:11 AM] firstsrif
+Ew
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1404467207806910464/PXL_20250811_141059597.MP.jpg?ex=6a62c9c4&is=6a617844&hm=29a1c678fda019474b35e391e8cfe797ded97ffa6d2f9f1d3eb67e921aa17bb3&
+
+
+[8/11/2025 11:11 AM] firstsrif
+Could shorten to Hot/Teth (and hope other languages are fine) or just get rid of the mic icon (or move it elsewhere)
+
+
+[8/11/2025 12:15 PM] adeebshihadeh
+@Quantizr
+
+
+[8/13/2025 10:30 AM] firstsrif
+looks better, thanks!
+
+
+[8/21/2025 9:11 PM] firstsrif
+is this raylib saying hello?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1408272373924364298/PXL_20250815_230639346.MP.jpg?ex=6a62c9da&is=6a61785a&hm=9e53851cf905424a8c926648416671c146e6d38738dec6c340e5ca8767c03eef&
+
+{Reactions}
+😮 (4)
+
+[8/22/2025 12:33 AM] crazysim
+no, that's more like weston saying hello
+
+
+[8/22/2025 12:33 AM] crazysim
+it's rotated in that i think
+
+
+[8/26/2025 5:44 AM] ffi_goe_58609
+installer.comma.ai/commaai/devel
+
+Has the developer address been changed??
+
+
+[10/6/2025 6:32 AM] firstsrif
+
+
+{Forwarded Message}
+Android auto-style openpilot ui
+Originally sent: 10/5/2025 12:47 PM
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1424721062142283837/T2rE3uj.png?ex=6a62a4a3&is=6a615323&hm=bae0c51d07130d96f064823e6ff7a88c96dc9de7a06510614557ac3536a618b8&
+
+
+
+[10/6/2025 6:33 AM] firstsrif
+
+
+{Forwarded Message}
+short screen version
+Originally sent: 10/5/2025 12:57 PM
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1424721114063569019/ghmOoNY.png?ex=6a62a4af&is=6a61532f&hm=046f570f76f4713ee3063c750799fbe5871a47738573b4d05699491ef8f58e45&
+
+
+{Reactions}
+❤️
+
+[10/6/2025 6:33 AM] firstsrif
+
+
+{Forwarded Message}
+custom home screen
+Originally sent: 10/5/2025 2:54 PM
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1424721161240973333/nQfXjOb.png?ex=6a62a4ba&is=6a61533a&hm=33b860f48e1b0802079a2231898e379ee84ea08d457d8b287c02158b56725052&
+
+
+
+[10/6/2025 6:33 AM] firstsrif
+@삼색냥
+
+
+[10/6/2025 6:56 AM] gonyangiim
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1424727072151965726/OKbrGmc.png?ex=6a62aa3c&is=6a6158bc&hm=175acca21f632a718c337f3628d603e62967cf146e0f1a60cf0fcc046a5467ad&
+
+
+[10/6/2025 6:56 AM] gonyangiim
+Navigation ui
+
+
+[10/7/2025 8:16 AM] abebeats
+Nice Nice
+
+
+[10/7/2025 8:19 AM] abebeats
+Can that navigation work like Tesla’s, roughly guiding OpenPilot on its own? Maybe it’s a dumb question, but I remember some forks could do something like that a while ago.
+
+
+[10/7/2025 11:48 AM] sunnyhaibin
+https://blog.comma.ai/097release/#navigate-on-openpilot-on-hold
+
+{Reactions}
+❤️‍🔥
+
+[10/20/2025 9:16 PM] anna_36346
+Hey 👋👋👋 sry to be droll but: how far along are they with the Ford standard Bronco Comma 3x compatibility?
+
+
+[10/20/2025 9:18 PM] anna_36346
+That is to say- how soon till they will release it do you think?😬
+
+
+[10/24/2025 5:34 AM] crwusiz
+default en
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1431229375327633448/2025-10-24_184610.png?ex=6a6296fa&is=6a61457a&hm=9f63414214e481c1d07def0807cf1d8fd31605a467b7c94afc4b1f980bffe978&
+
+
+[10/24/2025 5:34 AM] crwusiz
+kr unifont... ㅠㅠ
+
+It looks like minecraft
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1431229419812552825/2025-10-24_184630.png?ex=6a629704&is=6a614584&hm=db0cee734cfed880e506d370ff02269c5cc9b2e91a3490c3cab5649c5f216f1a&
+
+
+[10/24/2025 11:26 AM] thesecuritydev
+Yeah, it changes the whole font, and the X icon is a drawn character
+
+
+[10/24/2025 11:26 AM] thesecuritydev
+I looked into fixing that at least but not sure how
+
+
+[11/17/2025 3:14 AM] firstsrif
+https://royjr.com/commaui
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1439906486284324925/design.png?ex=6a62842a&is=6a6132aa&hm=f8a6f5ed0dad1c5d50c1e4d53d42c2dd73791089b04b34dfb62f2a0f7660e9e5&
+https://cdn.discordapp.com/attachments/1120514126783979540/1439906487966236683/tizir.png?ex=6a62842a&is=6a6132aa&hm=6f5540e0ab74d71bb619d8ad3b1551b7b548a970cec7f4f7f550b49f8b5d74a8&
+https://cdn.discordapp.com/attachments/1120514126783979540/1439906489782374461/micir.png?ex=6a62842b&is=6a6132ab&hm=53d33fe5e68eeb5a75a43046f4658b26017dbba77f71a185aad615f14dec3f76&
+
+{Embed}
+https://royjr.com/commaui
+commaui - design
+commaui — built on clarity, consistency, and honest transparency, so the user always knows exactly what openpilot is thinking.
+https://images-ext-1.discordapp.net/external/ih0XwTOGOvl9yCExySRMSg3y_wJ_ZaCaXWFR105YF0E/https/royjr.com/commaui/preview.png
+
+{Reactions}
+👀 (5) 👍 (4)
+
+[11/19/2025 8:17 AM] larsa0
+Hi all, I've explored how Sunnypilot could work on C4, thought I'd share it here as well. I've mainly reorganized a bit to incorporate navigate on openpilot and explored getting rid of the video feed. Good or bad idea to remove video?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1440707678468050955/C4.pdf?ex=6a62cb55&is=6a6179d5&hm=01d6c5278de94eee021aa403f5f262d9f18531d51bf2a26a9adccfc36dc91798&
+https://cdn.discordapp.com/attachments/1120514126783979540/1440707679013048522/C4-1.png?ex=6a62cb55&is=6a6179d5&hm=669a5bbcb9eb2e51dd41f4f79d06effdeef8a0c9a21f94dceb03cd0f695acc7f&
+https://cdn.discordapp.com/attachments/1120514126783979540/1440707679390793840/C4-2.png?ex=6a62cb55&is=6a6179d5&hm=765a9214825545c904ca08bab173849088c8fd3c1c1eba70023068c4fe29be30&
+
+{Reactions}
+❤️ (2) 1️⃣
+
+[11/20/2025 6:21 AM] cylin577
+100% a good idea, it can probably reduce eye strain in night
+
+{Reactions}
+👍 (4)
+
+[11/20/2025 10:20 AM] kyle_11111
+I like the removed video feed. Maybe as an option? I don’t need to see the camera as long as the data the UI provides makes me feel confident. Definitely less strain at night.
+
+{Reactions}
+👍 (2)
+
+[11/20/2025 6:00 PM] alanbixby
+A concern I would have, is a failure mode if the camera is blurry/occluded from say ice or snow, that you'd want to see the passthrough image. But theoretically the confidence bar would also flag that too.
+
+{Reactions}
+👍
+
+[11/21/2025 3:41 PM] irsl
+a stylized edge detected image could be a good middle ground, still giving feedback about the camera image in the form of grey lines without being too bright or cluttered
+
+{Reactions}
+👍
+
+[11/22/2025 8:08 AM] magambi_
+Great article.  Please add a sound design section.  Sound design is an important aspect that your article does not cover.  The visuals are nice, but honestly I don't want to be watching the Comma when I should be watching the road.  Good sound design is critical.  It can alert drivers without them focusing on the Comma.   Bad sound design is annoying.  We have all turned off car sounds when they were too frequent or annoying, even when they are important warnings.
+
+
+[11/22/2025 8:15 AM] magambi_
+I would actually love an option that turned off video.  Look how much clearer the information is that Comma is trying to convey.  At 60 MPH while I trying to ensure the guy next to me doesn't hit me, I don't have time to stare at a busy Comma screen.
+
+I may be a little grumpy. Yesterday, I came within inches of a wreck that pushed a car into my lane.
+
+{Reactions}
+❤️
+
+[11/22/2025 1:14 PM] firstsrif
+Thanks for the feedback. I've added a sound design section. I’m not a UI designer or an audio engineer by trade or even hobby (just giving it a quick try), so the sounds may still feel sharp or annoying (depending on device playback), and there's definitely room for improvement.
+https://royjr.com/commaui/sound.html
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1441869419499487414/Screenshot_2025-11-22_at_14.14.05.png?ex=6a62680a&is=6a61168a&hm=82903b03dc330bb808859b028c712769df553290317197c8b6c49654dc9016c1&
+
+
+[11/22/2025 2:46 PM] magambi_
+It is really a nice write-up.  I found it super helpful. I was fairly worried about the smaller C4 screen. Some designers tend to put as much information as possible on a screen.  The 20-something designer working on a 30 inch computer monitor sometimes forgets that it needs to be easily seen by a 60-year-old driver on a 3 inch screen while driving at 60 MPH.  
+
+Again, nice job. And fantastic job by the Comma design team as well.
+
+
+[11/23/2025 7:00 AM] irsl
+I'll be honest, those sounds are not very good. They won't be super audible through a small speaker and they don't communicate the different levels of communication and urgency well. I'd dial back the reliance on LLMs for the writeup as well. I'm not a UI designer but I do sound design, so I'll give it a shot.
+
+{Reactions}
+👍 (3)
+
+[11/23/2025 8:13 AM] firstsrif
+excited to see what you come up with 👀
+
+
+[11/23/2025 10:12 AM] irsl
+Here is a first shot. These are pretty sterile and simple but I tried to convey the meaning and level of urgency through the type of sound and harmony. The sounds are filtered to roughly match what a small speaker would sound like. When I do get my comma four, I can sweep the internal speaker and use the IR for a full in-cabin simulation for audio cues. 
+Most files contain more that one idea.
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1442186137903825079/disengaged.mp3?ex=6a62e641&is=6a6194c1&hm=66086e510b82e60f8bb6561ef940e795d53f5252a65c7b00b9de37ba7ffb7509&
+https://cdn.discordapp.com/attachments/1120514126783979540/1442186138147225610/engaged.mp3?ex=6a62e641&is=6a6194c1&hm=20c1cfcd484b1235d87c685c9704fc59dab7e2db71de13bd1bf1da392b437aae&
+https://cdn.discordapp.com/attachments/1120514126783979540/1442186138369528079/error.mp3?ex=6a62e641&is=6a6194c1&hm=507284562f4eb69fab908b803b6c3f95e5902952e14278e87786e403fde9b563&
+https://cdn.discordapp.com/attachments/1120514126783979540/1442186138633633853/error_critical.mp3?ex=6a62e641&is=6a6194c1&hm=7d9cbc32d5c31879a3528d61e5cfb210fa05cbeb7dc245e53ddc547e7251f14f&
+https://cdn.discordapp.com/attachments/1120514126783979540/1442186138864451727/orange_warning.mp3?ex=6a62e642&is=6a6194c2&hm=ed627fdd95da74d5f130758f25476fd32726c06e2e34f042e31f97e974f469e6&
+https://cdn.discordapp.com/attachments/1120514126783979540/1442186139082559750/red_critical.mp3?ex=6a62e642&is=6a6194c2&hm=ada0a3023b41a26f9e7d0055778cc54b2247f222649100745b5ee573708941a4&
+https://cdn.discordapp.com/attachments/1120514126783979540/1442186139338276967/white_notify.mp3?ex=6a62e642&is=6a6194c2&hm=81255cb3e9ea283cce01731fa2918c56191e8b0532495ca655c3bc7ff19a27b6&
+https://cdn.discordapp.com/attachments/1120514126783979540/1442186139573289042/yellow_prompt.mp3?ex=6a62e642&is=6a6194c2&hm=3c5c8f0f03e7e97606fbfece58ae9a7e13e5efb918538f5d16bd1881e2456775&
+
+{Reactions}
+🍓
+
+[11/23/2025 10:25 AM] irsl
+@First
+
+
+[11/23/2025 10:40 AM] firstsrif
+The multiple ideas per file threw me off at first, but pretty nice.
+
+
+[11/23/2025 11:17 AM] irsl
+just loosely putting down ideas per category
+
+
+[11/24/2025 10:11 AM] alanbixby
+yeah, I like the chime/chords of these a lot better than the morse ticks - #1 for all except #2 on error critical, white notify, yellow prompt
+
+
+[11/24/2025 10:12 AM] alanbixby
+on this writeup the idea of morse short/long codes for errors has merit, but the sound itself needs to be a wider pitch change imo
+
+{Reactions}
+👍
+
+[11/24/2025 10:12 AM] alanbixby
+that's where major/minor chords can come into play to reinforce if it's a positive or negative event
+
+
+[11/24/2025 10:14 AM] firstsrif
+Would be interesting to see if you could fix it while keeping the same general morse formatting. Codes on the bottom of the page.
+
+
+[11/24/2025 10:15 AM] alanbixby
+yeah, was just about to try that - I think part of whats throwing me off is the code-gen'd sounds are popping really harshly on my phone speakers so it might a sound curve/shape tuning thing
+
+
+[11/24/2025 10:16 AM] firstsrif
+Yeah, same here. Was better on my laptop than the phone.
+
+
+[11/24/2025 10:16 AM] alanbixby
+yeah
+
+
+[11/24/2025 10:25 AM] irsl
+Flexibility is low doing it in code and LLMs have no clue about generating sounds. The harshness you are hearing is the lack of attack and decay, causing an audible clicking sound as the sine wave starts and stops playing. 
+Pure sines are also not very audible on small speakers, which is why I used a triangle wave layer on top to get a more plucky sound. Square waves were used for the error sound as they appear far louder.
+
+{Reactions}
+👍
+
+[11/24/2025 10:27 AM] alanbixby
+it'll be interesting to see how the comma 4 speakers play since they are supposedly better - but I'd suspect there would still be some consideration of backwards compatibility with the 3/3X
+
+
+[11/24/2025 10:27 AM] irsl
+I don't see the benefit of using morse code because it packs information in the time domain that may as well be available immediately by pitch, chord and harshness. The latter are also somewhat intuitive to users
+
+
+[11/24/2025 10:28 AM] alanbixby
+Yeah, for morse I was moreso thinking a simpler more beeps = more problem (in addition to pitch)
+
+
+[11/24/2025 10:29 AM] alanbixby
+but that's also just "louder and longer = PAY ATTENTION YOURE ABOUT TO DIE"
+
+
+[11/24/2025 10:33 AM] crazysim
+iceberg ahead
+
+
+[11/29/2025 10:13 AM] _j3ns
+My attempt at building the mici UI for tizi 😁
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1444360644148203561/PXL_20251129_065819343.jpg?ex=6a62e66c&is=6a6194ec&hm=38e7656084f7b50e5e3b5147b36fbd1536804d928063ef6b558cec6ca62010ae&
+
+
+[11/29/2025 11:53 AM] firstsrif
+forget the ui, what device is that?
+
+
+[11/29/2025 1:25 PM] _j3ns
+This is the konik a1
+
+{Reactions}
+👍
+
+[11/30/2025 7:40 AM] crwusiz
+i modify my branch ui ( icon size 1.0 -> 0.8 )
+https://raw.githubusercontent.com/crwusiz/ci-artifacts/ui_preview_c3/onroad.png
+
+{Embed}
+https://raw.githubusercontent.com/crwusiz/ci-artifacts/ui_preview_c3/onroad.png
+https://images-ext-1.discordapp.net/external/mVPNbbfcwX5__7cgcI7XXGsx7ld4T6GAdwzugou6VzY/https/raw.githubusercontent.com/crwusiz/ci-artifacts/ui_preview_c3/onroad.png
+
+
+[12/7/2025 11:07 AM] davidcaliforniaa
+https://github.com/commaai/openpilot Just realized the "openpilot" text in link thumbnail below isn't using the same weight inter font and the overall letter spacing is tighter. Is the "openpilot" wordmark moving to this font styling now?
+
+
+[12/29/2025 9:19 AM] firstsrif
+do you mean.. engaged green color too close to the mads lateral only cyan color.. in sunnypilot? if so.. #custom-forks or the sp forum.
+
+
+[12/30/2025 5:48 PM] subzeroalphaq
+this is an interesting array of sounds, some pleasing, some jarring (critical red warnings lol) what do you use to create them with?
+
+
+[12/30/2025 5:53 PM] subzeroalphaq
+I think openpilot is not quite "there" yet to be totally without video, in my commute I often find moments where its nice to have a ground truth to check against the projected path and lanelines. Though I certainly am interested to see more experiments with increasing the contrast and readability of the video background; by its nature, pure video feed has a lot of extraneous details and information in this context.
+
+
+[12/31/2025 1:26 AM] irsl
+all done using serum 2 in ableton live
+
+{Reactions}
+🍓
+
+[1/8/2026 5:56 AM] crholm
+Will the new UI for comma4 be available for comma3x? (it would be nice to have the torque / steering limit displayed along with acceleration and breaking)
+
+
+[1/8/2026 11:16 AM] efini8426
+dual acreen PoC🙂
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1458872025736151221/010902_1767891748042.mp4?ex=6a624c73&is=6a60faf3&hm=12d0e71c22b4e19fe587777c4c5878daa9439e868ea398aba9708bb99564d112&
+https://cdn.discordapp.com/attachments/1120514126783979540/1458872026516295691/010901_1767891702195.mp4?ex=6a624c73&is=6a60faf3&hm=6d4f682ee0cdae3362e60ef27bab3ea5f3303dc178cf79b7a1bf02a0293c65ce&
+
+{Reactions}
+👀 (11)
+
+[1/10/2026 11:32 AM] alesatobrazilsp
+beautiful!!
+
+{Reactions}
+❤️
+
+[1/10/2026 2:13 PM] mlp______
+how is the second screen connected, I only see one usb-c cable
+
+
+[1/10/2026 4:14 PM] darshan12433
+If you could share the exact steps you followed to achieve this, that would be greatly appreciated. Also, will it work on the comma 4?
+
+
+[1/11/2026 11:15 PM] efini8426
+it streams over wifi, the UI is entirely written in JS. so you will need a browser to load it up
+
+{Reactions}
+👍
+
+[1/11/2026 11:23 PM] efini8426
+yeah it will work on c3/c3x/c4, code is in dragonpilot (https://github.com/dragonpilot/openpilot) testing branch, load it up:
+* turn on your phone hotspot and let your c4 connect to it, 
+* open your phone browser with the device ip (w/port 5088) or scan the barcode in openpilot screen (home -> slide right), 
+* enable dashy HUD in Device section
+* reboot c4 to active
+* now when you are driving, connect to the device ip w/ port 5088, you should see the ui
+
+{Reactions}
+❤️
+
+[1/17/2026 1:44 PM] agrippaz
+When the driver monitoring indicator on the display shows the green zone to the LEFT of the head, that means the driver is looking FORWARD, is that correct? (or is my driver detector miscalibrated?)
+
+
+[1/17/2026 1:49 PM] agrippaz
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1462172011978817849/Screenshot_20260117_134920_Discord.jpg?ex=6a62704d&is=6a611ecd&hm=d382ded39fd4c91589098c0ee8c4d19ac388effaf6fdccdde02e9ecac9600213&
+
+
+[1/17/2026 2:22 PM] sirian
+It means the driver is looking to the left of the camera, assuming you’re in a left hand drive car that’s correct lol
+
+
+[1/17/2026 2:23 PM] agrippaz
+Hmm. Not very intuitive, and even with the offset camera view I'm not looking that far left. I think that if I have my eyes on the road, the green area should be on top of the head icon, and if I'm looking out the left window, it should look like the image
+
+
+[1/17/2026 3:11 PM] michael03499
+I notice that too but it doesn’t nag about DM so it doesn’t matter
+
+
+[1/17/2026 3:15 PM] agrippaz
+It's not bothering me about DM either but as a first-time user this week, it made me think DM wasn't calibrated properly since it's always indicating left when I'm looking forward.
+
+{Reactions}
+💯
+
+[1/17/2026 3:23 PM] michael03499
+I get that and if you look directly at the camera you show up in the middle
+
+
+[1/17/2026 3:27 PM] agrippaz
+Is there like a form or a ticket system I can submit a suggestion to in order to have that improved?
+
+
+[1/17/2026 3:29 PM] jacobwaller
+#feature-requests but I would just ignore it. You really shouldn't be staring at the screen
+
+{Reactions}
+🤔 (2)
+
+[1/17/2026 10:16 PM] subzeroalphaq
+tbh I don't quite understand the need for a DM indicator outside of initial setup or settings. Seems like, if it's working then there's no need to see it, and if it's not working it'll let you know by nagging. So what's really the point of having it always visible? I'm admittedly a relatively new comma driver, so I'm curious what others think about this.
+
+{Reactions}
+💯 (3)
+
+[1/17/2026 10:54 PM] demiller9
+I agree with you. When it works right you don't need to look at it. When it's not working right, you can look at it, but there isn't much you can do to 'fix' it if the problem is the sun is on the lens, or behind you. The other issue is when it thinks you're not paying attention while you are looking for cross traffic or a parking spot or something else. There just doesn't seem to be much need to see where it thinks your head is.
+
+
+[1/18/2026 6:09 AM] agrippaz
+If it's not working right, can't you run a recalibration?
+
+
+[1/18/2026 6:51 AM] davidcaliforniaa
+https://blog.comma.ai/091release/#dmoji was a old blog post about the DM icon
+
+
+[1/18/2026 6:51 AM] davidcaliforniaa
+If a requirement was for the DM icon to be visible on screen when openpilot is engaged, would you prefer it as a static design just to indicate DM is enabled?
+
+
+[1/18/2026 12:52 PM] demiller9
+You can't recalibrate if the problem is that the sun has moved (or the car turned) so that it now shines directly onto the DM camera. I had that for 15 minutes while driving back home after the holidays. The combination of low sun elevation and south westerly heading put the sun on half my face and also directly onto the DM camera. It wouldn't stop telling me to pay attention. I tried to put one hand up to shade my face but that didn't help; it was too awkward to try to shade the camera.
+
+
+[1/18/2026 3:00 PM] sirian
+It should fallback to expecting slight wheel torque every so often iirc. I don’t really know what else they could really do in such a situation that the camera can’t see you because it’s fully blinded, I’m assuming it’s much worse on the dcam because it doesn’t have an ir filter like the others
+
+{Reactions}
+💯 (2)
+
+[1/18/2026 5:08 PM] subzeroalphaq
+Yeah, it's what I felt initially and, especially with the small size of the c4, seems to be the more appropriate solution. While it is super cool to see the facial pose and everything the model sees represented, it just seems more like a toy to play with on the road than some actionable feedback
+
+
+[1/18/2026 5:11 PM] alesatobrazilsp
+https://dragonpilot-substack-com.translate.goog/p/behind-dashy-hud-ai?r=2qujxk&utm_campaign=post&utm_medium=web&fbclid=IwdGRleAPYj8BleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAo2NjI4NTY4Mzc5AAEeI_NkKAgBLr9z6IU9F4sm4B-dioRPZbTvTET75WiH6hmWr7lT2cI7_qDJ9K0_aem_U-cGLwVk5KTX5syy98awnA&triedRedirect=true&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=pt-BR&_x_tr_pto=wapp&_x_tr_hist=true
+
+{Embed}
+https://dragonpilot-substack-com.translate.goog/p/behind-dashy-hud-ai?r=2qujxk&utm_campaign=post&utm_medium=web&fbclid=IwdGRleAPYj8BleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAo2NjI4NTY4Mzc5AAEeI_NkKAgBLr9z6IU9F4sm4B-dioRPZbTvTET75WiH6hmWr7lT2cI7_qDJ9K0_aem_U-cGLwVk5KTX5syy98awnA&triedRedirect=true&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=pt-BR&_x_tr_pto=wapp&_x_tr_hist=true
+Behind Dashy HUD: 與 AI 雞同鴨講的開發日誌
+Vibe Coding 的代價：當「感覺」無法被 AI 翻譯
+https://images-ext-1.discordapp.net/external/9opYGQ_VmpS6mcQ7qpjoFTMmC2WDJFUCzjf2eZCCUk4/https/substackcdn.com/image/fetch/%24s_%210Ink%21%2Cf_auto%2Cq_auto%3Abest%2Cfl_progressive%3Asteep/https%253A%252F%252Fdragonpilot.substack.com%252Fapi%252Fv1%252Fpost_preview%252F184768781%252Ftwitter.jpg%253Fversion%253D4
+
+{Reactions}
+🤣
+
+[1/18/2026 5:12 PM] alesatobrazilsp
+webRTC of Efini
+
+
+[1/19/2026 8:30 AM] magambi_
+It's not even a decent toy.  If you look away to "play" or test with it, you can not see it.  And if you are watching it, then...   (pause for dramatic effect 😆) ...you are distracted and not watching the road.  It's a completely senseless widget, IMHO.
+
+{Reactions}
+😂
+
+[1/19/2026 10:45 AM] firstsrif
+This annoyed me as well, might merge a potential fix into sp once its refined a bit more. https://github.com/sunnypilot/sunnypilot/pull/1604
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1462850423076421663/IMG_0824.png?ex=6a62451f&is=6a60f39f&hm=623926ace74d138a3e3d119b247953b144b4c641f8c4b9e692cdc5e5329cc203&
+
+
+[1/19/2026 12:10 PM] mlp______
+have you looked into carplay/android auto dongles with hdmi input, eg ottocast
+
+
+[1/19/2026 12:11 PM] mlp______
+with usb-c hdmi adapter plugged into c3/c3x/c4
+
+
+[1/19/2026 12:12 PM] mlp______
+also, browser could be in theory replaced with native ios/android app with webview and carplay
+
+{Reactions}
+👍
+
+[1/19/2026 12:14 PM] mlp______
+apple supports third party app stores in eu, so you could bypass the app store requirements if current ones do not allow carplay video streaming apps
+
+
+[1/19/2026 7:22 PM] efini8426
+I don't think the aux port support DP alt mode so didnt do too much research on that method.😂 
+regarding your suggestion about an Android app, I already have one working, but submitting it to the Play Store is a pain in the butt lol.
+
+
+[1/19/2026 9:30 PM] mlp______
+is the source and/or apk available, I can flash one of my ubuntu touch or pmos devices back to android
+
+
+[1/19/2026 9:31 PM] mlp______
+pmos is using https://flatpak.org/ apps/appstore
+
+{Embed}
+https://flatpak.org/
+Flatpak—the future of application distribution
+
+
+[1/19/2026 9:32 PM] mlp______
+and I just remembered that it also has waydroid so I could try the apk in pmos also
+
+
+[1/19/2026 9:34 PM] mlp______
+I bought refurbed oneplus 6t for pmos which has most of the hw working by now (including cameras)
+
+
+[1/21/2026 8:51 PM] iiaironwolf
+The issue is DM, thinking you’re always looking left, will not alert if you actually look left. I wouldn’t ignore a good suggestion like this…
+It’s not just a UI issue. DM doesn’t function properly
+
+{Reactions}
+👍 (2) 🚫
+
+[1/21/2026 9:15 PM] jacobwaller
+it actually does alert if you look left. It's not an issue with DM. In a left hand drive car, you are looking left of the camera. That's why it renders like that
+
+{Reactions}
+THIS
+
+[1/21/2026 9:28 PM] iiaironwolf
+It actually had never once alerted when I look left and it makes no UI change when I do either. It needs changed. But even if the UI didn’t change, DM still doesn’t function properly for many people sharing my same issue.
+
+
+[1/21/2026 9:29 PM] iiaironwolf
+That or maybe it needs ability to calibrate manually? Idk.
+
+
+[1/21/2026 9:30 PM] jacobwaller
+It alerts when I look left. If you've got a comma 4, make sure you have "Record and Upload Driver Camera" turned on so they can get more training data
+
+
+[1/21/2026 9:30 PM] iiaironwolf
+I do have C4. Not sure why it doesn’t work for me. Not keen on sharing that data with anyone as of yet.
+
+
+[1/21/2026 9:31 PM] jacobwaller
+But FYI, the raw angle displayed on the UI is different than the threshold they use for determining if you're paying attention
+
+{Reactions}
+👆
+
+[1/21/2026 9:31 PM] jacobwaller
+Like they're entirely different values and aren't related really
+
+
+[1/21/2026 9:31 PM] iiaironwolf
+Especially since you can view other peoples data (presumably) via useradmin
+
+
+[1/21/2026 9:32 PM] iiaironwolf
+That makes sense. I personally share @agrippaz ‘s sentiment with that, but I’d rather the system work when I look left than focus on the UI change
+
+
+[1/21/2026 9:32 PM] michael03499
+He’s not saying to share with anyone here just to turn on upload driver cam so comma can review
+
+
+[1/21/2026 9:33 PM] jacobwaller
+Yeah, this
+
+
+[1/21/2026 9:33 PM] iiaironwolf
+Oh I understand. Haha
+
+
+[1/21/2026 9:33 PM] iiaironwolf
+Meaning, yes I know. I still don’t want to. Haha
+
+
+[1/21/2026 9:33 PM] jacobwaller
+The only people who can view data on non-public routes are comma employees afaik
+
+
+[1/21/2026 9:34 PM] iiaironwolf
+I hope so! I just don’t know that for sure. Maybe if I find out that is true I would. I’d definitely like to help, but not at the expense of my privacy for now.
+
+
+[1/21/2026 9:34 PM] jacobwaller
+Well, it's 100% only comma representatives. I can't view your DM camera, for example
+
+
+[1/21/2026 9:35 PM] jacobwaller
+I'm just not sure if they give access to labelers or something of the sort
+
+
+[1/21/2026 9:35 PM] iiaironwolf
+Can you not just type in githubuser_[randomnunbers] and find another comma’s uploads in useradmin? I assumed that may be possible which made me hesitant.
+
+
+[1/21/2026 9:36 PM] jacobwaller
+Not unless you make that specific route public
+
+{Reactions}
+👍
+
+[1/21/2026 9:36 PM] iiaironwolf
+Ahhh I see. Okay I may do DM uploads then
+
+
+[2/7/2026 10:20 AM] adgower
+this makes the most sense in the name of safety first
+
+
+[2/8/2026 3:20 PM] karnbir
+in regards to privacy, no human is actually watching your driver cam footage: https://youtu.be/x6a_vlkMn54?si=yJjvyyRUKWzCoQBq&t=447
+
+{Embed}
+comma
+https://www.youtube.com/watch?v=x6a_vlkMn54&start=447
+A Tour Through Driver Monitoring | COMMA_CON
+Presentation by Weixing Zhang - Machine Learning Engineer at comma
+
+Buy your COMMA THREE at https://comma.ai/shop
+
+#COMMA_CON #commathree #openpilot
+https://images-ext-1.discordapp.net/external/XSjDHzlaow94Bhl-8dkYi8gzqBmoVsUEBlx3bszwI2o/https/i.ytimg.com/vi/x6a_vlkMn54/maxresdefault.jpg
+
+{Reactions}
+❤️
+
+[2/8/2026 3:21 PM] iiaironwolf
+Oh v interesting.
+
+
+[2/8/2026 3:21 PM] karnbir
+its all done by machines and anonymous, since c4 is a brand new product with a different camera location, they really need more data to make it good
+
+
+[2/8/2026 3:21 PM] karnbir
+so its a win win to enable driver front camera upload imo
+
+
+[2/8/2026 3:21 PM] iiaironwolf
+Sounds good to me!
+
+{Reactions}
+❤️
+
+[2/8/2026 3:45 PM] thesecuritydev
+Unless they need to manually review some segment, like if you submit a bug report
+
+
+[2/13/2026 3:41 AM] sshane_
+Please try out the new wifi ux for comma four and let us know how you like it! Can also test on PC
+
+https://github.com/commaai/openpilot/pull/37152
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1471803505751621753/Peek_2026-02-13_01-40.mp4?ex=6a628a94&is=6a613914&hm=c66178887da35d1b7517a5edb5f27116b6be08c822a8337aea1d3090d101c18c&
+
+{Reactions}
+👀 (2) 🍓 🔥 (2)
+
+[2/13/2026 2:46 PM] davidcaliforniaa
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1471970867163562105/change-ideas.mp4?ex=6a627db2&is=6a612c32&hm=f2e53ef3dbf6c589e7ca373a56a430e1edbbe9954ba02664b794e490f122d3f3&
+
+
+[2/13/2026 2:46 PM] davidcaliforniaa
+In current PR I felt color wise hierarchy was pretty flat, other than the really red btn which maybe grabs my attentions too much
+
+These below ideas assume users are usually scanning for one specific thing:
+- is something connected/is it obvious its connected
+
+** ui/ux ideas as seen in vid above:**
+- make check icon green
+- make wifi icon green (if network is connected)
+- make wifi icon and any network name(in network list) that is connected or saved a subtle grey color. Reason for it is to draw your attention to the green checkmark and the brighter white text for easier scanning
+
+- make any unconnected network names centered vertically
+- rm "connect" word. Non-connected networks should visually look more different then the connected networks. This should be enough for users to know it is a network that is not connected. If "connect" word is truly needed and users are complaining thats its not clear, then that would suggest the current UI/UX state of how a network is connected is not clear enough
+
+{Reactions}
+👍 (3) ❤️
+
+[2/19/2026 5:15 AM] sshane_
+gotta dream
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1474001492036948088/Peek_2026-02-19_03-15.mp4?ex=6a62a09d&is=6a614f1d&hm=86ece69bd6512e5f545628507a95bc24e00e94b175511d8bcd30e26b8b0a1031&
+
+{Reactions}
+👍 (2) 🔝 👀
+
+[2/19/2026 5:16 AM] crazysim
+reminds me of psp for some reason
+
+
+[2/19/2026 5:17 AM] crazysim
+psp vita
+
+
+[2/19/2026 5:21 AM] sshane_
+nick said it reminded him of dead space
+
+
+[2/19/2026 5:55 AM] crazysim
+i can see that, somewhat ar-ey
+
+
+[2/19/2026 8:48 AM] mba6comma1
+my first thought: “it’s like Liquid Glass but it’s also sentient glass”
+
+
+[2/19/2026 7:07 PM] alanbixby
+I feel like it is one of those "phonk" edits - just overlay this music on it https://youtu.be/nkLDh-UNqGI?t=31s
+
+{Reactions}
+🔥 👆
+
+[2/20/2026 1:05 AM] _j3ns
+psp and liquid glass mashup? 😯
+
+
+[2/20/2026 1:06 AM] _j3ns
+Which branch is this? I am somewhat inclined to try this out for myself
+
+
+[2/20/2026 4:33 AM] sshane_
+https://github.com/commaai/openpilot/tree/ui-experiment
+
+{Reactions}
+❤️
+
+[2/22/2026 4:23 AM] sshane_
+op's version of light show
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1475075636371656825/Peek_2026-02-22_02-22.mp4?ex=6a62947d&is=6a6142fd&hm=4f9eb47e5cf734080d6a05c4443a762bbb04f25a6d8055386120edc2fec1ba22&
+
+{Reactions}
+🔥 (8) 👍
+
+[2/23/2026 3:39 PM] davidcaliforniaa
+Never press the red button...
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1475607932472135793/red-button.mp4?ex=6a6289fa&is=6a61387a&hm=dc66ada954d086fae02f9db0f8d6da461c8fc6b0b6f4e8e9d7b9a7eb7a61c27d&
+
+{Reactions}
+👀 (3) 🔥 (5) 🦾 🔴 (3)
+
+[2/23/2026 3:39 PM] davidcaliforniaa
+inspired by Shanes light show idea and this [YouTube vid](https://www.youtube.com/watch?v=IIJD93Z2C_8)
+
+
+[2/23/2026 5:36 PM] _j3ns
+I am going to have such a fun time when driving 😂
+
+
+[2/23/2026 7:46 PM] efini8426
+took me awhile to get it ready, give this a try 🙂 https://github.com/eFiniLan/opview/
+
+{Reactions}
+👍 (3)
+
+[2/23/2026 8:51 PM] crazysim
+cool, and whew, i love the last entry in https://github.com/eFiniLan/opview/?tab=readme-ov-file#platform-notes . people just think too much of carplay/android auto allowances.
+
+{Reactions}
+🤣
+
+[2/23/2026 10:10 PM] mlp______
+thanks, I will check it out
+
+{Reactions}
+❤️
+
+[2/23/2026 10:13 PM] mlp______
+looks like carplay does support video but only while in standstill in upcoming iOS 26.4 https://www.youtube.com/watch?v=7WPjCuTKEHE
+
+
+[2/23/2026 10:18 PM] mlp______
+I'll try the ios version with apple hdmi dongle > ottocast hdmi input
+
+
+[2/24/2026 4:08 AM] sshane_
+amazing
+
+
+[2/27/2026 5:44 AM] alesatobrazilsp
+Jailbroken CarPlay plays with the car in motion, but Brazilian banks don't run the app on rooted phones (where are consumer rights??) so having to wait a few minutes at boot to revert the jailbreak to use the banking app, then a few more minutes to re-jailbreak, I realized that I was watching very little moving footage.
+
+
+[2/27/2026 5:49 AM] alesatobrazilsp
+<https://github.com/EthanArbuckle/carplay-cast>
+
+
+[2/27/2026 5:54 AM] alesatobrazilsp
+I used two: CarPlayEnable (free) and a paid from leftyfl1p's called carbridge
+
+
+[2/27/2026 6:08 AM] alesatobrazilsp
+In Brazil, it is very common to use a small Chinese ARM box connected to the car's USB port that performs several functions:
+1 - Plays video while driving;
+2 - Connects to your cell phone wirelessly;
+3 - Routes or provides internet access.
+
+Here in Brazil, they call it a "streaming box"; I'm not sure if you can find it in your countries.
+
+On this little box, you can install the APK that Efini created, for example, and view the comma four screen on your car's display.
+
+
+[2/27/2026 6:09 AM] alesatobrazilsp
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1476914031364145203/image.png?ex=6a62ad20&is=6a615ba0&hm=b3790be0ce039f746a0069558aa63437ce8028e57a84ac041b4120e4e55b183c&
+
+
+[2/27/2026 6:10 AM] alesatobrazilsp
+Others go even further—this one here is from Madmaxbr. He replaced the entire head unit with one that has more powerful ARM hardware, allowing the installation of third-party APKs and video playback while driving.
+<https://youtu.be/EzhJE2FDLOc>
+
+
+[2/28/2026 10:11 AM] sirmaster
+I wonder if you can do video on CarPlay with a sideloaded app. Obviously the app can’t be approved for the App Store if it’s doing video while driving.
+
+
+[2/28/2026 12:31 PM] karnbir
+You can't get Carplay entitlement with sideloaded app unless u trollstore/jailbreak it. https://github.com/qnblackcat/uYouPlus/discussions/90#discussioncomment-3350862
+
+{Embed}
+https://github.com/qnblackcat/uYouPlus/discussions/90
+YouTube++ and CarPlay · qnblackcat uYouPlus · Discussion #90
+After talking with the dev for &quot;carplayenable&quot;. They told me it would be possible to make this work with an unjailbroken device with some work. &quot;The tweak requires code injection int...
+https://images-ext-1.discordapp.net/external/QYiNebZ_RuoKcqBBcD41vpHIgZu_EXJ50lbXiFIEf7c/https/opengraph.githubassets.com/44e33a7be8cda93fd35060beeff06a0f6e7be0a7c1ba5a963ccd1c611e2bb003/qnblackcat/uYouPlus/discussions/90
+
+
+[2/28/2026 12:46 PM] sirmaster
+That’s not entirely true
+
+
+[2/28/2026 12:46 PM] sirmaster
+I bought a dev account and asked Apple for CarPlay entitlements and they gave it to me
+
+
+[2/28/2026 12:47 PM] sirmaster
+So like I sideloaded modified Spotify and CarPlay is working
+
+{Reactions}
+👍
+
+[2/28/2026 12:51 PM] sirmaster
+I might make a CarPlay app for SunnyPilot toggles and put that in the App Store since I have the dev account with entitlements. Sorry wrong channel…
+
+{Reactions}
+🔥 (4)
+
+[3/4/2026 1:58 AM] sshane_
+some onroad ui experimentation
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1478662815530090668/Peek_2026-03-03_23-57.mp4?ex=6a62724f&is=6a6120cf&hm=db420050c2045f72920bf192c0a622155b3494c6c7413e9560afa2942f6fa936&
+
+{Reactions}
+👀 (6) 👍
+
+[3/4/2026 2:00 AM] sshane_
+arrows probably too small to look good on device though
+
+
+[3/4/2026 5:17 AM] eyezenheim
+KISS https://youtu.be/2rEp7z_wlUI?si=YYnJbQYyO34dh790
+
+{Embed}
+Eyezenheim
+https://www.youtube.com/watch?v=2rEp7z_wlUI
+Speedometer and Set Speed Comma Four Openpilot Sunnypilot
+https://images-ext-1.discordapp.net/external/vtQ-jbX36qsNJ_ceZDi1x4MIK3ltrF7RcDRc-phdilw/https/i.ytimg.com/vi/2rEp7z_wlUI/maxresdefault.jpg
+
+{Reactions}
+👀
+
+[3/11/2026 11:16 PM] darshan12433
+I like your ui 😍. For lead car indicator can you just highlight two or three same arrow in different color that shows drive path.  I believe that will makes your UI super clean
+
+
+[3/19/2026 10:18 AM] larsa0
+Hi all, I’ve taken a stab at redesigning the comma 4 UI to be more info dense, please check out the PDF. I’d love to have your thoughts on the direction, would you prefer this over stock? Why, why not?
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1484209561014632609/Overview.png?ex=6a62d99e&is=6a61881e&hm=588f166daec443c19430fef76b9c677c8741210fd2efa20cb6104b319c207a3c&
+https://cdn.discordapp.com/attachments/1120514126783979540/1484209561413095514/UI_redesign.pdf?ex=6a62d99e&is=6a61881e&hm=cd66c75eefdcc6a15d8c13c9752033e83631669c8c11ddd968579d335a914697&
+
+
+[3/23/2026 6:39 AM] outz
+i vote we use status bar face
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1485603931206975508/doom.gif?ex=6a62a63a&is=6a6154ba&hm=585a79c0c99988bafb764fb56be442f2e7151867aa48f7b37f1eecc108272c72&
+
+
+[3/23/2026 10:54 AM] discountchubbs
+I’m not a huge fan of using emoji faces for a consumer product like that. It seems almost childlike in a way if that makes sense?
+
+
+[3/23/2026 11:19 AM] michael03499
+When I see emojis now I see ai slop
+
+{Reactions}
+💯 (2)
+
+[3/23/2026 11:21 AM] discountchubbs
+Same unfortunately. LLMs OVERUSE most emojis and it’s so dumb
+
+
+[3/23/2026 11:22 AM] crazysim
+llm, plz use the seahorse emoji for everything
+
+{Reactions}
+😂
+
+[3/23/2026 1:22 PM] larsa0
+Haha yeah fair. Maybe better with some other icons than emojjis. I'm also looking for feedback on the concept/direction as whole, a bit more zoomed out. Would something like this make sense for you as a user or no? (removing camera feed, persistently showing numbers and system status/settings as icons).
+
+
+[3/23/2026 1:29 PM] discountchubbs
+I mean yes it would. However why not create a new information page the user can swipe to instead of fully removing camera, make either mode optional !
+
+
+[3/23/2026 1:32 PM] larsa0
+I like that idea! Especially new users might prefer to see the camera feed/lane lines to build up confidence in the system and those who's confident/has used the same model for a long time might prefer more info.
+
+{Reactions}
+💯
+
+[3/23/2026 1:34 PM] sirmaster
+Does anyone actually like the steering wheel icon on the current ui?  Like it's so small does anyone even look at it and can tell what angle it is?  I mean your actual steering wheel is right there in front of you.  Just feels like something else should replace the wheel icon.
+
+{Reactions}
+👍
+
+[3/23/2026 1:45 PM] discountchubbs
+I forget it’s there tbh. If it doubled as experimental indicator it would be neat, but it’s too small to see it’s turning and the torque bar shows that anyways
+
+{Reactions}
+💯
+
+[3/23/2026 1:46 PM] sirmaster
+my thought too, every pixel is valuable realestate on the c4, i think it should be replaced heh
+
+
+[3/23/2026 1:46 PM] sirmaster
+even the confidence ball, changing color, great, needing space to move up and down? probably a waste on a c4
+
+
+[3/23/2026 1:55 PM] firstsrif
+while driving not really, but I find it helpful for clips. maybe if we moved it to the middle of the torque bar
+
+
+[3/23/2026 2:16 PM] larsa0
+totally agree that the steering wheel doesn't have any value unless it indicates experimental/dynamic/chill.
+
+
+[3/23/2026 2:18 PM] sirmaster
+I think the C4 UI could be pretty great even being so small, just have to be really smart about the information.  Color can convey a lot in a small amount of space and don't do anything wastefully uncessary or redundant
+
+
+[3/23/2026 2:19 PM] sirmaster
+multiple ui screens you can swipe between would probably be good too for different contexts
+
+
+[3/23/2026 2:20 PM] sirmaster
+in a perfect world the screens would be modular and customizable but that means standardizing the display elements somewhat
+
+
+[3/23/2026 2:20 PM] sirmaster
+think like apple watch complications and watch faces
+
+
+[3/23/2026 2:25 PM] michael03499
+I used to like it because it showed if the system was in chill or experimental
+
+
+[3/23/2026 7:03 PM] outz
+yeh having to dig through a toggle for that is eh
+
+
+[3/26/2026 2:31 AM] subzeroalphaq
+If you ask me right now, this is essentially what I believe the future of openpilot UI will be (maybe with some styling differences lol). Though it is admintedly still not totally clear what the camera/lanelines should evolve into (or disappear), but I digress. The reason the UI isn't this spartan yet, is because the underlying technology as well as the culture/community is not ready yet.
+
+That's why the c4 ui is essentially just a translation of the previous large interface to a small screen; with the extra visual enhancements and styling upgrades that are afforded (and in cases required, due to smaller size) by a new hardware release.
+
+Regarding the concept, it's generally quite solid and seems to present quite useful/desireable info when needed. There's minor things I'd change, like swapping the position of the confidence and dm; not sure if driving personality is important enough to show persistently; idk what SLM and SCC-M mean.
+I think the biggest thing missing (setting aside the larger philosophical debate about camera view and lane lines) is I feel the tiny torque indicator really cuts away a lot of the utility of the current one; the way the torque bar is designed is almost explicitly to _prepare_ someone for the torque limit to be reached, which is why it fills and grows. So, ironically, the 'least' important part of it is when its at full saturation; its all the movement leading up to it that conveys the immediate future behaviour.
+Would be happy to talk more details, but I dont want to turn this into an essay lol.
+
+Lastly, on the bright side, except for some of the model output notifications (since those require comma research to make the model output that stuff afaik), this should be pretty darn easy to make on a custom branch c: (a whole fork is certainly harder since that'd require.... testing for reliability and bugfixing :c)
+
+{Reactions}
+❤️
+
+[3/26/2026 2:36 AM] subzeroalphaq
+For the rest of yall, and everyone really (it bugs me too), an experimental mode indicator onroad is coming soon™. And along with, should be the ability to toggle the mode right from that screen as well, most likely just by tapping the steering wheel.
+
+
+[3/26/2026 2:46 AM] subzeroalphaq
+btw @Lars (and any other concept makers), the interface icons are public like all the rest, here 🙂 : https://github.com/commaai/openpilot/tree/master/selfdrive/assets/icons_mici
+
+I want to say there will eventually be a small library of these icons in a vector format, but there is no real timeline for that afaik.
+
+{Reactions}
+❤️
+
+[3/26/2026 3:19 AM] larsa0
+Thanks for the thoughtful feedback! This is a redesign with Sunnypilot in mind, hence features like SLM(speed limit maps and SCC-M(smart cruise control maps).
+
+My thinking is something more spartan like this might make more sense for "expert users" that are already aware and comfortable with their current driving model and limits of the system, at least for now(so forks and/or available as an option). Not for new users that find the camera feed and lanelines helpful to get comfortable with the system limits. 
+
+Agree about not having the variable size torque indicator being a big compromise.
+
+{Reactions}
+🍓
+
+[3/26/2026 3:29 AM] subzeroalphaq
+Yes, absolutely. I see, I havent driven with sunnypilot before so I wasnt aware of the acronyms, thanks.
+
+And yeah, honestly I think almost everyone in here would probably relate to; you get used to how your car drives pretty quickly, so you stop looking so much at the roadlines pretty quickly too. So ofc I can see how desirable this type of interface is; actually ui like this exists in some strange and weird conceptual forms from the c4 interface exploration, but again I digress.
+
+I hope to see these further developed and validated in custom forks in the meantime.
+
+{Reactions}
+👍
+
+[4/11/2026 6:12 PM] mvl3c
+The lack of a quick experimental toggle has been the biggest barrier to me using experimental in a day of using my C4 on a loaner.  I don't know if this is deliberate due to comma expecting experimental to good enough to use all the time, but right now the only reason I am able to use experimental on my c3x is because I can toggle it off mid-drive if the situation requires.
+
+Guess this will be my second UI PR after the branch switcher...
+
+{Reactions}
+👍
+
+[4/11/2026 7:40 PM] michael03499
+For me it’s getting to that point but for sure a quick toggle is something I’ve brought up a bit
+
+
+[4/11/2026 7:41 PM] michael03499
+But I roll 100% experimental 100% of the time now so I don’t even need it anymore
+
+
+[4/11/2026 7:42 PM] mvl3c
+Experimental is OK for me on weekends.   I constantly get cut off and honked at during rush hour, too timid.  Need agressive alphalong then.
+
+
+[4/11/2026 7:42 PM] michael03499
+Even on the pop models and offpolicy 8 and 9?
+
+
+[4/11/2026 7:44 PM] mvl3c
+Haven't had time to merge my tuning fork with those yet.   I"ve succeeded in making a Honda Nidec feedforward that nulls out the stupid actuator blending, just need to tune it a better.  Once that is reliable I'll look at merging newer models, probably on SP so it's a live toggle.
+
+
+[4/11/2026 7:45 PM] mvl3c
+I'll see if the missing toggle annoys me at that time, if latest models are that good might not bother.
+
+
+[4/11/2026 8:03 PM] michael03499
+Trust me brother they are that good
+
+
+[4/11/2026 8:05 PM] mvl3c
+OK I'll look if  I can cherrypick the commit into my tuning branch, which model do you recommend?  Don't want to lose my release 0.11.0 DM.
+
+{Reactions}
+👍
+
+[4/30/2026 11:08 AM] davidcaliforniaa
+Been thinkin about ways to improve the DMoji. Ended up coming up with the DMoji Bar. If your curious, read more about the thinking behind the design in my post linked below
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1499442438002049155/new-ui-dm-1.mp4?ex=6a62e557&is=6a6193d7&hm=4e034ff8eae1b4432096395c9528b71837cf05bb9e46bcf97d21b239cd8cf99c&
+
+{Reactions}
+👀 (4) 👍 (5) ❤️
+
+[4/30/2026 11:10 AM] davidcaliforniaa
+-
+Blog post: https://publish.obsidian.md/typedbyhumans/Folders/comma/DMoji+Time
+Link to try out the branch: 
+```
+installer.comma.ai/ugtthis/dmojibar
+```
+If you try it out lmk how it goes!
+
+
+[5/24/2026 8:48 PM] atoms.tech
+Missed the 3x green box outline
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1508285524090290267/Screenshot_20260524-214628.png?ex=6a62c45b&is=6a6172db&hm=3b82ced3c4a69886c498d9f3eae8b834fda36f734ac6964e78d03a80bf079482&
+
+{Reactions}
+👍 (4) 😂
+
+[5/29/2026 5:18 PM] karnbir
+Starpilot has this. I personally dont like it
+
+
+[6/3/2026 11:55 PM] ansr42
+Has there been any progress on this? I like everything except the emojis. Will the buttons be toggleable? I'd love to be able to quickly tap Experimental Mode when I get into town.
+
+
+[6/4/2026 10:15 AM] sirmaster
+can't you hold the distance button to toggle experimental mode? or is that only sunnypilot?
+
+
+[6/4/2026 3:31 PM] larsa0
+Happy to hear, and icons instead emojjis would make sense. No progress on implementing this no. The devs at sunnypilot sounded potentially open to something like this as an optional view, so that you can swipe between this and the already existing road camera view. I think that would be a good approach until nav on openpilot is mature enough for something more like this.
+
+
+[6/10/2026 12:39 PM] atoms.tech
+all good, you prefer stock or would you like to see something else ?
+
+
+[6/12/2026 8:40 AM] rippermagoux2591
+This is great. I recently got the comma 4 hardware. Ran OP for about a month, moved over to SP for more customizability and smoother driving, but haven't been able to find where to toggle different settings on the device with the limited screen real estate and seemingly limited menu options. If there is a doc or how to somewhere that breaks down these features / how to toggle to make the most out of the experience, that would be a huge help.
+
+
+[6/12/2026 9:12 AM] slcsasquatch
+Use https://www.sunnylink.ai to manage settings easily
+
+{Reactions}
+❤️
+
+[7/9/2026 8:38 PM] n449qx
+Resized the camera to take up the full width and draw the confidence ball on top
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1524952855746973808/Screenshot_20260709_183536_Gallery.png?ex=6a62c205&is=6a617085&hm=505a9c264654e527b2c01de52f5d88868d9cc5cf1bc6abc9906589947ce3d1c9&
+
+{Reactions}
+🔥 (3)
+
+[7/9/2026 8:38 PM] n449qx
+Not a fan of part of the screen always being black on an OLED
+
+
+[7/13/2026 1:14 AM] laco0933
+So I’ve actually thought of this method. I currently do have an AI box and I have a comma for. I was just waiting on some free time to take a crack at coding an android app. I’ve only coded with Swift for iOS apps, but I know that these boxes use the play store. If enough people are interested, I’ll definitely take a crack at it because I believe a better, app for android NOI iOS needs to exist for like viewing dash cam, looking at your status, checking your car and changing settings in one app. I previously had the drone mobile app, which was a really good aftermarket car app that gave you some of those functions. I believe that if this existed, it would make, a better all around car ownership device
+
+
+[7/13/2026 3:44 AM] alesatobrazilsp
+check dashy app by dragonpilot #custom-forks
+
+
+[7/14/2026 6:24 AM] jonghyuk2
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1526550006730068119/2026_07_14_20_14_1.mp4?ex=6a62a2bb&is=6a61513b&hm=d0e1e5eef1a7850ba425cc055c66ac5b2a2a1b8c6c941056eb94c90265947840&
+
+{Reactions}
+👀
+
+[7/14/2026 6:24 AM] jonghyuk2
+What about this
+
+
+[7/15/2026 6:00 PM] jrgiacone
+That’s awesome. Is this something you implemented
+
+
+[7/16/2026 3:04 AM] jonghyuk2
+Technically, my Codex implemented it. 🤪
+
+
+[7/16/2026 12:06 PM] jonghyuk2
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1527360813768118282/2026_07_15_19_38.mp4?ex=6a624a1a&is=6a60f89a&hm=ee4a3091ec8b948eaba489fe0677481a7af7f753210dedca25b192a1158e7fdd&
+
+{Reactions}
+🤤 (2)
+
+[7/16/2026 12:06 PM] jonghyuk2
+Here's update
+
+
+[7/16/2026 3:45 PM] ryanyo
+This is very cool.
+
+
+[7/22/2026 4:00 PM] babyboyok5
+what is the device you are using? is it separate from the car or it came with the car
+
+
+[7/22/2026 4:54 PM] thisistemmy
+https://iamtemmy.github.io/openpilot-confidence/
+
+
+[7/22/2026 4:54 PM] thisistemmy
+hi everyone, feel free to check this. i am open to feedback or let me know if you like it
+
+
+[7/22/2026 10:45 PM] jonghyuk2
+It’s a third-party device, so it didn’t come with the car. It’s called Navdy, but it has been discontinued.
+
+
+[7/22/2026 10:52 PM] jonghyuk2
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1529697649777840269/20260318_195757.mp4?ex=6a62e174&is=6a618ff4&hm=66d77f255740a754bae0e3279bf46e7b02a835a2e45a04290124e35b784d7b88&
+
+
+[7/22/2026 10:52 PM] jonghyuk2
+Here's my another UI for C3
+
+
+[7/22/2026 10:56 PM] jonghyuk2
+
+
+{Attachments}
+https://cdn.discordapp.com/attachments/1120514126783979540/1529698693681250374/20260323_201430.jpg?ex=6a62e26d&is=6a6190ed&hm=a484bc41d0b437e9eea9c4d7f9a89e596b7e2e1eb7af2c3a6e15e6d0ca9e0f97&
+https://cdn.discordapp.com/attachments/1120514126783979540/1529698694079713390/20260425_153618.jpg?ex=6a62e26d&is=6a6190ed&hm=4126422bad856ca8c405ff1c6c9d1c4891b839ba09e696b3cd8a11ffa9c78969&
+https://cdn.discordapp.com/attachments/1120514126783979540/1529698694717378622/20260425_153415.jpg?ex=6a62e26d&is=6a6190ed&hm=7f59bba06896e377af928dccedc4dc79370efcf2e3356cb6184f7bcebb44b8bc&
+https://cdn.discordapp.com/attachments/1120514126783979540/1529698695191461888/20260425_153807.jpg?ex=6a62e26d&is=6a6190ed&hm=391095b0f40f44154b918521737908b7b6180a8bcf19ca75343a57fbe6bc8191&
+
+
+[7/22/2026 11:02 PM] babyboyok5
+niceee
+
+
+[7/22/2026 11:03 PM] babyboyok5
+look good ngl
+
+
+[7/22/2026 11:05 PM] babyboyok5
+is the hud getting the info from your car or from C4?
+
+
+==============================================================
+Exported 721 message(s)
+==============================================================
