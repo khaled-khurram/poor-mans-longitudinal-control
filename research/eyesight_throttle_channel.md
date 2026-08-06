@@ -221,11 +221,16 @@ stack.
 Two extra findings fall out of this, both material:
 
 - **sunnypilot already ships a *modified* preglobal TX allowlist to end users** (the
-  stop-and-go entries, selected by a car param flag). So "we would need a panda safety
-  change" is not the hard wall this project has treated it as since Q5 — it is a change
-  of a kind the fork already makes for this exact platform. That reframes the escalation
-  path to `ES_Brake`/`ES_Status` from "impossible on a prebuilt branch" to "a distribution
-  problem with a known shape."
+  stop-and-go entries, runtime-selected via a safety-param word sunnypilot added to the
+  panda protocol itself). So "we would need a panda safety change" is not the hard wall
+  this project has treated it as since Q5. Note this is **already reachable on this device
+  with zero build work**: `SubaruStopAndGo` is in the *compiled* params allowlist
+  (`common/params_keys.h:221`), so setting it flips the panda to the expanded TX allowlist
+  live — a way to exercise the mechanism on this car before ever building firmware. Caveat:
+  it transmits on bus 2, which is where Q9's "EyeSight Off" fault came from. Two further
+  cautions worth knowing: sunnypilot's own `tx_hook` value checks for those two messages
+  are **commented out**, and `test_subaru_preglobal.py:14` still declares
+  `TX_MSGS = [[0x161,0],[0x164,0]]` — their additions have zero test coverage.
 - **There is a second, independent lever, already shipping**: see below.
 
 ### 7. Second lever — sunnypilot already lies to EyeSight on this platform
@@ -413,8 +418,25 @@ more than N frames, revert to passthrough immediately.
 **Escalation (separate decision, not part of this):** adding `ES_Brake` (`0x160`) and
 `ES_Status` (`0x162`) to `SUBARU_PG_TX_MSGS` would give real friction-brake and CVT
 engine-brake authority — full openpilot longitudinal, the thing jnewb1's lost
-`subaru-preglobal-long` branch appears to have had. It needs a panda safety-firmware change
-and therefore a real answer to the prebuilt-branch problem. Deliberately scoped out of v1.
+`subaru-preglobal-long` branch appears to have had. **This was investigated separately and
+the firmware wall turned out to be far lower than Q5 assumed — see
+`research/panda_safety_firmware_deployability.md`.** Headline: this device already runs
+debug-signed, non-comma panda firmware *by necessity* (`SAFETY_SUBARU_PREGLOBAL` is
+registered only inside `#ifdef ALLOW_DEBUG`, so comma's release firmware cannot run this
+car at all), the firmware ships as a git-tracked binary on the release branch, and
+`pandad` reflashes on every boot when the signature differs — so modified safety firmware
+reaches this device by `git pull` + reboot, with **no reinstall, no factory reset, no
+recalibration, no torque relearn**. Still deliberately scoped out of v1, but it is now a
+real option rather than a wall.
+
+Two warnings from that same pass, both of which would have bitten a naive patch:
+**the bit offsets do not port from global.** Preglobal `ES_Brake.Brake_Pressure` is `0|16`
+(global's is `16|16`) and `ES_Status.Cruise_RPM` is `16|16` (global's is `16|13`), so
+copy-pasting `subaru.h`'s `GET_BYTES(msg, 2, 2)` value checks would read the wrong bits and
+enforce nothing — and global's `.max_brake = 600` is calibrated to global's scaling, which
+is unmeasured on preglobal. Second: `check_relay = true` makes openpilot the **sole**
+transmitter, so it would have to produce valid `0x160`/`0x162` frames from the first frame
+onward, and preglobal `carstate.py` does not parse those messages at all today.
 
 ## Honest gaps and what would kill this
 
