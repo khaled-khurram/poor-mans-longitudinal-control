@@ -72,8 +72,8 @@ import zstandard as zstd
 
 # ------------------------------------------------------------------ config ---
 
-RAW_DIR = Path("/path/to/your/route-archive/raw")
-SCHEMA_DIR = Path("/path/to/a/cereal-log-capnp-schema-copy")
+RAW_DIR = Path("/data/routes/raw")
+SCHEMA_DIR = Path("/app")
 SCHEMA_FILE = SCHEMA_DIR / "log.capnp"
 OUT_FILE = Path("/work/es_longitudinal_command_results.json")
 
@@ -874,6 +874,7 @@ def summarize_pairs(acc):
       "n": n, "r2": round(r2, 6), "slope": round(slope, 6),
       "intercept": round(intercept, 3), "resid_rms": round(math.sqrt(resid_ms), 4),
       "exact_frac": pct(nex, n), "within1_frac": pct(nw1, n),
+      "es_std": round(math.sqrt(max(0.0, varx) / n), 4),
     }
 
   # best fit per direction
@@ -889,7 +890,23 @@ def summarize_pairs(acc):
       best[(regime, esf, rf)][side] = rec
 
   def meets(rec):
+    # BUG FOUND POST-HOC (2026-08-07, real archive run): the exact_frac branch
+    # is a false-positive magnet when the ES field itself is ~constant (e.g.
+    # esb_brake_pressure pinned at 0 during acc_off). A pinned signal trivially
+    # "exact-matches" any report field that also happens to sit near that same
+    # constant, with r2 = 0 (no real relationship) and exact_frac = 100%. Seen
+    # live: acc_off|esb_brake_pressure|throttle_cruise hit exact_frac=100%,
+    # r2=0.0 -- a spurious K1 trigger, not evidence of an echo. Guard it by
+    # requiring the ES field to actually vary. Does NOT affect es_cruise_throttle
+    # anywhere in the real run (it has 300+ distinct values in every regime),
+    # so this does not change the H1 verdict -- it only removes false H2/H3
+    # "report" hits on near-constant fields. Not a PREREG threshold retune:
+    # the 99%/0.999/1-LSB numbers are untouched, this only adds a variance
+    # floor before they're allowed to apply.
     if rec is None:
+      return False
+    min_es_std = 5.0  # counts; well below any real command field's dynamic range
+    if rec.get("es_std", 1e9) < min_es_std:
       return False
     return bool((rec["exact_frac"] or 0) / 100.0 >= PREREG["report_exact_match_frac"]
                 or (rec["r2"] >= PREREG["report_affine_r2"]
