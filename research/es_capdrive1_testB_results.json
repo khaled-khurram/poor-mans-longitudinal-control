@@ -1,0 +1,47 @@
+{
+  "raw_events_all_bands": 122,
+  "deduped_events_all_bands": 5,
+  "midrange_band": {
+    "label": "mid-range 2600-3100 (the prediction)",
+    "n_in_band": 1,
+    "n_usable": 1,
+    "same_sign": 1,
+    "opposite_sign": 0,
+    "frac_opposite_sign": 0.0,
+    "events": [
+      {
+        "route_id": "000000cc--628fef79f1",
+        "t": 352536252879136,
+        "ct_before": 2627.0,
+        "d_es_cruise_throttle": -809.0,
+        "d_throttle_body": -19.0
+      }
+    ]
+  },
+  "floor_band": {
+    "label": "floor ~808-900 (control group)",
+    "n_in_band": 2,
+    "n_usable": 1,
+    "same_sign": 1,
+    "opposite_sign": 0,
+    "frac_opposite_sign": 0.0,
+    "events": [
+      {
+        "route_id": "000000c9--0afa14f389",
+        "t": 317410257369811,
+        "ct_before": 808.0,
+        "d_es_cruise_throttle": 1335.0,
+        "d_throttle_body": 15.0
+      },
+      {
+        "route_id": "000000cc--628fef79f1",
+        "t": 352573133189551,
+        "ct_before": 808.0,
+        "d_es_cruise_throttle": 0.0,
+        "d_throttle_body": 0.0
+      }
+    ]
+  },
+  "prereg_verdict_midrange": "INCONCLUSIVE (n=1 < power floor of 30)",
+  "power_floor_note": "N>=30 required, target>=50, per es_stage0_prereg_round2.md"
+}
