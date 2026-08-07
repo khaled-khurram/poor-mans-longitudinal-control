@@ -844,13 +844,25 @@ def pct(x, n):
 
 
 def summarize_pairs(acc):
-  """For each (regime, es_field, report_field): the best lag by affine R^2, the
-  best exact-match fraction, and whether that trips the pre-registered KILL."""
-  best = {}
-  for (regime, esf, rf, lag), a in acc.pairs.items():
+  """For each (regime, es_field, report_field), the best affine fit - split by the
+  SIGN of the lag, which is the whole ballgame.
+
+  A tight match on its own does NOT mean the ES field is a report. If the ECU
+  obeys or echoes an ES command, the ECU's own report becomes a near-copy of that
+  command a few tens of ms LATER. Preglobal first-hand accounts describe exactly
+  that: EyeSight cross-checks its commanded Cruise_Throttle against the ECU's
+  echo in Throttle(0x140).Throttle_Cruise (see the archaeology writeup). So:
+
+    best fit at lag <= 0  (ES(t) matches what the report already was)  => ECHO
+    best fit at lag  > 0  (ES(t) matches what the report becomes later) => COMMAND
+
+  K1 only fires when the match is best in the ECHO direction. Ignoring the sign
+  here would turn the strongest possible confirmation into a false KILL.
+  """
+  def fit(a):
     n, sx, sy, sxy, sxx, syy, nex, nw1 = a
     if n < 500:
-      continue
+      return None
     varx = sxx - sx * sx / n
     vary = syy - sy * sy / n
     cov = sxy - sx * sy / n
@@ -858,23 +870,47 @@ def summarize_pairs(acc):
     slope = cov / varx if varx > 0 else 0.0
     intercept = (sy - slope * sx) / n
     resid_ms = max(0.0, (vary - (cov * cov / varx if varx > 0 else 0.0)) / n)
-    key = (regime, esf, rf)
-    rec = {
-      "lag_ms": lag, "n": n, "r2": round(r2, 6), "slope": round(slope, 6),
+    return {
+      "n": n, "r2": round(r2, 6), "slope": round(slope, 6),
       "intercept": round(intercept, 3), "resid_rms": round(math.sqrt(resid_ms), 4),
       "exact_frac": pct(nex, n), "within1_frac": pct(nw1, n),
     }
-    prev = best.get(key)
-    if prev is None or r2 > prev["r2"]:
-      best[key] = rec
+
+  # best fit per direction
+  best = defaultdict(dict)   # (regime, esf, rf) -> {"echo": rec, "cmd": rec}
+  for (regime, esf, rf, lag), a in acc.pairs.items():
+    rec = fit(a)
+    if rec is None:
+      continue
+    rec = dict(rec, lag_ms=lag)
+    side = "echo" if lag <= 0 else "cmd"
+    prev = best[(regime, esf, rf)].get(side)
+    if prev is None or rec["r2"] > prev["r2"]:
+      best[(regime, esf, rf)][side] = rec
+
+  def meets(rec):
+    if rec is None:
+      return False
+    return bool((rec["exact_frac"] or 0) / 100.0 >= PREREG["report_exact_match_frac"]
+                or (rec["r2"] >= PREREG["report_affine_r2"]
+                    and rec["resid_rms"] <= PREREG["report_affine_resid_lsb"]))
+
   out = {}
-  for (regime, esf, rf), rec in best.items():
-    rec = dict(rec)
+  for (regime, esf, rf), sides in best.items():
+    echo, cmd = sides.get("echo"), sides.get("cmd")
+    overall = max([r for r in (echo, cmd) if r], key=lambda r: r["r2"], default=None)
+    if overall is None:
+      continue
+    rec = dict(overall)
+    rec["best_echo_side"] = echo
+    rec["best_cmd_side"] = cmd
+    # K1: tight match AND that match is best in the echo (lag <= 0) direction
     rec["is_report_by_prereg"] = bool(
-      (rec["exact_frac"] or 0) / 100.0 >= PREREG["report_exact_match_frac"]
-      or (rec["r2"] >= PREREG["report_affine_r2"]
-          and rec["resid_rms"] <= PREREG["report_affine_resid_lsb"])
-    )
+      meets(echo) and (cmd is None or echo["r2"] >= cmd["r2"]))
+    # the mirror case: tight match that is best in the command direction, i.e.
+    # the ECU reproducing an ES command. Strong CONFIRM evidence, not a kill.
+    rec["is_ecu_echo_of_es_by_prereg"] = bool(
+      meets(cmd) and (echo is None or cmd["r2"] > echo["r2"]))
     out[f"{regime}|{esf}|{rf}"] = rec
   return out
 
@@ -994,14 +1030,43 @@ def verdicts(acc, pair_sum, xcorr_sum, ev_sum, hist_sum):
             "not a KILL. Report it as such.",
   }
 
-  # T2 - the kill test
+  # T2 - the kill test (echo direction only, see summarize_pairs)
   reports = {k: r for k, r in pair_sum.items() if r["is_report_by_prereg"]}
+  echoes = {k: r for k, r in pair_sum.items() if r["is_ecu_echo_of_es_by_prereg"]}
   v["T2_exact_copy"] = {
-    "pairs_meeting_report_criteria": sorted(reports),
+    "pairs_meeting_report_criteria_ECHO_direction": sorted(reports),
+    "pairs_where_ECU_reproduces_the_ES_field_COMMAND_direction": sorted(echoes),
     "verdict": "KILL (field is a powertrain report)" if any(
       k.split("|")[1] == "es_cruise_throttle" for k in reports) else
-      "no exact-copy source found for es_cruise_throttle",
+      "no echo-direction copy source found for es_cruise_throttle",
   }
+
+  # T2b - the documented ECU cross-check. First-hand preglobal accounts say
+  # EyeSight faults if it does not "hear back the same thing from 0x140" after
+  # commanding Cruise_Throttle. If that loop is real it should be visible here as
+  # Throttle(0x140).Throttle_Cruise reproducing ES_Distance.Cruise_Throttle at a
+  # POSITIVE lag. Finding it is simultaneously the strongest CONFIRM available
+  # from archive data AND the identification of the exact mechanism that makes a
+  # naive write fault EyeSight.
+  tc = pair_sum.get("acc_engaged_clean|es_cruise_throttle|throttle_cruise")
+  if tc is None:
+    v["T2b_ecu_crosscheck"] = {"verdict": "INCONCLUSIVE (no usable samples)"}
+  else:
+    cmd_side = tc.get("best_cmd_side")
+    echo_side = tc.get("best_echo_side")
+    v["T2b_ecu_crosscheck"] = {
+      "cmd_direction_fit": cmd_side,
+      "echo_direction_fit": echo_side,
+      "verdict": ("ECU reproduces Cruise_Throttle at positive lag => command "
+                  "confirmed AND EyeSight cross-check loop is real"
+                  if tc["is_ecu_echo_of_es_by_prereg"] else
+                  "no clean ECU reproduction of Cruise_Throttle found"),
+      "implication_if_present": (
+        "any write to Cruise_Throttle changes what the ECU echoes on 0x140, "
+        "which EyeSight is reported to validate against its own command. A naive "
+        "write would therefore be expected to fault EyeSight, matching the 2020 "
+        "first-hand preglobal reports. Plan the live test around this, not past it."),
+    }
 
   # T3 - lead/lag
   peaks = xcorr_sum.get("peaks", {})
